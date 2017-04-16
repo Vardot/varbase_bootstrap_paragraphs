@@ -17,7 +17,6 @@ This module is built on the premise that all good things in Drupal 8 are entitie
   * Columns (Equal, up to 6)
   * Columns (Three Uneven)
   * Columns (Two Uneven)
-  * Contact Form
   * Drupal Block
   * Modal
   * Tabs
@@ -50,8 +49,6 @@ Each Paragraph has width and background color options. Included are over 50 back
 
 **Requirements:**
 
-  * Contact
-  * [Contact Formatter](https://www.drupal.org/project/contact_formatter)
   * [Entity Reference Revisions](https://www.drupal.org/project/entity_reference_revisions)
   * Field
   * File

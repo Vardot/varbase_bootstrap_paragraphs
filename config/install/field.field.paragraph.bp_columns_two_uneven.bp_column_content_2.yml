@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.bp_simple
     - paragraphs.paragraphs_type.bp_tabs
     - paragraphs.paragraphs_type.bp_view
+    - paragraphs.paragraphs_type.webfrom
   module:
     - entity_reference_revisions
 id: paragraph.bp_columns_two_uneven.bp_column_content_2
@@ -43,6 +44,7 @@ settings:
       bp_modal: bp_modal
       bp_tabs: bp_tabs
       bp_view: bp_view
+      webfrom: webfrom
     target_bundles_drag_drop:
       bp_simple:
         enabled: true
@@ -86,4 +88,7 @@ settings:
       bp_tab_section:
         weight: -17
         enabled: false
+      webfrom:
+        enabled: true
+        weight: 17
 field_type: entity_reference_revisions

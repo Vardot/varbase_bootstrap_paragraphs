@@ -8,8 +8,8 @@ dependencies:
     - field.field.paragraph.bp_image.bp_width
     - paragraphs.paragraphs_type.bp_image
   module:
-    - image
     - link
+    - media_entity
     - options
 id: paragraph.bp_image.default
 targetEntityType: paragraph
@@ -22,6 +22,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
   bp_image_field:
     weight: 2
     label: hidden
@@ -29,7 +30,8 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: media_thumbnail
+    region: content
   bp_link:
     weight: 3
     label: hidden
@@ -41,12 +43,14 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link_separate
+    region: content
   bp_width:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
 hidden:
   created: true
   uid: true

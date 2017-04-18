@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.bp_webform_field
-    - paragraphs.paragraphs_type.webfrom
+    - paragraphs.paragraphs_type.bp_webfrom
   module:
     - webform
 id: paragraph.webfrom.bp_webform_field

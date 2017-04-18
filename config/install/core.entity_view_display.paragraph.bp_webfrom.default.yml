@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.webfrom.bp_webform_field
-    - paragraphs.paragraphs_type.webfrom
+    - paragraphs.paragraphs_type.bp_webfrom
   module:
     - webform
 id: paragraph.webfrom.default
@@ -12,24 +12,19 @@ bundle: webfrom
 mode: default
 content:
   bp_webform_field:
-    type: webform_entity_reference_autocomplete
+    type: webform_entity_reference_entity_view
     weight: 0
     region: content
+    label: hidden
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      source_entity: '1'
     third_party_settings: {  }
   field_bp_webform_field:
     weight: 0
+    label: hidden
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      source_entity: true
     third_party_settings: {  }
-    type: webform_entity_reference_autocomplete
+    type: webform_entity_reference_entity_view
     region: content
-hidden:
-  created: true
-  status: true
-  uid: true
+hidden: {  }

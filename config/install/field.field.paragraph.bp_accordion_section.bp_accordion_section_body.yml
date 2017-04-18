@@ -13,7 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.bp_modal
     - paragraphs.paragraphs_type.bp_simple
     - paragraphs.paragraphs_type.bp_view
-    - paragraphs.paragraphs_type.webfrom
+    - paragraphs.paragraphs_type.bp_webfrom
   module:
     - entity_reference_revisions
 id: paragraph.bp_accordion_section.bp_accordion_section_body
@@ -39,7 +39,7 @@ settings:
       bp_block: bp_block
       bp_modal: bp_modal
       bp_view: bp_view
-      webfrom: webfrom
+      bp_webfrom: bp_webfrom
     target_bundles_drag_drop:
       bp_simple:
         enabled: true
@@ -85,5 +85,5 @@ settings:
         enabled: false
       webfrom:
         enabled: true
-        weight: 17
+        weight: -16
 field_type: entity_reference_revisions

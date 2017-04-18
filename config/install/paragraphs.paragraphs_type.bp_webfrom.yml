@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-id: webfrom
+id: bp_webfrom
 label: Webfrom
 icon_uuid: null
 behavior_plugins: {  }

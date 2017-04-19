@@ -2,13 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.webfrom.bp_webform_field
+    - field.field.paragraph.bp_webfrom.bp_webform_field
     - paragraphs.paragraphs_type.bp_webfrom
   module:
     - webform
-id: paragraph.webfrom.default
+id: paragraph.bp_webfrom.default
 targetEntityType: paragraph
-bundle: webfrom
+bundle: bp_webfrom
 mode: default
 content:
   bp_webform_field:
@@ -20,15 +20,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_bp_webform_field:
-    weight: 0
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: webform_entity_reference_autocomplete
-    region: content
 hidden:
   created: true
   status: true

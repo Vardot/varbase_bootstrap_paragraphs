@@ -9,7 +9,7 @@ dependencies:
 id: paragraph.webfrom.bp_webform_field
 field_name: bp_webform_field
 entity_type: paragraph
-bundle: webfrom
+bundle: bp_webfrom
 label: Webform
 description: ''
 required: false

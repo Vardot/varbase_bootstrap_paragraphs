@@ -21,6 +21,7 @@ This module is built on the premise that all good things in Drupal 8 are entitie
   * Modal
   * Tabs
   * View
+  * webform
 
 **Backgrounds:**
 
@@ -62,6 +63,7 @@ Each Paragraph has width and background color options. Included are over 50 back
   * Views
   * [Views Reference Field](https://www.drupal.org/project/viewsreference)
   * Bootstrap framework's CSS and JS included in your theme
+  * [Webform](https://www.drupal.org/project/webform)
 
 **Supporting Organizations:**
 

@@ -1,6 +1,8 @@
 # Bootstrap Paragraphs
 A suite of Paragraph bundles made with the Boostrap framework.
 
+A new testing is forked from the current stable [Bootstrap paragraphs](https://github.com/xenomedia/bootstrap_paragraphs) based on [Varbase](https://www.drupal.org/project/varbase).
+
 For content creators, attempts to use wysiwyg editors to create structured layouts typically lead to frustration and compromise. With this module you can easily position chunks of content (Paragraph bundles) within a structured layout of your own design.
 
 This suite of [Paragraphs](https://www.drupal.org/project/paragraphs) bundles works within the [Bootstrap](http://getbootstrap.com) framework.

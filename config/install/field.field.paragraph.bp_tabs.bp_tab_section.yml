@@ -25,30 +25,30 @@ settings:
     target_bundles_drag_drop:
       bp_tab_section:
         enabled: true
-        weight: 15
-      bp_accordion:
         weight: 16
-        enabled: false
-      bp_accordion_section:
+      bp_accordion:
         weight: 17
         enabled: false
-      bp_blank:
+      bp_accordion_section:
         weight: 18
         enabled: false
-      bp_block:
+      bp_blank:
         weight: 19
         enabled: false
+      bp_block:
+        weight: 20
+        enabled: false
       bp_carousel:
-        weight: 22
+        weight: 21
         enabled: false
       bp_columns:
-        weight: 23
+        weight: 22
         enabled: false
       bp_columns_three_uneven:
-        weight: 24
+        weight: 23
         enabled: false
       bp_columns_two_uneven:
-        weight: 25
+        weight: 24
         enabled: false
       bp_image:
         weight: 26

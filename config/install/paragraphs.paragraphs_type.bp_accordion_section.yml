@@ -3,3 +3,4 @@ status: true
 dependencies: {  }
 id: bp_accordion_section
 label: 'Accordion Section'
+behavior_plugins: {  }

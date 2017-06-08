@@ -1,0 +1,7 @@
+entity.paragraphs_colors.collection:
+  path: '/admin/config/user-interface/paragraphs_colors'
+  defaults:
+    _entity_list: 'paragraphs_colors'
+    _title: 'Paragraphs colors'
+  requirements:
+     _permission: 'administer paragraphs types'

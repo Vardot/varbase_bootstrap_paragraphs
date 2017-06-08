@@ -3,3 +3,4 @@ status: true
 dependencies: {  }
 id: bp_view
 label: View
+behavior_plugins: {  }

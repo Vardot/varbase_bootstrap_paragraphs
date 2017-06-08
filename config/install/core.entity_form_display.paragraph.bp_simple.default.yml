@@ -2,34 +2,72 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
     - field.field.paragraph.bp_simple.bp_background
+    - field.field.paragraph.bp_simple.bp_image_field
     - field.field.paragraph.bp_simple.bp_text
     - field.field.paragraph.bp_simple.bp_width
     - paragraphs.paragraphs_type.bp_simple
   module:
+    - entity_browser
+    - field_group
     - text
+third_party_settings:
+  field_group:
+    group_advanced:
+      children:
+        - bp_width
+        - bp_background
+        - bp_image_field
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        label: 'Styling settings'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Styling settings'
 id: paragraph.bp_simple.default
 targetEntityType: paragraph
 bundle: bp_simple
 mode: default
 content:
   bp_background:
-    weight: 0
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  bp_image_field:
+    weight: 3
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   bp_text:
-    weight: 2
+    weight: 0
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   bp_width:
     weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
 hidden:
   created: true
   status: true

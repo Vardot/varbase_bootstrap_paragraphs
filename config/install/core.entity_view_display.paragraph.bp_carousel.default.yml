@@ -21,6 +21,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
   bp_slide_content:
     type: entity_reference_revisions_entity_view
     weight: 3
@@ -29,18 +30,21 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   bp_slide_interval:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
   bp_width:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
 hidden:
   created: true
   uid: true

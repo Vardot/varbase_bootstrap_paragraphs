@@ -3,3 +3,4 @@ status: true
 dependencies: {  }
 id: bp_block
 label: 'Drupal Block'
+behavior_plugins: {  }

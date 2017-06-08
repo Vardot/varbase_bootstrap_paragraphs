@@ -13,7 +13,6 @@ dependencies:
     - paragraphs.paragraphs_type.bp_modal
     - paragraphs.paragraphs_type.bp_simple
     - paragraphs.paragraphs_type.bp_view
-    - paragraphs.paragraphs_type.bp_webfrom
   module:
     - entity_reference_revisions
 id: paragraph.bp_accordion_section.bp_accordion_section_body
@@ -39,26 +38,25 @@ settings:
       bp_block: bp_block
       bp_modal: bp_modal
       bp_view: bp_view
-      bp_webfrom: bp_webfrom
     target_bundles_drag_drop:
       bp_simple:
         enabled: true
-        weight: -30
+        weight: -31
       bp_image:
         enabled: true
-        weight: -29
+        weight: -30
       bp_blank:
         enabled: true
-        weight: -28
+        weight: -29
       bp_columns:
         enabled: true
-        weight: -27
+        weight: -28
       bp_columns_three_uneven:
         enabled: true
-        weight: -26
+        weight: -27
       bp_columns_two_uneven:
         enabled: true
-        weight: -25
+        weight: -26
       bp_block:
         enabled: true
         weight: -24
@@ -83,7 +81,4 @@ settings:
       bp_tab_section:
         weight: -17
         enabled: false
-      webfrom:
-        enabled: true
-        weight: -16
 field_type: entity_reference_revisions

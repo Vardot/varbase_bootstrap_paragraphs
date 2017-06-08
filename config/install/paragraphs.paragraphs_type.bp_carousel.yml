@@ -3,3 +3,4 @@ status: true
 dependencies: {  }
 id: bp_carousel
 label: Carousel
+behavior_plugins: {  }

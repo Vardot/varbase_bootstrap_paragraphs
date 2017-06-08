@@ -3,3 +3,4 @@ status: true
 dependencies: {  }
 id: bp_columns_two_uneven
 label: 'Columns (Two Uneven)'
+behavior_plugins: {  }

@@ -37,7 +37,7 @@
  */
 #}
 
-{{ attach_library('bootstrap_paragraphs/bootstrap-paragraphs') }}
+{{ attach_library('varbase_bootstrap_paragraphs/bootstrap-paragraphs') }}
 
 {# Renders Width field. #}
 {# Sets class name from values in database. #}
@@ -49,6 +49,7 @@
     'paragraph--width--medium' == layout_width ? 'paragraph--width--medium',
     'paragraph--width--wide' == layout_width ? 'paragraph--width--wide',
     'paragraph--width--full' == layout_width ? 'paragraph--width--full',
+    'bg-edge2edge' == layout_width ? 'bg-edge2edge',
   ]
   %}
 {% endif %}
@@ -123,14 +124,32 @@
 {# Renders Column Style field. #}
 {# Sets class name from values in database. #}
 {% if content.bp_column_style_3|render %}
-  {% set column_style_3 = content.bp_column_style_3['#items'].getString() %}
-  {% set column_style_3_classes = [
-    'paragraph--style--25-50-25' == column_style_3 ? 'paragraph--style--25-50-25',
-    'paragraph--style--50-25-25' == column_style_3 ? 'paragraph--style--50-25-25',
-    'paragraph--style--25-25-50' == column_style_3 ? 'paragraph--style--25-25-50',
-    'paragraph--style--16-66-16' == column_style_3 ? 'paragraph--style--16-66-16',
-    'paragraph--style--66-16-16' == column_style_3 ? 'paragraph--style--66-16-16',
-    'paragraph--style--16-16-66' == column_style_3 ? 'paragraph--style--16-16-66',
+  {%  set column_style_3 = content.bp_column_style_3['#items'].getString() %}
+  {% set col_1 = [
+    'paragraph--style--25-50-25' == column_style_3 ? 'col-lg-3',
+    'paragraph--style--50-25-25' == column_style_3 ? 'col-lg-6',
+    'paragraph--style--25-25-50' == column_style_3 ? 'col-lg-3',
+    'paragraph--style--16-66-16' == column_style_3 ? 'col-lg-2 col-xs-6',
+    'paragraph--style--66-16-16' == column_style_3 ? 'col-lg-8',
+    'paragraph--style--16-16-66' == column_style_3 ? 'col-lg-2 col-xs-6',
+  ]
+  %}
+  {% set col_2 = [
+    'paragraph--style--25-50-25' == column_style_3 ? 'col-lg-6',
+    'paragraph--style--50-25-25' == column_style_3 ? 'col-lg-3',
+    'paragraph--style--25-25-50' == column_style_3 ? 'col-lg-3',
+    'paragraph--style--16-66-16' == column_style_3 ? 'col-lg-8',
+    'paragraph--style--66-16-16' == column_style_3 ? 'col-lg-2 col-xs-6',
+    'paragraph--style--16-16-66' == column_style_3 ? 'col-lg-2 col-xs-6',
+  ]
+  %}
+  {% set col_3 = [
+    'paragraph--style--25-50-25' == column_style_3 ? 'col-lg-3',
+    'paragraph--style--50-25-25' == column_style_3 ? 'col-lg-3',
+    'paragraph--style--25-25-50' == column_style_3 ? 'col-lg-6',
+    'paragraph--style--16-66-16' == column_style_3 ? 'col-lg-2 col-xs-6',
+    'paragraph--style--66-16-16' == column_style_3 ? 'col-lg-2 col-xs-6',
+    'paragraph--style--16-16-66' == column_style_3 ? 'col-lg-8',
   ]
   %}
 {% endif %}
@@ -157,14 +176,32 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Merges Column Style field with classes. #}
-{% set column_style_field = content.bp_column_style_3|render %}
+{# {% set column_style_field = content.bp_column_style_2|render %}
 {% if column_style_field %}
-  {% set classes = classes|merge(column_style_3_classes) %}
-{% endif %}
+  {% set classes = classes|merge(column_style_2_classes) %}
+{% endif %} #}
 
 {# Prints div with classes, and content without Width and Background. #}
-<div{{ attributes.addClass(classes) }}>
-  <div class="paragraph__column">
-    {{ content|without('bp_width', 'bp_background', 'bp_column_style_3') }}
-  </div>
+<div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
+ <div class="row paragraph__column" >
+    {% for key, item in content.bp_column_content_3 if key|first != '#' %}
+        {% set column_style_field = content.bp_column_content_3|render %}
+        {% set col_classes= "" %}
+        {% if column_style_field %}
+            {% if loop.index  == 1 %}
+                {% set col_classes = col_1 %}
+            {% endif %}
+            {% if loop.index  == 2 %}
+                {% set attributes = attributes.removeClass(col_1) %}
+                {% set col_classes = col_2 %}
+            {% endif %}
+            {% if loop.index  == 3 %}
+                {% set attributes = attributes.removeClass(col_1) %}
+                {% set attributes = attributes.removeClass(col_2) %}
+                {% set col_classes = col_3 %}
+            {% endif %}
+        {% endif %}
+        <div{{ attributes.removeClass(classes).addClass(col_classes) }}>{{ item }}</div>
+    {% endfor %}
+ </div>
 </div>

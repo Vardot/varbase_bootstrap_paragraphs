@@ -37,7 +37,7 @@
  */
 #}
 
-{{ attach_library('bootstrap_paragraphs/bootstrap-paragraphs') }}
+{{ attach_library('varbase_bootstrap_paragraphs/bootstrap-paragraphs') }}
 
 {# Renders Width field. #}
 {# Sets class name from values in database. #}
@@ -49,6 +49,7 @@
     'paragraph--width--medium' == layout_width ? 'paragraph--width--medium',
     'paragraph--width--wide' == layout_width ? 'paragraph--width--wide',
     'paragraph--width--full' == layout_width ? 'paragraph--width--full',
+    'bg-edge2edge' == layout_width ? 'bg-edge2edge',
   ]
   %}
 {% endif %}
@@ -124,11 +125,18 @@
 {# Sets class name from values in database. #}
 {% if content.bp_column_style_2|render %}
   {% set column_style_2 = content.bp_column_style_2['#items'].getString() %}
-  {% set column_style_2_classes = [
-    'paragraph--style--75-25' == column_style_2 ? 'paragraph--style--75-25',
-    'paragraph--style--66-33' == column_style_2 ? 'paragraph--style--66-33',
-    'paragraph--style--25-75' == column_style_2 ? 'paragraph--style--25-75',
-    'paragraph--style--33-66' == column_style_2 ? 'paragraph--style--33-66',
+  {% set col_1 = [
+    'paragraph--style--75-25' == column_style_2 ? 'col-lg-9',
+    'paragraph--style--66-33' == column_style_2 ? 'col-lg-8',
+    'paragraph--style--25-75' == column_style_2 ? 'col-lg-3',
+    'paragraph--style--33-66' == column_style_2 ? 'col-lg-4',
+  ]
+  %}
+  {% set col_2 = [
+    'paragraph--style--75-25' == column_style_2 ? 'col-lg-3',
+    'paragraph--style--66-33' == column_style_2 ? 'col-lg-4',
+    'paragraph--style--25-75' == column_style_2 ? 'col-lg-9',
+    'paragraph--style--33-66' == column_style_2 ? 'col-lg-8',
   ]
   %}
 {% endif %}
@@ -155,14 +163,27 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Merges Column Style field with classes. #}
-{% set column_style_field = content.bp_column_style_2|render %}
+{# {% set column_style_field = content.bp_column_style_2|render %}
 {% if column_style_field %}
   {% set classes = classes|merge(column_style_2_classes) %}
-{% endif %}
+{% endif %} #}
 
 {# Prints div with classes, and content without Width and Background. #}
-<div{{ attributes.addClass(classes) }}>
-  <div class="paragraph__column">
-    {{ content|without('bp_width', 'bp_background', 'bp_column_style_2') }}
-  </div>
+<div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
+ <div class="row paragraph__column" >
+    {% for key, item in content.bp_column_content_2 if key|first != '#' %}
+        {% set column_style_field = content.bp_column_style_2|render %}
+        {% set col_classes= "" %}
+        {% if column_style_field %}
+            {% if loop.index  == 1 %}
+                {% set col_classes = col_1 %}
+            {% endif %}
+            {% if loop.index  == 2 %}
+                {% set attributes = attributes.removeClass(col_1) %}
+                {% set col_classes = col_2 %}
+            {% endif %}
+        {% endif %}
+        <div{{ attributes.removeClass(classes).addClass(col_classes) }}>{{ item }}</div>
+    {% endfor %}
+ </div>
 </div>

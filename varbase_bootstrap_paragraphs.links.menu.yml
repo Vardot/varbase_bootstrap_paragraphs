@@ -1,0 +1,5 @@
+entity.paragraphs_colors.collection:
+  title: 'Paragraphs colors'
+  parent: system.admin_config_ui
+  description: 'Create and manage paragraphs colors.'
+  route_name: entity.paragraphs_colors.collection

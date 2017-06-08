@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * @file
+ * Varbase Bootstrap Paragraphs module file.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * Implements hook_theme().
+ */
+function varbase_bootstrap_paragraphs_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__default' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__bp_accordion' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__bp_carousel' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__bp_tabs' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__bp_columns_three_uneven' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__bp_columns_two_uneven' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__bp_image' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__bp_modal' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__entity_reference_revisions' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__paragraph__bp_column_content' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__paragraph__bp_column_content_2' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__paragraph__bp_column_content_3' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__paragraph__bp_image__image' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
+  $paragraph = &$variables['paragraph'];
+  if (isset($variables['paragraph']->bp_image_field->target_id)) {
+    // Get the target id and build the url.
+    $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
+    $file = File::load($target_id);
+    $file_uri = $file->getFileUri();
+    $style = ImageStyle::load('de2e_standard');
+    $file_path = $style->buildUrl($file_uri);
+
+    // Add variables to template.
+    _varbase_bootstrap_paragraphs_add_template_variable($variables, [
+      'background_image' => [
+        'type' => 'image',
+        'url' => $file_path,
+      ],
+    ]);
+  }
+}
+
+/**
+ * Populates TWIG variables with VBP related data.
+ *
+ * E.g.: $variables['VBP']['test'] becomes
+ * {{ VBP.test }} in the templates.
+ *
+ * @param array &$variables
+ *   The core $variables passed by reference.
+ * @param array $data
+ *   New data in array format, which will be passed to the template.
+ *
+ * @return bool|array
+ *   The new data.
+ *
+ * @internal
+ */
+function _varbase_bootstrap_paragraphs_add_template_variable(array &$variables, array $data = NULL) {
+
+  static $key = 'VBP';
+
+  if (!isset($variables[$key])) {
+    $variables[$key] = $data;
+  }
+  else {
+    $variables[$key][] = $data;
+  }
+  return $data;
+}

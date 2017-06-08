@@ -37,7 +37,7 @@
  */
 #}
 
-{{ attach_library('bootstrap_paragraphs/bootstrap-paragraphs') }}
+{{ attach_library('varbase_bootstrap_paragraphs/bootstrap-paragraphs') }}
 
 {# Renders Width field. #}
 {# Sets class name from values in database. #}
@@ -49,6 +49,7 @@
     'paragraph--width--medium' == layout_width ? 'paragraph--width--medium',
     'paragraph--width--wide' == layout_width ? 'paragraph--width--wide',
     'paragraph--width--full' == layout_width ? 'paragraph--width--full',
+    'bg-edge2edge' == layout_width ? 'bg-edge2edge',
   ]
   %}
 {% endif %}
@@ -145,8 +146,9 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% set paragraph_id = 'tab-' ~ paragraph.id.value %}
 
 {# Prints Tabs template. #}
-<div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true">
-  <div class="paragraph__column">
+<div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true" {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
+  <div class="row paragraph__column">
+    {{ title_suffix }}
     <ul class="nav nav-tabs" role="tablist">
       {# Loops through the tab sections to print the tab section titles. #}
       {% for key, item in content.bp_tab_section if key|first != '#' %}
@@ -160,7 +162,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
           {% for body_key, body_item in item['#paragraph'].bp_tab_section_body %}
             {# Use the same render array as item and set the '#paragraph'. #}
             {% set section_body = item %}
-            {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_tab_section_body[body_key].entity}) %}
+            {# Load the entity for the current translation #}
+            {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_tab_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
             {# Remove the cache keys so it doesn't repeat the first value. #}
             {% set section_body = section_body|merge({'#cache': {}}) %}
             {# Print the compiled section body. #}

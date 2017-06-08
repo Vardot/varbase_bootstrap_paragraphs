@@ -3,3 +3,4 @@ status: true
 dependencies: {  }
 id: bp_accordion
 label: Accordion
+behavior_plugins: {  }

@@ -3,3 +3,4 @@ status: true
 dependencies: {  }
 id: bp_tab_section
 label: 'Tab Section'
+behavior_plugins: {  }

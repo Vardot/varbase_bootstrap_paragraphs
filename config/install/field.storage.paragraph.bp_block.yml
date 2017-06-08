@@ -2,17 +2,17 @@ langcode: en
 status: true
 dependencies:
   module:
-    - block_content
+    - block
     - paragraphs
 id: paragraph.bp_block
 field_name: bp_block
 entity_type: paragraph
 type: entity_reference
 settings:
-  target_type: block_content
+  target_type: block
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

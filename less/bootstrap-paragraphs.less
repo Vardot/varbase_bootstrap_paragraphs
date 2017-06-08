@@ -191,7 +191,8 @@
       .paragraph.paragraph--type--bp-columns {} -- Is used below
       .paragraph.paragraph--type--bp-columns-three-uneven {} -- Is used below
       .paragraph.paragraph--type--bp-columns-two-uneven {} -- Is used below
-      .paragraph.paragraph--type--bp-image {}
+      .paragraph.paragraph--type--bp-contact {}
+      .paragraph.paragraph--type--bp-image {} -- Is used below
       .paragraph.paragraph--type--bp-modal {} -- Is used below
       .paragraph.paragraph--type--bp-simple {}
       .paragraph.paragraph--type--bp-tabs {} -- Is used below
@@ -333,10 +334,14 @@
 
 /* Carousel Paragraph. */
 /* paragraph--bp-carousel.html.twig */
-/* Adds minimum height and top padding on a paragraph in a carousel */
-.paragraph.paragraph--type--bp-carousel > .carousel-inner > .item > .paragraph > .paragraph__column {
-  padding-top: @jumbotron-padding;
-  min-height: 420px;
+/* Removes padding-left/padding-right added by column widths. */
+.paragraph.paragraph--width--tiny.paragraph--type--bp-carousel > .carousel-inner,
+.paragraph.paragraph--width--narrow.paragraph--type--bp-carousel > .carousel-inner,
+.paragraph.paragraph--width--medium.paragraph--type--bp-carousel > .carousel-inner,
+.paragraph.paragraph--width--wide.paragraph--type--bp-carousel > .carousel-inner,
+.paragraph.paragraph--width--full.paragraph--type--bp-carousel > .carousel-inner {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Columns Paragraph. */
@@ -349,9 +354,20 @@
 }
 
 /* Columns Modifiers inside of Columns Element  */
-.paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__6col,
-.paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
+.paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__6col {
   .make-sm-column(2);
+}
+
+.paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: 768px) {
+    float: left;
+    width: 20%;
+  }
 }
 
 .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__4col {
@@ -527,6 +543,17 @@
     }
     .paragraph--type--bp-columns__3col:nth-of-type(3) {
       .make-sm-column(8);
+    }
+  }
+}
+
+/* Image Paragraph. */
+/* .paragraph--bp-image.html.twig */
+.paragraph--type--bp-image {
+  &.paragraph--width--full {
+    .paragraph__column {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

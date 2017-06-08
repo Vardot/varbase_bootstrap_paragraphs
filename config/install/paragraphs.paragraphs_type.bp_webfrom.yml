@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: bp_webfrom
-label: Webfrom
-icon_uuid: null
-behavior_plugins: {  }

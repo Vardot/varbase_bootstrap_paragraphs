@@ -10,56 +10,81 @@ dependencies:
     - field.field.paragraph.bp_modal.bp_width
     - paragraphs.paragraphs_type.bp_modal
   module:
+    - field_group
     - paragraphs
+third_party_settings:
+  field_group:
+    group_advanced:
+      children:
+        - bp_width
+        - bp_background
+      parent_name: ''
+      weight: 4
+      format_type: details
+      format_settings:
+        label: 'Styling settings'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Styling settings'
 id: paragraph.bp_modal.default
 targetEntityType: paragraph
 bundle: bp_modal
 mode: default
 content:
   bp_background:
-    weight: 0
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   bp_modal_body:
     type: entity_reference_paragraphs
-    weight: 4
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-    third_party_settings: {  }
-  bp_modal_button_text:
     weight: 2
     settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  bp_modal_button_text:
+    weight: 0
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   bp_modal_footer:
     type: entity_reference_paragraphs
-    weight: 5
+    weight: 3
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
   bp_modal_title:
-    weight: 3
+    weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   bp_width:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
 hidden:
   created: true
   status: true

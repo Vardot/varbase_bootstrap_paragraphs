@@ -3,13 +3,15 @@ status: true
 dependencies:
   module:
     - paragraphs
-    - text
 id: paragraph.bp_accordion_section_title
 field_name: bp_accordion_section_title
 entity_type: paragraph
 type: string
-settings: {  }
-module: text
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

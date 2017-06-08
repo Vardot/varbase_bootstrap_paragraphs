@@ -3,3 +3,4 @@ status: true
 dependencies: {  }
 id: bp_tabs
 label: Tabs
+behavior_plugins: {  }

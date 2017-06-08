@@ -25,6 +25,9 @@ settings:
     -
       value: paragraph--width--full
       label: 'Full Screen'
+    -
+      value: bg-edge2edge
+      label: 'Edge to Edge'
   allowed_values_function: ''
 module: options
 locked: false

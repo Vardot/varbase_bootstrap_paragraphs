@@ -23,6 +23,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
   bp_modal_body:
     type: entity_reference_revisions_entity_view
     weight: 4
@@ -31,6 +32,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   bp_modal_button_text:
     weight: 2
     label: hidden
@@ -38,6 +40,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   bp_modal_footer:
     type: entity_reference_revisions_entity_view
     weight: 5
@@ -46,6 +49,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   bp_modal_title:
     weight: 3
     label: hidden
@@ -53,12 +57,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   bp_width:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
 hidden:
   created: true
   uid: true

@@ -2,12 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.bp_accordion_section.bp_accordion_section_body
     - field.field.paragraph.bp_accordion_section.bp_accordion_section_title
     - paragraphs.paragraphs_type.bp_accordion_section
-  module:
-    - paragraphs
-    - text
 id: paragraph.bp_accordion_section.default
 targetEntityType: paragraph
 bundle: bp_accordion_section
@@ -23,13 +19,15 @@ content:
       add_mode: dropdown
       form_display_mode: default
     third_party_settings: {  }
+    region: content
   bp_accordion_section_title:
     weight: 0
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: { }
+    third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

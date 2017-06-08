@@ -36,9 +36,16 @@
  * @see template_preprocess_field()
  */
 #}
-
-{%- for item in items -%}
-  <div class="paragraph--type--bp-columns__{{ loop.length }}col">
+{# {%- for item in items -%}
+	{% if loop.index == 1 %}
+  <div class="paragraph--type--bp-columns__{{ loop.length }}col col-lg-9">
     {{ item.content }}
   </div>
-{%- endfor -%}
+	{% endif %}
+
+	{% if loop.index  == 2 %}
+  <div class="paragraph--type--bp-columns__{{ loop.length }}col col-lg-3">
+    {{ item.content }}
+  </div>
+	{% endif %}
+{%- endfor -%} #}

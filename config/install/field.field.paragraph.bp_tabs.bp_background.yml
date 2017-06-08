@@ -10,7 +10,7 @@ id: paragraph.bp_tabs.bp_background
 field_name: bp_background
 entity_type: paragraph
 bundle: bp_tabs
-label: Background
+label: 'Background Color'
 description: ''
 required: false
 translatable: true

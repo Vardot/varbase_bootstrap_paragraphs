@@ -1,8 +1,6 @@
 # Bootstrap Paragraphs
 A suite of Paragraph bundles made with the Boostrap framework.
 
-A new testing is forked from the current stable [Bootstrap paragraphs](https://github.com/xenomedia/bootstrap_paragraphs) based on [Varbase](https://www.drupal.org/project/varbase).
-
 For content creators, attempts to use wysiwyg editors to create structured layouts typically lead to frustration and compromise. With this module you can easily position chunks of content (Paragraph bundles) within a structured layout of your own design.
 
 This suite of [Paragraphs](https://www.drupal.org/project/paragraphs) bundles works within the [Bootstrap](http://getbootstrap.com) framework.
@@ -19,11 +17,11 @@ This module is built on the premise that all good things in Drupal 8 are entitie
   * Columns (Equal, up to 6)
   * Columns (Three Uneven)
   * Columns (Two Uneven)
+  * Contact Form
   * Drupal Block
   * Modal
   * Tabs
   * View
-  * webform
 
 **Backgrounds:**
 
@@ -52,6 +50,8 @@ Each Paragraph has width and background color options. Included are over 50 back
 
 **Requirements:**
 
+  * Contact
+  * [Contact Formatter](https://www.drupal.org/project/contact_formatter)
   * [Entity Reference Revisions](https://www.drupal.org/project/entity_reference_revisions)
   * Field
   * File
@@ -65,7 +65,6 @@ Each Paragraph has width and background color options. Included are over 50 back
   * Views
   * [Views Reference Field](https://www.drupal.org/project/viewsreference)
   * Bootstrap framework's CSS and JS included in your theme
-  * [Webform](https://www.drupal.org/project/webform)
 
 **Supporting Organizations:**
 

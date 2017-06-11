@@ -16,9 +16,7 @@ third_party_settings:
   field_group:
     group_advanced:
       children:
-        - bp_width
-        - bp_background
-        - bp_image_field
+        - group_styling_settings
       parent_name: ''
       weight: 1
       format_type: details
@@ -29,19 +27,58 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Styling settings'
+    group_styling_settings:
+      children:
+        - group_background_settings
+        - group_content_settings
+      parent_name: group_advanced
+      weight: 20
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Styling settings'
+    group_background_settings:
+      children:
+        - bp_background
+        - bp_image_field
+      parent_name: group_styling_settings
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Background settings'
+    group_content_settings:
+      children:
+        - bp_width
+      parent_name: group_styling_settings
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Content settings'
 id: paragraph.bp_view.default
 targetEntityType: paragraph
 bundle: bp_view
 mode: default
 content:
   bp_background:
-    weight: 3
+    weight: 22
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   bp_image_field:
-    weight: 4
+    weight: 23
     settings:
       entity_browser: image_browser
       field_widget_display: rendered_entity
@@ -64,7 +101,7 @@ content:
     type: viewsreference_autocomplete
     region: content
   bp_width:
-    weight: 2
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: options_select

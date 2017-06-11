@@ -16,9 +16,7 @@ third_party_settings:
   field_group:
     group_advanced:
       children:
-        - bp_width
-        - bp_background
-        - bp_image_field
+        - group_styling_settings
       parent_name: ''
       weight: 3
       format_type: details
@@ -28,6 +26,45 @@ third_party_settings:
         id: ''
         classes: ''
         open: false
+      label: 'Styling settings'
+    group_content_settings:
+      children:
+        - bp_width
+      parent_name: group_styling_settings
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Content settings'
+    group_background_settings:
+      children:
+        - bp_background
+        - bp_image_field
+      parent_name: group_styling_settings
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Background settings'
+    group_styling_settings:
+      children:
+        - group_background_settings
+        - group_content_settings
+      parent_name: group_advanced
+      weight: 20
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
       label: 'Styling settings'
 id: paragraph.bp_accordion.default
 targetEntityType: paragraph
@@ -48,13 +85,13 @@ content:
     region: content
   bp_background:
     type: options_select
-    weight: 3
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   bp_image_field:
     type: entity_browser_entity_reference
-    weight: 4
+    weight: 23
     region: content
     settings:
       entity_browser: image_browser
@@ -68,7 +105,7 @@ content:
     third_party_settings: {  }
   bp_width:
     type: options_select
-    weight: 2
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -17,6 +17,7 @@ dependencies:
   - media_entity_image
   - options
   - paragraphs
+  - responsive_image
   - system
   - text
   - user

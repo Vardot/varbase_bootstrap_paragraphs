@@ -16,37 +16,36 @@ bundle: bp_columns
 mode: default
 content:
   bp_background:
-    weight: 0
-    label: hidden
+    type: list_default
+    weight: 1
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_key
-    region: content
   bp_column_content:
     type: entity_reference_revisions_entity_view
-    weight: 2
+    weight: 0
+    region: content
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
   bp_image_field:
+    type: entity_reference_label
     weight: 3
-    label: hidden
+    region: content
+    label: above
     settings:
       link: true
-      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   bp_width:
-    weight: 1
-    label: hidden
+    type: list_default
+    weight: 2
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_key
-    region: content
 hidden:
   created: true
   uid: true

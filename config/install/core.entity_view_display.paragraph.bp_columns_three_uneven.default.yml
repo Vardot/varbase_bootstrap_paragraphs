@@ -17,15 +17,15 @@ bundle: bp_columns_three_uneven
 mode: default
 content:
   bp_background:
-    weight: 1
-    label: hidden
+    type: list_default
+    weight: 4
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_key
-    region: content
   bp_column_content_3:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 0
     label: hidden
     settings:
       view_mode: default
@@ -33,28 +33,27 @@ content:
     third_party_settings: {  }
     region: content
   bp_column_style_3:
-    type: list_key
-    weight: 2
-    label: hidden
+    type: list_default
+    weight: 3
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
-    region: content
   bp_image_field:
-    weight: 4
-    label: hidden
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: above
     settings:
       link: true
-      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   bp_width:
-    weight: 0
-    label: hidden
+    type: list_default
+    weight: 1
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_key
-    region: content
 hidden:
   created: true
   uid: true

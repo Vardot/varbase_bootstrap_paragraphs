@@ -163,28 +163,35 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
-{# Merges Width field with classes. #}
-{% set width_field = content.bp_width|render %}
-{% if width_field %}
-  {% set classes = classes|merge(layout_width_classes) %}
-{% endif %}
-
 {# Merges Background field with classes. #}
 {% set background_field = content.bp_background|render %}
 {% if background_field %}
   {% set classes = classes|merge(layout_background_classes) %}
 {% endif %}
 
-{# Merges Column Style field with classes. #}
-{# {% set column_style_field = content.bp_column_style_2|render %}
-{% if column_style_field %}
-  {% set classes = classes|merge(column_style_2_classes) %}
-{% endif %} #}
+{# Row classes. #}
+{% set row_attribute = create_attribute() %}
+{% set width_field = content.bp_width|render %}
+  {%
+    set row_classes = [
+    'row',
+    'paragraph__column',
+    ]
+  %}
+{% if width_field %}
+  {% set row_classes = row_classes|merge(layout_width_classes) %}
+{% endif %}
+
+{# If there is BG image it's always edge to edge #}
+{% if VBP.background_image.url %}
+    {% set attributes = attributes.addClass('bg-edge2edge') %}
+{% endif %}
 
 {# Prints div with classes, and content without Width and Background. #}
 <div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
- <div class="row paragraph__column" >
+ <div{{ row_attribute.addClass(row_classes) }}>
     {% for key, item in content.bp_column_content_3 if key|first != '#' %}
+        {% set attributes = attributes.removeClass('bg-edge2edge') %} 
         {% set column_style_field = content.bp_column_content_3|render %}
         {% set col_classes= "" %}
         {% if column_style_field %}

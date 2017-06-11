@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_image.bp_background
+    - field.field.paragraph.bp_image.bp_image_field
+    - field.field.paragraph.bp_image.bp_link
+    - field.field.paragraph.bp_image.bp_width
+    - paragraphs.paragraphs_type.bp_image
+id: paragraph.bp_image.default
+targetEntityType: paragraph
+bundle: bp_image
+mode: default
+content:
+  bp_image_field:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+hidden:
+  bp_background: true
+  bp_link: true
+  bp_width: true

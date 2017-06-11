@@ -2,8 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.bp_accordion_section.bp_accordion_section_body
     - field.field.paragraph.bp_accordion_section.bp_accordion_section_title
     - paragraphs.paragraphs_type.bp_accordion_section
+  module:
+    - paragraphs
 id: paragraph.bp_accordion_section.default
 targetEntityType: paragraph
 bundle: bp_accordion_section

@@ -130,16 +130,28 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
-{# Merges Width field with classes. #}
-{% set width_field = content.bp_width|render %}
-{% if width_field %}
-  {% set classes = classes|merge(layout_width_classes) %}
-{% endif %}
-
 {# Merges Background field with classes. #}
 {% set background_field = content.bp_background|render %}
 {% if background_field %}
   {% set classes = classes|merge(layout_background_classes) %}
+{% endif %}
+
+{# Row classes. #}
+{% set row_attribute = create_attribute() %}
+{% set width_field = content.bp_width|render %}
+  {%
+    set row_classes = [
+    'row',
+    'paragraph__column',
+    ]
+  %}
+{% if width_field %}
+  {% set row_classes = row_classes|merge(layout_width_classes) %}
+{% endif %}
+
+{# If there is BG image it's always edge to edge #}
+{% if VBP.background_image.url %}
+    {% set attributes = attributes.addClass('bg-edge2edge') %}
 {% endif %}
 
 {# Sets Unique ID for Accordion from Paragraph ID. #}
@@ -147,11 +159,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Prints Tabs template. #}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true" {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
-  <div class="row paragraph__column">
+  <div{{ row_attribute.addClass(row_classes) }}>
     {{ title_suffix }}
     <ul class="nav nav-tabs" role="tablist">
       {# Loops through the tab sections to print the tab section titles. #}
       {% for key, item in content.bp_tab_section if key|first != '#' %}
+        {% set attributes = attributes.removeClass('bg-edge2edge') %} 
         <li role="presentation" class="{% if loop.first %}active{% endif %}"><a href="#tab-{{ key }}" aria-controls="{{ item['#paragraph'].bp_tab_section_title.value }}" role="tab" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
       {% endfor %}
     </ul>

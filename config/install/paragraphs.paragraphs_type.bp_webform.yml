@@ -1,6 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-id: bp_blank
-label: Blank
+id: bp_webform
+label: Webform
 behavior_plugins: {  }

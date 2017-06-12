@@ -32,9 +32,6 @@ settings:
       bp_accordion_section:
         weight: 18
         enabled: false
-      bp_blank:
-        weight: 19
-        enabled: false
       bp_block:
         weight: 20
         enabled: false

@@ -29,9 +29,6 @@ settings:
       bp_accordion:
         weight: 11
         enabled: false
-      bp_blank:
-        weight: 12
-        enabled: false
       bp_carousel:
         weight: 13
         enabled: false

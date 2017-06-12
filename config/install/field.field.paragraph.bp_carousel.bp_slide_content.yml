@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.storage.paragraph.bp_slide_content
     - paragraphs.paragraphs_type.bp_accordion
-    - paragraphs.paragraphs_type.bp_blank
     - paragraphs.paragraphs_type.bp_block
     - paragraphs.paragraphs_type.bp_carousel
     - paragraphs.paragraphs_type.bp_columns
@@ -33,7 +32,6 @@ settings:
     target_bundles:
       bp_simple: bp_simple
       bp_image: bp_image
-      bp_blank: bp_blank
       bp_accordion: bp_accordion
       bp_columns: bp_columns
       bp_columns_three_uneven: bp_columns_three_uneven
@@ -49,9 +47,6 @@ settings:
       bp_image:
         enabled: true
         weight: -30
-      bp_blank:
-        enabled: true
-        weight: -29
       bp_accordion:
         enabled: true
         weight: -28

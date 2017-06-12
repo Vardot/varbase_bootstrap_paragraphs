@@ -11,7 +11,6 @@ This module is built on the premise that all good things in Drupal 8 are entitie
 
   * Simple HTML
   * Image
-  * Blank
   * Accordion
   * Carousel
   * Columns (Equal, up to 6)
@@ -22,6 +21,7 @@ This module is built on the premise that all good things in Drupal 8 are entitie
   * Modal
   * Tabs
   * View
+  * Webform
 
 **Backgrounds:**
 
@@ -39,11 +39,11 @@ Each Paragraph has width and background color options. Included are over 50 back
 
   * Install the module as you normally would.
   * Verify installation by visiting /admin/structure/paragraphs_type and seeing your new Paragraph bundles.
-  * On the Simple and Blank bundles, click Manage fields and choose which Text formats to use.  We recommend a *Full HTML* for the Simple, and a *Full HTML - No Editor* for the Blank.
+  * On the Simple bundle, click Manage fields and choose which Text formats to use.  We recommend a *Full HTML* for the Simple.
   * Go to your content type and add a new field to type Entity revisions, Paragraphs.
   * Allow unlimited so creators can add more that one Paragraph to the node.
   * On the field edit screen, you can add instructions, and choose which bundles you want to allow for this field. Check all but Accordion Section and Tab Section. Those should only be used inside Accordions and Tabs.
-  * Arrange them as you see fit. I prefer Simple, Image, and Blank at the top, then the rest in Alphabetical order. Click Save Settings.
+  * Arrange them as you see fit. I prefer Simple, Image, at the top, then the rest in Alphabetical order. Click Save Settings.
   * Adjust your form display, placing the field where you want it.
   * Add the field into the Manage display tab.
   * Start creating content!
@@ -65,6 +65,7 @@ Each Paragraph has width and background color options. Included are over 50 back
   * Views
   * [Views Reference Field](https://www.drupal.org/project/viewsreference)
   * Bootstrap framework's CSS and JS included in your theme
+  * [Webform](https://www.drupal.org/project/webform)
 
 **Supporting Organizations:**
 

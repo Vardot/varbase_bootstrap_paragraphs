@@ -5,29 +5,7 @@
   margin-right: 0;
 }
 .paragraph > .paragraph__column {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
   padding-bottom: 30px;
-}
-@media (min-width: 768px) {
-  .paragraph > .paragraph__column {
-    float: left;
-    width: 100%;
-  }
-}
-@media (min-width: 992px) {
-  .paragraph > .paragraph__column {
-    float: left;
-    width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  .paragraph > .paragraph__column {
-    float: left;
-    width: 100%;
-  }
 }
 .paragraph--type--bp-carousel .paragraph:last-of-type > .paragraph__column,
 .paragraph--type--bp-columns .paragraph:last-of-type > .paragraph__column,
@@ -112,4 +90,3 @@
     margin-left: 25%;
   }
 }
-/*# sourceMappingURL=vbp-default.base.css.map */

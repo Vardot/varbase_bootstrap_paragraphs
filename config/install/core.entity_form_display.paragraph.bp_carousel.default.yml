@@ -21,7 +21,7 @@ third_party_settings:
       format_settings:
         label: 'Styling settings'
         required_fields: true
-        id: ''
+        id: styling-settings
         classes: ''
         open: false
       label: 'Styling settings'

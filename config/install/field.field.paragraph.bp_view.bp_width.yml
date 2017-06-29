@@ -12,9 +12,9 @@ entity_type: paragraph
 bundle: bp_view
 label: Width
 description: ''
-required: false
+required: true
 translatable: true
-default_value: {  }
+default_value: paragraph--width--full
 default_value_callback: ''
 settings: {  }
 field_type: list_string

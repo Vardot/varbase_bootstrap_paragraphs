@@ -24,7 +24,7 @@ settings:
       label: Wide
     -
       value: paragraph--width--full
-      label: 'Full Width'
+      label: 'Full width'
     -
       value: bg-edge2edge
       label: 'Edge to Edge'

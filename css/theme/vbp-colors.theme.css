@@ -1,11 +1,12 @@
 .paragraph.paragraph--color {
   display: table;
-  width: 100%;
 }
+/* Adds padding to fill in color. */
 .paragraph.paragraph--color > .paragraph__column {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+/* Fills color on colorless .paragraph__column after color .paragraph__column. */
 .paragraph.paragraph--color + .paragraph > .paragraph__column {
   padding-top: 30px;
 }
@@ -174,4 +175,3 @@
 .paragraph--color--danger {
   background: transparent;
 }
-/*# sourceMappingURL=vbp-colors.theme.css.map */

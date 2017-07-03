@@ -5,22 +5,19 @@
 // -----------------------------------------------------------------------------
 
 // Add display so color shows.
-.paragraph {
-  &.paragraph--color {
-    display: table;
-    width: 100%;
-  }
+.paragraph.paragraph--color {
+  display: table;
+}
 
-  // Adds padding to fill in color.
-  &.paragraph--color > .paragraph__column {
-    padding-top: @jumbotron-padding;
-    padding-bottom: @jumbotron-padding;
-  }
+/* Adds padding to fill in color. */
+.paragraph.paragraph--color > .paragraph__column {
+  padding-top: @jumbotron-padding;
+  padding-bottom: @jumbotron-padding;
+}
 
-  // Fills color on colorless .paragraph__column after color .paragraph__column.
-  &.paragraph--color + .paragraph > .paragraph__column {
-    padding-top: @jumbotron-padding;
-  }
+/* Fills color on colorless .paragraph__column after color .paragraph__column. */
+.paragraph.paragraph--color + .paragraph > .paragraph__column {
+  padding-top: @jumbotron-padding;
 }
 
 .paragraph--color--rgba-blue-light {

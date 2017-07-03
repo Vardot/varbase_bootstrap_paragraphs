@@ -146,6 +146,11 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {# Sets Unique ID for Modal from Paragraph ID. #}
 {% set paragraph_id = 'modal-' ~ paragraph.id.value %}
 
+{# If there is BG it's always edge to edge #}
+{% if content.bp_background|render %}
+    {% set attributes = attributes.addClass('bg-edge2edge') %}
+{% endif %}
+
 {# Prints div with classes, and button to trigger the modal. #}
 <div{{ attributes.addClass(classes) }}>
   <div class="row paragraph__column">

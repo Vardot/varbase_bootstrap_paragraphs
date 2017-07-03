@@ -14,6 +14,9 @@
   padding-bottom: @jumbotron-padding;
 }
 
+.paragraph__column {
+  padding: 0 25px;
+}
 .paragraph--type--bp-carousel .paragraph:last-of-type > .paragraph__column,
 .paragraph--type--bp-columns .paragraph:last-of-type > .paragraph__column,
 .paragraph--type--bp-columns-three-uneven .paragraph:last-of-type > .paragraph__column,
@@ -34,10 +37,15 @@
 .paragraph > .paragraph__column .paragraph > .paragraph__column,
 .paragraph > .paragraph__column .paragraph > .paragraph__column .paragraph > .paragraph__column {
   float: none;
-  margin-left: 0;
-  padding-left: 0;
-  padding-right: 0;
-  width: auto;
+}
+
+.paragraph__column > div > .paragraph , 
+.paragraph__column > .tab-content > .tab-pane > .paragraph {
+  width: 100%;
+  margin-right: 0px;
+  margin-left: 0px;
+  left: 0 ;
+  right: 0;
 }
 
 // Columns Modifiers inside of Columns Element.

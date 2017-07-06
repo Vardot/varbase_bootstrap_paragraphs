@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_and_image.bp_background
+    - field.field.paragraph.text_and_image.bp_width
+    - field.field.paragraph.text_and_image.field_image
+    - field.field.paragraph.text_and_image.field_image_position
+    - field.field.paragraph.text_and_image.field_text_content
+    - field.field.paragraph.text_and_image.text_and_image_style
+    - paragraphs.paragraphs_type.text_and_image
+  module:
+    - options
+    - text
+id: paragraph.text_and_image.default
+targetEntityType: paragraph
+bundle: text_and_image
+mode: default
+content:
+  bp_background:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  bp_width:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_image:
+    weight: 12
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_image_position:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_text_content:
+    weight: 11
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  text_and_image_style:
+    type: list_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

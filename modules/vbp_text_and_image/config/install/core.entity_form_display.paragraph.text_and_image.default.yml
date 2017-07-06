@@ -1,0 +1,163 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.text_and_image.bp_background
+    - field.field.paragraph.text_and_image.bp_width
+    - field.field.paragraph.text_and_image.field_image
+    - field.field.paragraph.text_and_image.field_image_position
+    - field.field.paragraph.text_and_image.field_text_content
+    - field.field.paragraph.text_and_image.text_and_image_style
+    - paragraphs.paragraphs_type.text_and_image
+  module:
+    - entity_browser
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_styling_settings:
+      children:
+        - group_styling_setting
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        id: styling-settings
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Styling settings'
+    group_background_settings:
+      children:
+        - bp_background
+      parent_name: group_styling_setting
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Background settings'
+    group_content_settings:
+      children:
+        - bp_width
+        - text_and_image_style
+        - field_image_position
+      parent_name: group_styling_setting
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Content settings'
+    group_styling_setting:
+      children:
+        - group_background_settings
+        - group_content_settings
+      parent_name: group_styling_settings
+      weight: 20
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Styling settings'
+    group_components:
+      children:
+        - group_text
+        - group_image
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Components
+    group_text:
+      children:
+        - field_text_content
+      parent_name: group_components
+      weight: 5
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Text
+    group_image:
+      children:
+        - field_image
+      parent_name: group_components
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Image
+id: paragraph.text_and_image.default
+targetEntityType: paragraph
+bundle: text_and_image
+mode: default
+content:
+  bp_background:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  bp_width:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 26
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: field_preview
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_image_position:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_text_content:
+    weight: 25
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  text_and_image_style:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

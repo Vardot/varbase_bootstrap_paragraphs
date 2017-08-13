@@ -4,9 +4,12 @@
 .paragraph > .paragraph__column {
   padding: 0px;
 }
-.row.paragraph--width--full {
+.row.paragraph--width--full{
   margin-left: 0px !important;
   margin-right: 0px !important;
+}
+.row {
+  margin-bottom: 0px !important;
 }
 @media screen and (min-width: 1200px) {
   .align2right {
@@ -15,11 +18,25 @@
   .align2left {
     float: left !important;
   }
+  .paragraph.paragraph--type--text-and-image {
+    display: flex;
+  }
+  .align2left.wrapper {
+    padding-left: 35px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .paragraph--type--text-and-image {
+    margin-bottom: 20px;
+  }
+  .paragraph--type--text-and-image > .row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
 }
 .wrapper {
   display: table;
   height: 100%;
-  padding-top: 40px;
   text-align: left;
 }
 .wrapper > div {

@@ -4,7 +4,7 @@
 .paragraph > .paragraph__column {
   padding: 0px;
 }
-.row.paragraph--width--full{
+.row.paragraph--width--full {
   margin-left: 0px !important;
   margin-right: 0px !important;
 }

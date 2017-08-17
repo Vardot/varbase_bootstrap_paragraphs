@@ -4,6 +4,7 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.paragraph.text_and_image.bp_background
+    - field.field.paragraph.text_and_image.bp_image_field
     - field.field.paragraph.text_and_image.bp_width
     - field.field.paragraph.text_and_image.field_image
     - field.field.paragraph.text_and_image.field_image_position
@@ -31,6 +32,7 @@ third_party_settings:
     group_background_settings:
       children:
         - bp_background
+        - bp_image_field
       parent_name: group_styling_setting
       weight: 20
       format_type: tab
@@ -117,6 +119,20 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  bp_image_field:
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: field_preview
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   bp_width:
     type: options_select
     weight: 2

@@ -20,7 +20,7 @@ id: paragraph.bp_columns_three_uneven.bp_column_content_3
 field_name: bp_column_content_3
 entity_type: paragraph
 bundle: bp_columns_three_uneven
-label: 'Column Content'
+label: 'Column content'
 description: ''
 required: false
 translatable: false
@@ -29,6 +29,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       bp_simple: bp_simple
       bp_image: bp_image
@@ -80,5 +81,11 @@ settings:
         enabled: false
       bp_tab_section:
         weight: -17
+        enabled: false
+      bp_webform:
+        weight: 29
+        enabled: false
+      text_and_image:
+        weight: 30
         enabled: false
 field_type: entity_reference_revisions

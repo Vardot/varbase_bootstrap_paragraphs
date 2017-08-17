@@ -18,7 +18,7 @@ id: paragraph.bp_accordion_section.bp_accordion_section_body
 field_name: bp_accordion_section_body
 entity_type: paragraph
 bundle: bp_accordion_section
-label: 'Accordion Section Body'
+label: 'Accordion section body'
 description: ''
 required: false
 translatable: false
@@ -27,6 +27,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       bp_simple: bp_simple
       bp_image: bp_image
@@ -75,5 +76,11 @@ settings:
         enabled: false
       bp_tab_section:
         weight: -17
+        enabled: false
+      bp_webform:
+        weight: 29
+        enabled: false
+      text_and_image:
+        weight: 30
         enabled: false
 field_type: entity_reference_revisions

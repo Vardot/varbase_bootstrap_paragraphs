@@ -9,7 +9,7 @@ id: paragraph.text_and_image.bp_image_field
 field_name: bp_image_field
 entity_type: paragraph
 bundle: text_and_image
-label: 'Background Image'
+label: 'Background image'
 description: ''
 required: false
 translatable: true

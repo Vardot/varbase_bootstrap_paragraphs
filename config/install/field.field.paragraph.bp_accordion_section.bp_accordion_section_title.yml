@@ -8,7 +8,7 @@ id: paragraph.bp_accordion_section.bp_accordion_section_title
 field_name: bp_accordion_section_title
 entity_type: paragraph
 bundle: bp_accordion_section
-label: 'Accordion Section Title'
+label: 'Accordion section title'
 description: ''
 required: false
 translatable: false

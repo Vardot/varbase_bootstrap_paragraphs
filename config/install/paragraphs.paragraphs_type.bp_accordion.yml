@@ -3,4 +3,6 @@ status: true
 dependencies: {  }
 id: bp_accordion
 label: Accordion
+icon_uuid: null
+description: null
 behavior_plugins: {  }

@@ -8,7 +8,7 @@ id: paragraph.bp_tab_section.bp_tab_section_title
 field_name: bp_tab_section_title
 entity_type: paragraph
 bundle: bp_tab_section
-label: 'Tab Name'
+label: 'Tab name'
 description: ''
 required: true
 translatable: false

@@ -11,7 +11,7 @@ id: paragraph.bp_accordion.bp_accordion_section
 field_name: bp_accordion_section
 entity_type: paragraph
 bundle: bp_accordion
-label: 'Accordion Section'
+label: 'Accordion section'
 description: ''
 required: false
 translatable: false
@@ -20,6 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       bp_accordion_section: bp_accordion_section
     target_bundles_drag_drop:
@@ -43,5 +44,29 @@ settings:
         enabled: false
       bp_view:
         weight: 18
+        enabled: false
+      bp_block:
+        weight: 18
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 21
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 22
+        enabled: false
+      bp_modal:
+        weight: 24
+        enabled: false
+      bp_tab_section:
+        weight: 26
+        enabled: false
+      bp_tabs:
+        weight: 27
+        enabled: false
+      bp_webform:
+        weight: 29
+        enabled: false
+      text_and_image:
+        weight: 30
         enabled: false
 field_type: entity_reference_revisions

@@ -3,4 +3,6 @@ status: true
 dependencies: {  }
 id: bp_columns_two_uneven
 label: 'Columns (Two Uneven)'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

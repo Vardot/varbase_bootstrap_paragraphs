@@ -11,20 +11,20 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: 'vbp_color_01'
-      label: 'Blue'
+      value: vbp_color_01
+      label: Blue
     -
-      value: 'vbp_color_02'
-      label: 'Madison'
+      value: vbp_color_02
+      label: Madison
     -
-      value: 'vbp_color_03'
+      value: vbp_color_03
       label: 'Dark Gray'
     -
-      value: 'vbp_color_04'
+      value: vbp_color_04
       label: 'Light Gray'
     -
-      value: 'vbp_color_05'
-      label: 'Red'
+      value: vbp_color_05
+      label: Red
   allowed_values_function: ''
 module: options
 locked: false

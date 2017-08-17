@@ -8,7 +8,7 @@ id: paragraph.bp_modal.bp_modal_button_text
 field_name: bp_modal_button_text
 entity_type: paragraph
 bundle: bp_modal
-label: 'Modal Button Text'
+label: 'Modal button text'
 description: ''
 required: true
 translatable: false

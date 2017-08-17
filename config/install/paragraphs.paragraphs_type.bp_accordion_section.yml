@@ -1,10 +1,8 @@
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:b4378118-9ee0-49b6-8205-8fa2ece8f19a'
+dependencies:{ }
 id: bp_accordion_section
 label: 'Accordion Section'
-icon_uuid: b4378118-9ee0-49b6-8205-8fa2ece8f19a
-description: ''
+icon_uuid: null
+description: null
 behavior_plugins: {  }

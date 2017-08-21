@@ -99,7 +99,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% endif %}
 
 {% set image_attr = create_attribute() %}
-{% set image_attr = image_attr.addClass('no-paddings').addClass(img_align) %}
+{% set image_attr = image_attr.addClass(img_align) %}
 
 {# Set text field attributes. #}
 {% set text_attr = create_attribute() %}

@@ -3,5 +3,6 @@ status: true
 dependencies: {  }
 id: bp_accordion_section
 label: 'Accordion Section'
+icon_uuid: null
 description: ''
 behavior_plugins: {  }

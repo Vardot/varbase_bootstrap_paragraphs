@@ -71,8 +71,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {# Sets Unique ID for Modal from Paragraph ID. #}
 {% set paragraph_id = 'modal-' ~ paragraph.id.value %}
 
-{# If there is BG it's always edge to edge #}
-{% if content.bp_background|render %}
+{# If there is BG image it's always edge to edge #}
+{% if (VBP.background_image.url or content.bp_background|render) %}
     {% set attributes = attributes.addClass('bg-edge2edge') %}
 {% endif %}
 
@@ -82,7 +82,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% set col_classes = col_classes|merge(layout_width_classes) %}
 
 {# Prints div with classes, and button to trigger the modal. #}
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
   <div class="container">
     <div class = "row">
       <div{{ col_attribute.addClass(col_classes) }}>

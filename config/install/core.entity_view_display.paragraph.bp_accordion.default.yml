@@ -44,7 +44,7 @@ content:
     type: list_default
     weight: 1
     region: content
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
 hidden: {  }

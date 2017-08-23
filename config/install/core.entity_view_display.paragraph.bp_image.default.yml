@@ -7,11 +7,21 @@ dependencies:
     - field.field.paragraph.bp_image.bp_link
     - field.field.paragraph.bp_image.bp_width
     - paragraphs.paragraphs_type.bp_image
+  module:
+    - link
+    - options
 id: paragraph.bp_image.default
 targetEntityType: paragraph
 bundle: bp_image
 mode: default
 content:
+  bp_background:
+    type: list_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   bp_image_field:
     type: entity_reference_entity_view
     weight: 0
@@ -21,7 +31,23 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-hidden:
-  bp_background: true
-  bp_link: true
-  bp_width: true
+  bp_link:
+    type: link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  bp_width:
+    type: list_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -2,15 +2,35 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.bp_webform.bp_background
+    - field.field.paragraph.bp_webform.bp_image_field
     - field.field.paragraph.bp_webform.bp_webform_field
+    - field.field.paragraph.bp_webform.bp_width
     - paragraphs.paragraphs_type.bp_webform
   module:
+    - options
     - webform
 id: paragraph.bp_webform.default
 targetEntityType: paragraph
 bundle: bp_webform
 mode: default
 content:
+  bp_background:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  bp_image_field:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   bp_webform_field:
     type: webform_entity_reference_entity_view
     weight: 0
@@ -19,4 +39,11 @@ content:
     settings:
       source_entity: true
     third_party_settings: {  }
+  bp_width:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
 hidden: {  }

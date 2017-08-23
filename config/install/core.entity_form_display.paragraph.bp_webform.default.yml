@@ -2,21 +2,106 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.bp_webform.bp_background
+    - field.field.paragraph.bp_webform.bp_image_field
     - field.field.paragraph.bp_webform.bp_webform_field
+    - field.field.paragraph.bp_webform.bp_width
     - paragraphs.paragraphs_type.bp_webform
   module:
+    - entity_browser
+    - field_group
     - webform
+third_party_settings:
+  field_group:
+    group_styling_settings:
+      children:
+        - group_styling_setting
+      parent_name: ''
+      weight: 20
+      format_type: details
+      format_settings:
+        id: styling-settings
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Styling settings'
+    group_styling_setting:
+      children:
+        - group_background_settings
+        - group_content_settings_
+      parent_name: group_styling_settings
+      weight: 20
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Styling_settings
+    group_background_settings:
+      children:
+        - bp_background
+        - bp_image_field
+      parent_name: group_styling_setting
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Background settings'
+    group_content_settings_:
+      children:
+        - bp_width
+      parent_name: group_styling_setting
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Content settings'
 id: paragraph.bp_webform.default
 targetEntityType: paragraph
 bundle: bp_webform
 mode: default
 content:
+  bp_background:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  bp_image_field:
+    weight: 2
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: field_preview
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   bp_webform_field:
     type: webform_entity_reference_select
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
+  bp_width:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
 hidden:
   created: true
   status: true

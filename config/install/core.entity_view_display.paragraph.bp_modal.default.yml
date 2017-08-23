@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bp_modal.bp_background
+    - field.field.paragraph.bp_modal.bp_image_field
     - field.field.paragraph.bp_modal.bp_modal_body
     - field.field.paragraph.bp_modal.bp_modal_button_text
     - field.field.paragraph.bp_modal.bp_modal_footer
@@ -23,6 +24,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
+  bp_image_field:
+    weight: 6
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   bp_modal_body:
     type: entity_reference_revisions_entity_view

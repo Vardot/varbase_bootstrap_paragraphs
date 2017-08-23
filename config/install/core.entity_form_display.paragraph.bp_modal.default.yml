@@ -2,7 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
     - field.field.paragraph.bp_modal.bp_background
+    - field.field.paragraph.bp_modal.bp_image_field
     - field.field.paragraph.bp_modal.bp_modal_body
     - field.field.paragraph.bp_modal.bp_modal_button_text
     - field.field.paragraph.bp_modal.bp_modal_footer
@@ -10,6 +12,7 @@ dependencies:
     - field.field.paragraph.bp_modal.bp_width
     - paragraphs.paragraphs_type.bp_modal
   module:
+    - entity_browser
     - field_group
     - paragraphs
 third_party_settings:
@@ -42,6 +45,7 @@ third_party_settings:
     group_background_settings:
       children:
         - bp_background
+        - bp_image_field
       parent_name: group_styling_settings
       weight: 20
       format_type: tab
@@ -75,6 +79,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  bp_image_field:
+    weight: 22
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: field_preview
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
     region: content
   bp_modal_body:
     type: entity_reference_paragraphs

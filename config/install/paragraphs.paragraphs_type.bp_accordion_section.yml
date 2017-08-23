@@ -1,8 +1,7 @@
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 id: bp_accordion_section
 label: 'Accordion Section'
-icon_uuid: null
-description: null
+description: ''
 behavior_plugins: {  }

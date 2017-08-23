@@ -11,23 +11,23 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: paragraph--width--tiny
+      value: col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2
       label: Tiny
     -
-      value: paragraph--width--narrow
+      value: col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1
       label: Narrow
     -
-      value: paragraph--width--medium
+      value: col-md-8 col-md-offset-2
       label: Medium
     -
-      value: paragraph--width--wide
+      value: col-md-10 col-md-offset-1
       label: Wide
     -
-      value: paragraph--width--full
-      label: 'Full width'
+      value: col-lg-12
+      label: Full width
     -
       value: bg-edge2edge
-      label: 'Edge to Edge'
+      label: Edge to Edge
   allowed_values_function: ''
 module: options
 locked: false

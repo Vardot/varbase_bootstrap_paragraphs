@@ -62,32 +62,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
+{# col classes #}
+{% set col_attribute = create_attribute() %}
+{% set col_classes = [] %}
+{% set col_classes = col_classes|merge(layout_width_classes) %}
+
 {# Merges Background color with classes. #}
 {% set background_field = content.bp_background|render %}
 {% if background_field %}
   {% set classes = classes|merge(layout_background_classes) %}
-{% endif %}
-
-{# Sets Unique ID for Accordion from Paragraph ID. #}
-{% set paragraph_id = 'accordion-' ~ paragraph.id.value %}
-
-{# Merges Width field with classes. #}
-{% set width_field = content.bp_width|render %}
-{% if width_field %}
-  {% set classes = classes|merge(layout_width_classes) %}
-{% endif %}
-
-{# Row classes. #}
-{% set row_attribute = create_attribute() %}
-{% set width_field = content.bp_width|render %}
-  {%
-    set row_classes = [
-    'row',
-    'paragraph__column',
-    ]
-  %}
-{% if width_field %}
-  {% set row_classes = row_classes|merge(layout_width_classes) %}
 {% endif %}
 
 {# If there is BG image it's always edge to edge #}
@@ -95,36 +78,43 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     {% set attributes = attributes.addClass('bg-edge2edge') %}
 {% endif %}
 
+{# Sets Unique ID for Accordion from Paragraph ID. #}
+{% set paragraph_id = 'accordion-' ~ paragraph.id.value %}
+
 {# Prints Accordion template. #}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true" {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
-  <div{{ row_attribute.addClass(row_classes) }}>
-    {{ title_suffix }}
-    <div class="card panel panel-default">
-      {# Loop through all of the accordion sections. #}
-      {% for key, item in content.bp_accordion_section if key|first != '#' %}
-        {% set attributes = attributes.removeClass('bg-edge2edge') %}
-        <div class="card-header panel-heading" role="tab" id="heading-{{ paragraph_id }}-{{ key + 1 }}">
-          <div class="panel-title">
-            <a data-toggle="collapse" data-parent="{{ paragraph_id }}" href="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-expanded="true" aria-controls="collapse-{{ paragraph_id }}-{{ key + 1 }}">
-              {# Print the accordion section title. #}
-              {{ item['#paragraph'].bp_accordion_section_title.value }}
-            </a>
-          </div>
-        </div>
-        <div id="collapse-{{ paragraph_id }}-{{ key + 1 }}" class="card-block panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ paragraph_id }}-{{ key + 1 }}">
-          {# Loop through all of the accordion section bodies. #}
-          {% for body_key, body_item in item['#paragraph'].bp_accordion_section_body %}
-            {# Use the same render array as item and set the '#paragraph'. #}
-            {% set section_body = item %}
-            {# Load the entity for the current translation #}
-            {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_accordion_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
-            {# Remove the cache keys so it doesn't repeat the first value. #}
-            {% set section_body = section_body|merge({'#cache': {}}) %}
-            {# Print the compiled section body. #}
-            {{ section_body }}
+  <div class="container">
+    <div class = "row">
+      <div{{ col_attribute.addClass(col_classes) }}>
+        {{ title_suffix }}
+        <div class="card panel panel-default">
+          {# Loop through all of the accordion sections. #}
+          {% for key, item in content.bp_accordion_section if key|first != '#' %}
+            {% set attributes = attributes.removeClass('bg-edge2edge') %}
+            <div class="card-header panel-heading" role="tab" id="heading-{{ paragraph_id }}-{{ key + 1 }}">
+              <div class="panel-title">
+                <a data-toggle="collapse" data-parent="{{ paragraph_id }}" href="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-expanded="true" aria-controls="collapse-{{ paragraph_id }}-{{ key + 1 }}">
+                  {# Print the accordion section title. #}
+                  {{ item['#paragraph'].bp_accordion_section_title.value }}
+                </a>
+              </div>
+            </div>
+            <div id="collapse-{{ paragraph_id }}-{{ key + 1 }}" class="card-block panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ paragraph_id }}-{{ key + 1 }}">
+              {# Loop through all of the accordion section bodies. #}
+              {% for body_key, body_item in item['#paragraph'].bp_accordion_section_body %}
+                {# Use the same render array as item and set the '#paragraph'. #}
+                {% set section_body = item %}
+                {# Load the entity for the current translation #}
+                {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_accordion_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
+                {# Remove the cache keys so it doesn't repeat the first value. #}
+                {% set section_body = section_body|merge({'#cache': {}}) %}
+                {# Print the compiled section body. #}
+                {{ section_body }}
+              {% endfor %}
+            </div>
           {% endfor %}
         </div>
-      {% endfor %}
+      </div>
     </div>
   </div>
 </div>

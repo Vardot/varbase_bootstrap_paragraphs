@@ -39,12 +39,11 @@
 
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-default') }}
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-colors') }}
-{{ attach_library('varbase_bootstrap_paragraphs/vbp-image') }}
 
 {# Layout width. #}
 {% if content.bp_width|render %}
   {% set layout_width = content.bp_width['#items'].getString() %}
-  {% set layout_width_classes = [ layout_width] %}
+  {% set layout_width_classes = [ layout_width ] %}
 {% endif %}
 
 {# Background color. #}
@@ -59,31 +58,32 @@ set classes = [
 'paragraph',
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+'bg-edge2edge',
 ]
 %}
 
-{# Merges Width field with classes. #}
-{% set width_field = content.bp_width|render %}
-{% if width_field %}
-  {% set classes = classes|merge(layout_width_classes) %}
-{% endif %}
+{# col classes #}
+{% set col_attribute = create_attribute() %}
+{% set col_classes = [] %}
+{# {% set col_classes = col_classes|merge(layout_width_classes) %} #}
 
-{# Merges Background color with classes. #}
-{% set background_field = content.bp_background|render %}
-{% if background_field %}
-  {% set classes = classes|merge(layout_background_classes) %}
-{% endif %}
+{# Wrapper classes. #}
+{% set wrapper_attribute = create_attribute() %}
 
 {# Prints div with classes, and content without Width and Background. #}
-<div{{ attributes.addClass(classes) }}>
-  <div class="row paragraph__column">
-    {{ title_suffix }}
-    {% if content.bp_link|render is not empty %}
-      <a href="{{ content.bp_link.0['#url'] }}">
-    {% endif %}
-      {{ content|without('bp_width', 'bp_background', 'bp_link') }}
-    {% if content.bp_link|render is not empty %}
-      </a>
-    {% endif %}
+<div{{ attributes.addClass(classes).addClass(layout_background_classes) }}>
+  <div class="container">
+    <div class = "row">
+      <div{{ col_attribute.addClass(layout_width_classes) }}>
+          {% set attributes = attributes.removeClass('bg-edge2edge') %}
+          {% if content.bp_link|render is not empty %}
+            <a href="{{ content.bp_link.0['#url'] }}">
+          {% endif %}
+          {{ content|without('bp_width', 'bp_background', 'bp_link') }}
+          {% if content.bp_link|render is not empty %}
+            </a>
+          {% endif %}
+      </div>
+    </div>
   </div>
 </div>

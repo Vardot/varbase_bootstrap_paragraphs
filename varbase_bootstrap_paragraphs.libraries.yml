@@ -3,10 +3,6 @@ vbp-default:
   css:
     base:
       css/base/vbp-default.base.css: {}
-    layout:
-      css/layout/vbp-widths.layout.css: {}
-      css/layout/vbp-columns-three-uneven.layout.css: {}
-      css/layout/vbp-columns-two-uneven.layout.css: {}
   dependencies:
     - core/jquery
 
@@ -25,18 +21,6 @@ vbp-accordion:
   css:
     component:
       css/component/vbp-accordion.component.css: {}
-
-# Varbase Bootstrap Paragraphs carousel component.
-vbp-carousel:
-  css:
-    component:
-      css/component/vbp-carousel.component.css: {}
-
-# Varbase Bootstrap Paragraphs image component.
-vbp-image:
-  css:
-    component:
-      css/component/vbp-image.component.css: {}
 
 # Varbase Bootstrap Paragraphs modal component.
 vbp-modal:

@@ -62,12 +62,6 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
-{# Merges Width field with classes. #}
-{% set width_field = content.bp_width|render %}
-{% if width_field %}
-  {% set classes = classes|merge(layout_width_classes) %}
-{% endif %}
-
 {# Merges Background color with classes. #}
 {% set background_field = content.bp_background|render %}
 {% if background_field %}
@@ -82,14 +76,23 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     {% set attributes = attributes.addClass('bg-edge2edge') %}
 {% endif %}
 
+{# col classes #}
+{% set col_attribute = create_attribute() %}
+{% set col_classes = [] %}
+{% set col_classes = col_classes|merge(layout_width_classes) %}
+
 {# Prints div with classes, and button to trigger the modal. #}
 <div{{ attributes.addClass(classes) }}>
-  <div class="row paragraph__column">
-    {{ title_suffix }}
-    {# Button trigger modal #}
-    <button type="button" class="btn btn-primary btn-lg btn-modal" data-toggle="modal" data-target="#{{ paragraph_id }}">
-      {{ content.bp_modal_button_text }}
-    </button>
+  <div class="container">
+    <div class = "row">
+      <div{{ col_attribute.addClass(col_classes) }}>
+        {{ title_suffix }}
+        {# Button trigger modal #}
+        <button type="button" class="btn btn-primary btn-lg btn-modal" data-toggle="modal" data-target="#{{ paragraph_id }}">
+          {{ content.bp_modal_button_text }}
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 

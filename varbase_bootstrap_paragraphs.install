@@ -4,3 +4,14 @@
  * @file
  * Install, uninstall and update hooks for Varbase Boostrap Paragraphs module.
  */
+use Symfony\Component\Yaml\Yaml;
+function varbase_bootstrap_paragraphs_update_8001() {
+	  $profile_path = drupal_get_path('module', 'varbase_bootstrap_paragraphs') . '/config/install/';
+  $configs['field.storage.paragraph.bp_width'] = $profile_path . 'field.storage.paragraph.bp_width.yml';
+
+  foreach ($configs as $name => $config_path) {
+    $data = (array) Yaml::parse($config_path);
+    $config = \Drupal::configFactory()->getEditable($name);
+    $config->setData($data)->save(TRUE);
+  }
+}

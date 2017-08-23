@@ -3,6 +3,10 @@
 // -----------------------------------------------------------------------------
 
 .paragraph--type--bp-modal {
+  padding: 10px;
+}
+
+.paragraph--type--bp-modal {
   .btn.btn-modal {
     display: block;
     margin-left: auto;
@@ -16,11 +20,6 @@
     padding: 15px 30px;
   }
 
-  .modal-body,
-  .modal-footer {
-    padding: 15px 30px 0 30px;
-  }
-
   .modal-title {
     font-weight: bold;
   }
@@ -31,7 +30,10 @@
 
   .modal-body .paragraph,
   .modal-footer .paragraph {
-    display: table;
+    margin-left: 0;
+    margin-right: 0;
     width: 100%;
+    position: initial;
+    padding: 15px 30px 15px 30px;
   }
 }

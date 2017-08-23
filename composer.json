@@ -1,0 +1,31 @@
+{
+  "name": "drupal/varbase_bootstrap_paragraphs",
+  "description": "Varbase Bootstrap Paragraphs : A suite of Paragraph bundles to be used for Varbase distribution. Made with the Boostrap framework, based on a fork of Bootstrap Paragraph module (bootstrap_paragraphs).",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/varbase_bootstrap_paragraphs",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Vardot",
+      "homepage": "https://www.drupal.org/vardot",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/varbase_bootstrap_paragraphs",
+    "source": "http://cgit.drupalcode.org/varbase_bootstrap_paragraphs"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": { },
+  "extra": {
+    "branch-alias": {
+      "dev-8.x-4.x": "8.4.x-dev"
+    }
+  }
+}

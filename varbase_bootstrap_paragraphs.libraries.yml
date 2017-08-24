@@ -22,6 +22,18 @@ vbp-accordion:
     component:
       css/component/vbp-accordion.component.css: {}
 
+# Varbase Bootstrap Paragraphs carousel component.
+vbp-carousel:
+  css:
+    component:
+      css/component/vbp-carousel.component.css: {}
+
+# Varbase Bootstrap Paragraphs image component.
+vbp-image:
+  css:
+    component:
+      css/component/vbp-image.component.css: {}
+
 # Varbase Bootstrap Paragraphs modal component.
 vbp-modal:
   css:

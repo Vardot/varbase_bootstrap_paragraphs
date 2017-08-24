@@ -97,6 +97,10 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     {% set attributes = attributes.addClass('bg-edge2edge') %}
 {% endif %}
 
+{% if VBP.background_image.url %}
+  {% set attributes = attributes.addClass('background-style') %}
+{% endif %}
+
 {# Prints div with classes, and content without Width and Background. #}
 <div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
   <div class="container">

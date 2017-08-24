@@ -23,10 +23,10 @@ settings:
       value: 'col-md-10 col-md-offset-1'
       label: Wide
     -
-      value: col-lg-12
+      value: col-xs-12
       label: 'Full width'
     -
-      value: bg-edge2edge
+      value: 'bg-edge2edge col-xs-12'
       label: 'Edge to Edge'
   allowed_values_function: ''
 module: options

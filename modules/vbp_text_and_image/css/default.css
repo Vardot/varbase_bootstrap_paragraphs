@@ -8,7 +8,7 @@
   .align2left {
     float: left !important;
   }
-  .paragraph.paragraph--type--text-and-image {
+  .paragraph.paragraph--type--text-and-image .row {
     display: flex;
   }
    .align2left.wrapper {

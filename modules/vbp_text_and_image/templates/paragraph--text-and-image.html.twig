@@ -72,26 +72,34 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     {% set attributes = attributes.addClass('bg-edge2edge') %}
 {% endif %}
 
+{% if VBP.background_image.url %}
+  {% set attributes = attributes.addClass('background-style') %}
+{% endif %}
+
 {# Prints div with classes, and content. #}
 <div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
-  <div{{ col_attribute.addClass(col_classes) }}>
-    {# Check the Image position field. #} 
-    {% set align = content.field_image_position['#items'].getString() %}
-      {% if align == "left"%}
-        {% set img_align = 'align2left' %}
-        {% set txt_align = 'align2right' %}
-      {% else %}
-        {% set img_align = 'align2right' %}
-        {% set txt_align = 'align2left' %}
-      {% endif %}
+  <div class="container">
+    <div class = "row">
+      <div{{ col_attribute.addClass(col_classes) }}>
+        {# Check the Image position field. #} 
+        {% set align = content.field_image_position['#items'].getString() %}
+          {% if align == "left"%}
+            {% set img_align = 'align2left' %}
+            {% set txt_align = 'align2right' %}
+          {% else %}
+            {% set img_align = 'align2right' %}
+            {% set txt_align = 'align2left' %}
+          {% endif %}
 
-    {% set image_attr = create_attribute() %}
-    {% set image_attr = image_attr.addClass('no-paddings').addClass(img_align) %}
+        {% set image_attr = create_attribute() %}
+        {% set image_attr = image_attr.addClass('no-paddings').addClass(img_align) %}
 
-    {# Set text field attributes. #}
-    {% set text_attr = create_attribute() %}
-    {% set text_attr = text_attr.addClass(txt_align).addClass('wrapper') %}
-    <div{{ image_attr.addClass(col_1) }}>{{ content.field_image|render }}</div>
-    <div{{ text_attr.addClass(col_2) }}>{{ content.field_text_content|render }}</div>
+        {# Set text field attributes. #}
+        {% set text_attr = create_attribute() %}
+        {% set text_attr = text_attr.addClass(txt_align).addClass('wrapper') %}
+        <div{{ image_attr.addClass(col_1) }}>{{ content.field_image|render }}</div>
+        <div{{ text_attr.addClass(col_2) }}>{{ content.field_text_content|render }}</div>
+      </div>
+    </div>
   </div>
 </div>

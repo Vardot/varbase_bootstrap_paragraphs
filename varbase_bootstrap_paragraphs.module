@@ -61,14 +61,6 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     $file_uri = $file->getFileUri();
     $style = ImageStyle::load('de2e');
     $file_path = $style->buildUrl($file_uri);
-
-    // Add variables to template.
-    _varbase_bootstrap_paragraphs_add_template_variable($variables, [
-      'background_image' => [
-        'type' => 'image',
-        'url' => $file_path,
-      ],
-    ]);
   }
 
   $width = $variables['paragraph']->bp_width->value;
@@ -101,6 +93,10 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
 
   // Add variables to template.
   _varbase_bootstrap_paragraphs_add_template_variable($variables, [
+    'background_image' => [
+      'type' => 'image',
+      'url' => $file_path,
+      ],
     'bp_width' => [
       'type' => 'string',
       'value' => $width,

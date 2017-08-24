@@ -70,6 +70,42 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
       ],
     ]);
   }
+
+  $width = $variables['paragraph']->bp_width->value;
+  switch ($width) {
+    case 'paragraph--width--tiny':
+      $width = 'col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2';
+      break;
+
+    case 'paragraph--width--narrow':
+      $width = 'col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1';
+      break;
+
+    case 'paragraph--width--medium':
+      $width = 'col-md-8 col-md-offset-2';
+      break;
+
+    case 'paragraph--width--wide':
+      $width = 'col-md-10 col-md-offset-1';
+      break;
+
+    case 'paragraph--width--full':
+      $width = 'col-xs-12';
+      break;
+
+    case 'bg-edge2edge':
+      $width = 'bg-edge2edge col-xs-12';
+      break;
+
+  }
+
+  // Add variables to template.
+  _varbase_bootstrap_paragraphs_add_template_variable($variables, [
+    'bp_width' => [
+      'type' => 'string',
+      'value' => $width,
+    ],
+  ]);
 }
 
 /**

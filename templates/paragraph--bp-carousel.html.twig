@@ -40,12 +40,6 @@
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-default') }}
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-colors') }}
 
-{# Layout width. #}
-{% if content.bp_width|render %}
-  {% set layout_width = content.bp_width['#items'].getString() %}
-  {% set layout_width_classes = [ layout_width] %}
-{% endif %}
-
 {# Background color. #}
 {% if content.bp_background|render %}
   {% set layout_background = content.bp_background['#items'].getString() %}
@@ -80,22 +74,6 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
-{# col classes #}
-{% set col_attribute = create_attribute() %}
-{% set col_classes = [] %}
-{% set col_classes = col_classes|merge(layout_width_classes) %}
-
-{# Layout width. #}
-{% if content.bp_width|render %}
-  {% set layout_width = content.bp_width['#items'].getString() %}
-  {% set layout_width_classes = [ layout_width ] %}
-{% endif %}
-
-{# col classes #}
-{% set col_attribute = create_attribute() %}
-{% set col_classes = [] %}
-{% set col_classes = col_classes|merge(layout_width_classes) %}
-
 {# Merges Background color with classes. #}
 {% set background_field = content.bp_background|render %}
 {% if background_field %}
@@ -116,7 +94,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {{ title_suffix }}
   <div class="container">
     <div class = "row">
-      <div{{ col_attribute.addClass(col_classes) }}>
+      <div class="{{- VBP.bp_width.value -}}">
         <ol class="carousel-indicators">
           {% for key, item in content.bp_slide_content if key|first != '#' %}
             <li class="{% if loop.first %}active{% endif %}" data-slide-to="{{ key }}" data-target="#{{ paragraph_id }}"></li>

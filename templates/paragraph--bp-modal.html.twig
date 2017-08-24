@@ -41,12 +41,6 @@
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-colors') }}
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-modal') }}
 
-{# Layout width. #}
-{% if content.bp_width|render %}
-  {% set layout_width = content.bp_width['#items'].getString() %}
-  {% set layout_width_classes = [ layout_width] %}
-{% endif %}
-
 {# Background color. #}
 {% if content.bp_background|render %}
   {% set layout_background = content.bp_background['#items'].getString() %}
@@ -80,16 +74,11 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set attributes = attributes.addClass('background-style') %}
 {% endif %}
 
-{# col classes #}
-{% set col_attribute = create_attribute() %}
-{% set col_classes = [] %}
-{% set col_classes = col_classes|merge(layout_width_classes) %}
-
 {# Prints div with classes, and button to trigger the modal. #}
 <div{{ attributes.addClass(classes) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
   <div class="container">
     <div class = "row">
-      <div{{ col_attribute.addClass(col_classes) }}>
+      <div class="{{- VBP.bp_width.value -}}">
         {{ title_suffix }}
         {# Button trigger modal #}
         <button type="button" class="btn btn-primary btn-lg btn-modal" data-toggle="modal" data-target="#{{ paragraph_id }}">

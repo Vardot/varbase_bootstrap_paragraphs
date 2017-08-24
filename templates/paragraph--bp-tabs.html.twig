@@ -41,12 +41,6 @@
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-colors') }}
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-tabs') }}
 
-{# Layout width. #}
-{% if content.bp_width|render %}
-  {% set layout_width = content.bp_width['#items'].getString() %}
-  {% set layout_width_classes = [ layout_width] %}
-{% endif %}
-
 {# Background color. #}
 {% if content.bp_background|render %}
   {% set layout_background = content.bp_background['#items'].getString() %}
@@ -61,11 +55,6 @@ set classes = [
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
-
-{# col classes #}
-{% set col_attribute = create_attribute() %}
-{% set col_classes = [] %}
-{% set col_classes = col_classes|merge(layout_width_classes) %}
 
 {# Merges Background color with classes. #}
 {% set background_field = content.bp_background|render %}
@@ -89,7 +78,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} role="tablist" aria-multiselectable="true" {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
   <div class="container">
     <div class = "row">
-      <div{{ col_attribute.addClass(col_classes) }}>
+      <div class="{{- VBP.bp_width.value -}}">
         {{ title_suffix }}
         <ul class="nav nav-tabs" role="tablist">
           {# Loops through the tab sections to print the tab section titles. #}

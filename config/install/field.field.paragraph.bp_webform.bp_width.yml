@@ -16,7 +16,7 @@ required: true
 translatable: true
 default_value:
   -
-    value: col-lg-12
+    value: paragraph--width--full
 default_value_callback: ''
 settings: {  }
 field_type: list_string

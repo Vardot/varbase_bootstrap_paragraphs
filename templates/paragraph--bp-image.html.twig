@@ -40,12 +40,6 @@
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-default') }}
 {{ attach_library('varbase_bootstrap_paragraphs/vbp-colors') }}
 
-{# Layout width. #}
-{% if content.bp_width|render %}
-  {% set layout_width = content.bp_width['#items'].getString() %}
-  {% set layout_width_classes = [ layout_width ] %}
-{% endif %}
-
 {# Background color. #}
 {% if content.bp_background|render %}
   {% set layout_background = content.bp_background['#items'].getString() %}
@@ -62,11 +56,6 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
-{# col classes #}
-{% set col_attribute = create_attribute() %}
-{% set col_classes = [] %}
-{# {% set col_classes = col_classes|merge(layout_width_classes) %} #}
-
 {# Wrapper classes. #}
 {% set wrapper_attribute = create_attribute() %}
 
@@ -74,7 +63,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes).addClass(layout_background_classes) }}>
   <div class="container">
     <div class = "row">
-      <div{{ col_attribute.addClass(layout_width_classes) }}>
+      <div class="{{- VBP.bp_width.value -}}">
           {% set attributes = attributes.removeClass('bg-edge2edge') %}
           {% if content.bp_link|render is not empty %}
             <a href="{{ content.bp_link.0['#url'] }}">

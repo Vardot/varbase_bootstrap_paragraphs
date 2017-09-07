@@ -112,7 +112,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                 {% set col_classes = col_2 %}
             {% endif %}
           {% endif %}
-          <div{{ attributes.removeClass(classes).addClass(col_classes) }}>{{ item }}</div>
+          <div{{ attributes.removeClass(classes).addClass(col_classes).addClass('no-paddings') }}>{{ item }}</div>
         {% endfor %}
       </div>
     </div>

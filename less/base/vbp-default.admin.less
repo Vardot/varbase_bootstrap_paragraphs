@@ -103,7 +103,7 @@
 
 .paragraph-type-add-modal {
   .paragraph-type-add-modal-button:hover {
-    color: #000000;
+    color: #000000 !important;;
   }
 }
 
@@ -116,11 +116,6 @@ input&.paragraph-type-add-modal-button,
   display: none;
 }
 
-.paragraph-type-top {
-  position: relative;
-  top: -25px;
-}
-
 .paragraph-actions {
   float: right;
 }
@@ -130,4 +125,23 @@ input&.paragraph-type-add-modal-button,
     top: 0px;
   }
 }
-    
+
+.paragraphs-previewer {
+  &.button {
+    grid-column-start: 5;
+    grid-column-end: 5;
+  }
+}
+
+.add-in-between-row {
+  td {
+    text-align: center;
+  }
+}
+.paragraphs-tabs-wrapper {
+  .form-item {
+    .clearfix {
+      margin-top: 10px;
+    }
+  }
+}

@@ -13,13 +13,13 @@ bundle: bp_accordion_section
 mode: default
 content:
   bp_accordion_section_body:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 1
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Component
+      title_plural: Components
       edit_mode: closed
-      add_mode: dropdown
+      add_mode: modal
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }

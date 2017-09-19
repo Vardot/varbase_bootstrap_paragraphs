@@ -95,13 +95,13 @@ content:
     type: entity_browser_entity_reference
     region: content
   bp_modal_body:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 2
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Component
+      title_plural: Components
       edit_mode: closed
-      add_mode: dropdown
+      add_mode: modal
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
@@ -115,13 +115,13 @@ content:
     type: string_textfield
     region: content
   bp_modal_footer:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 3
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Component
+      title_plural: Components
       edit_mode: closed
-      add_mode: dropdown
+      add_mode: modal
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }

@@ -126,7 +126,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
    * @see optionsExtractAllowedListTextValues()
    */
   public function optionsExtractAllowedListTextValues($string) {
-    $values = array();
+    $values = [];
 
     $list = explode("\n", $string);
     $list = array_map('trim', $list);
@@ -136,7 +136,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
       $value = $key = FALSE;
 
       // Check for an explicit key.
-      $matches = array();
+      $matches = [];
       if (preg_match('/(.*)\|(.*)/', $text, $matches)) {
         // Trim key and value to avoid unwanted spaces issues.
         $key = trim($matches[1]);

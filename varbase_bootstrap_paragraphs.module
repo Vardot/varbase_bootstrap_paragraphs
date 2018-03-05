@@ -16,17 +16,17 @@ use Drupal\field\Entity\FieldStorageConfig;
  */
 function varbase_bootstrap_paragraphs_theme($existing, $type, $theme, $path) {
     return [
-        'paragraph__default' => ['base hook' => 'paragraph'],
-        'paragraph__bp_accordion' => ['base hook' => 'paragraph'],
-        'paragraph__bp_carousel' => ['base hook' => 'paragraph'],
-        'paragraph__bp_tabs' => ['base hook' => 'paragraph'],
-        'paragraph__bp_columns_three_uneven' => ['base hook' => 'paragraph'],
-        'paragraph__bp_columns_two_uneven' => ['base hook' => 'paragraph'],
-        'paragraph__bp_image' => ['base hook' => 'paragraph'],
-        'paragraph__bp_modal' => ['base hook' => 'paragraph'],
-        'field__entity_reference_revisions' => ['base hook' => 'paragraph'],
-        'field__paragraph__bp_column_content' => ['base hook' => 'paragraph'],
-        'field__paragraph__bp_image__image' => ['base hook' => 'paragraph'],
+      'paragraph__default' => ['base hook' => 'paragraph'],
+      'paragraph__bp_accordion' => ['base hook' => 'paragraph'],
+      'paragraph__bp_carousel' => ['base hook' => 'paragraph'],
+      'paragraph__bp_tabs' => ['base hook' => 'paragraph'],
+      'paragraph__bp_columns_three_uneven' => ['base hook' => 'paragraph'],
+      'paragraph__bp_columns_two_uneven' => ['base hook' => 'paragraph'],
+      'paragraph__bp_image' => ['base hook' => 'paragraph'],
+      'paragraph__bp_modal' => ['base hook' => 'paragraph'],
+      'field__entity_reference_revisions' => ['base hook' => 'paragraph'],
+      'field__paragraph__bp_column_content' => ['base hook' => 'paragraph'],
+      'field__paragraph__bp_image__image' => ['base hook' => 'paragraph'],
     ];
 }
 
@@ -37,13 +37,13 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     $file_path = null;
     if (isset($variables['paragraph']->bp_image_field)
         && isset($variables['paragraph']->bp_image_field->target_id)) {
-        // Get the target id and build the url.
-        $paragraph = &$variables['paragraph'];
-        $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
-        $file = File::load($target_id);
-        $file_uri = $file->getFileUri();
-        $style = ImageStyle::load('de2e');
-        $file_path = $style->buildUrl($file_uri);
+      // Get the target id and build the url.
+      $paragraph = &$variables['paragraph'];
+      $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
+      $file = File::load($target_id);
+      $file_uri = $file->getFileUri();
+      $style = ImageStyle::load('de2e');
+      $file_path = $style->buildUrl($file_uri);
     }
 
     $width_value = null;
@@ -52,50 +52,50 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
         $width_value = $variables['paragraph']->bp_width->value;
     }
 
-    $width_map = array(
-        'paragraph--width--tiny' => 'col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2',
-        'paragraph--width--narrow' => 'col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1',
-        'paragraph--width--medium' => 'col-md-8 col-md-offset-2',
-        'paragraph--width--wide' => 'col-md-10 col-md-offset-1',
-        'paragraph--width--full' => 'col-xs-12',
-        'bg-edge2edge' => 'bg-edge2edge col-xs-12 no-padding',
-    );
+    $width_map = [
+      'paragraph--width--tiny' => 'col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2',
+      'paragraph--width--narrow' => 'col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1',
+      'paragraph--width--medium' => 'col-md-8 col-md-offset-2',
+      'paragraph--width--wide' => 'col-md-10 col-md-offset-1',
+      'paragraph--width--full' => 'col-xs-12',
+      'bg-edge2edge' => 'bg-edge2edge col-xs-12 no-padding',
+    ];
 
     $width = 'col-xs-12';
     if (isset($width_map[$width_value])) {
-        $width = $width_map[$width_value];
+      $width = $width_map[$width_value];
     }
 
     $custom_paragraph_classes_value = null;
     if (isset($variables['paragraph']->bp_classes)
         && isset($variables['paragraph']->bp_classes->value)) {
-        $custom_paragraph_classes_value = $variables['paragraph']->bp_classes->value;
+      $custom_paragraph_classes_value = $variables['paragraph']->bp_classes->value;
     }
 
     $gutter_value = FALSE;
     if (isset($variables['paragraph']->bp_gutter)
         && isset($variables['paragraph']->bp_gutter->value)) {
-        $gutter_value = $variables['paragraph']->bp_gutter->value;
+      $gutter_value = $variables['paragraph']->bp_gutter->value;
     }
 
     // Add variables to template.
     _varbase_bootstrap_paragraphs_add_template_variable($variables, [
-        'background_image' => [
-            'type' => 'image',
-            'url' => $file_path,
-        ],
-        'bp_width' => [
-            'type' => 'string',
-            'value' => $width,
-        ],
-        'bp_classes' => [
-            'type' => 'string',
-            'value' => $custom_paragraph_classes_value,
-        ],
-        'bp_gutter' => [
-            'type' => 'bool',
-            'value' => $gutter_value,
-        ],
+      'background_image' => [
+        'type' => 'image',
+        'url' => $file_path,
+      ],
+      'bp_width' => [
+        'type' => 'string',
+        'value' => $width,
+      ],
+      'bp_classes' => [
+        'type' => 'string',
+        'value' => $custom_paragraph_classes_value,
+      ],
+      'bp_gutter' => [
+        'type' => 'bool',
+        'value' => $gutter_value,
+      ],
     ]);
 }
 
@@ -109,31 +109,31 @@ function varbase_bootstrap_paragraphs_form_paragraphs_subform_alter(array &$subf
 
     // If the paragraph type has got a background color field.
     if (isset($subform['bp_background']) && isset($subform['bp_background']['widget'])) {
-        $configFactory = \Drupal::configFactory()->getEditable('varbase_bootstrap_paragraphs.settings');
-        $background_colors = $configFactory->get('background_colors');
+      $configFactory = \Drupal::configFactory()->getEditable('varbase_bootstrap_paragraphs.settings');
+      $background_colors = $configFactory->get('background_colors');
 
-        $background_colors_options = ['_none' => t('N/A')];
-        $lines = explode(PHP_EOL, $background_colors);
-        foreach($lines as $line) {
-            $line = explode('|', $line);
-            $background_colors_options[$line[0]] = $line[1];
-        }
+      $background_colors_options = ['_none' => t('N/A')];
+      $lines = explode(PHP_EOL, $background_colors);
+      foreach($lines as $line) {
+        $line = explode('|', $line);
+        $background_colors_options[$line[0]] = $line[1];
+      }
 
-        // Updated the bp_background options with the list of vbp colors.
-        $subform['bp_background']['widget']['#options'] = $background_colors_options;
+      // Updated the bp_background options with the list of vbp colors.
+      $subform['bp_background']['widget']['#options'] = $background_colors_options;
 
-        // Get the default active theme for the site.
-        $default_system_theme = \Drupal::configFactory()->getEditable('system.theme');
-        $default_active_theme_name = $default_system_theme->get('default');
-        $default_active_theme_libraries = \Drupal::service('library.discovery')->getLibrariesByExtension($default_active_theme_name);
+      // Get the default active theme for the site.
+      $default_system_theme = \Drupal::configFactory()->getEditable('system.theme');
+      $default_active_theme_name = $default_system_theme->get('default');
+      $default_active_theme_libraries = \Drupal::service('library.discovery')->getLibrariesByExtension($default_active_theme_name);
 
-        // If the default active theme has got the vbp-colors library use it.
-        if (isset($default_active_theme_libraries['vbp-colors'])) {
-            $subform['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
-        }
-        else {
-            $subform['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
-        }
+      // If the default active theme has got the vbp-colors library use it.
+      if (isset($default_active_theme_libraries['vbp-colors'])) {
+        $subform['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
+      }
+      else {
+        $subform['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
+      }
     }
 }
 
@@ -158,10 +158,10 @@ function _varbase_bootstrap_paragraphs_add_template_variable(array &$variables, 
     static $key = 'VBP';
 
     if (!isset($variables[$key])) {
-        $variables[$key] = $data;
+      $variables[$key] = $data;
     }
     else {
-        $variables[$key][] = $data;
+      $variables[$key][] = $data;
     }
     return $data;
 }

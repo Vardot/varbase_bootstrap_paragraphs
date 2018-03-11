@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.bp_image_field
-    - media.bundle.image
+    - media.type.image
     - paragraphs.paragraphs_type.bp_simple
 id: paragraph.bp_simple.bp_image_field
 field_name: bp_image_field

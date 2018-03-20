@@ -26,4 +26,4 @@ dependencies:
   - views
   - viewsreference
   - webform
-version: 8.x-4.x-dev
+version: 8.x-5.x-dev

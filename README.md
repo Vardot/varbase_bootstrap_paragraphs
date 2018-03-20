@@ -27,11 +27,13 @@ and layout.
   * Columns (Equal, up to 6)
   * Columns (Three Uneven)
   * Columns (Two Uneven)
+  * Column Wrapper
   * Drupal Block
   * Modal
   * Tabs
   * View
   * Webform
+  # Text and Image
 
 **Backgrounds:**
 

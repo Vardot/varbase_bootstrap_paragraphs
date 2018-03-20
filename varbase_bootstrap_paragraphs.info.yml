@@ -13,7 +13,8 @@ dependencies:
   - filter
   - image
   - link
-  - media
+  - media_entity
+  - media_entity_image
   - options
   - paragraphs
   - responsive_image

@@ -9,7 +9,7 @@ dependencies:
   - field_group
   - file
   - image
-  - media
+  - media_entity
   - options
   - paragraphs
   - text

@@ -5,6 +5,7 @@ core: 8.x
 package: Varbase
 dependencies:
   - block
+  - ds
   - entity_browser
   - entity_reference_revisions
   - field
@@ -13,8 +14,7 @@ dependencies:
   - filter
   - image
   - link
-  - media_entity
-  - media_entity_image
+  - media
   - options
   - paragraphs
   - responsive_image

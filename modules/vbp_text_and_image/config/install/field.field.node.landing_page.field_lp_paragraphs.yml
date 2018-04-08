@@ -16,7 +16,6 @@ dependencies:
     - paragraphs.paragraphs_type.bp_tabs
     - paragraphs.paragraphs_type.bp_view
     - paragraphs.paragraphs_type.bp_webform
-    - paragraphs.paragraphs_type.text_and_image
   module:
     - entity_reference_revisions
 id: node.landing_page.field_lp_paragraphs
@@ -26,12 +25,13 @@ bundle: landing_page
 label: Components
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       bp_accordion: bp_accordion
       bp_block: bp_block
@@ -45,7 +45,6 @@ settings:
       bp_tabs: bp_tabs
       bp_view: bp_view
       bp_webform: bp_webform
-      text_and_image: text_and_image
     target_bundles_drag_drop:
       bp_accordion:
         enabled: true
@@ -89,7 +88,4 @@ settings:
       bp_webform:
         enabled: true
         weight: 29
-      text_and_image:
-        enabled: true
-        weight: 30
 field_type: entity_reference_revisions

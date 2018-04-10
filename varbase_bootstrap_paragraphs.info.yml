@@ -4,6 +4,8 @@ description: 'A suite of Paragraph bundles to be used for Varbase distribution. 
 core: 8.x
 package: Varbase
 dependencies:
+  - varbase_media:varbase_media
+  - varbase_media:varbase_webform
   - block
   - ds
   - entity_browser
@@ -21,8 +23,6 @@ dependencies:
   - system
   - text
   - user
-  - varbase_media
-  - varbase_webform
   - views
   - viewsreference
   - webform

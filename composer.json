@@ -23,8 +23,8 @@
     }
   ],
   "require": {
-    "drupal/varbase_media": "^5.*",
-    "drupal/varbase_webform": "^5.*"
+    "drupal/varbase_media": "5.*",
+    "drupal/varbase_webform": "5.*"
   },
   "extra": {
     "branch-alias": {

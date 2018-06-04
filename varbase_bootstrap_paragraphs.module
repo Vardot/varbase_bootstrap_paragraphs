@@ -41,9 +41,11 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
       $paragraph = &$variables['paragraph'];
       $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
       $file = File::load($target_id);
-      $file_uri = $file->getFileUri();
-      $style = ImageStyle::load('de2e');
-      $file_path = $style->buildUrl($file_uri);
+      if (isset($file)) {
+        $file_uri = $file->getFileUri();
+        $style = ImageStyle::load('de2e');
+        $file_path = $style->buildUrl($file_uri);
+      }
     }
 
     $width_value = null;

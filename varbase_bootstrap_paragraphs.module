@@ -36,22 +36,29 @@ function varbase_bootstrap_paragraphs_theme($existing, $type, $theme, $path) {
 function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     $file_path = null;
     if (isset($variables['paragraph']->bp_image_field)
-        && isset($variables['paragraph']->bp_image_field->target_id)) {
+      && isset($variables['paragraph']->bp_image_field->target_id)) {
+
       // Get the target id and build the url.
       $paragraph = &$variables['paragraph'];
-      $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
-      $file = File::load($target_id);
-      if (isset($file)) {
-        $file_uri = $file->getFileUri();
-        $style = ImageStyle::load('de2e');
-        $file_path = $style->buildUrl($file_uri);
+      if (isset($paragraph->get('bp_image_field')->entity)
+        && isset($paragraph->get('bp_image_field')->entity->field_image)
+        && isset($paragraph->get('bp_image_field')->entity->field_image->target_id)) {
+
+        $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
+        $file = File::load($target_id);
+        if (isset($file)) {
+          $file_uri = $file->getFileUri();
+          $style = ImageStyle::load('de2e');
+          $file_path = $style->buildUrl($file_uri);
+        }
       }
     }
 
     $width_value = null;
     if (isset($variables['paragraph']->bp_width)
-        && isset($variables['paragraph']->bp_width->value)) {
-        $width_value = $variables['paragraph']->bp_width->value;
+      && isset($variables['paragraph']->bp_width->value)) {
+      
+      $width_value = $variables['paragraph']->bp_width->value;
     }
 
     $width_map = [
@@ -103,11 +110,14 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * 
+ * Widget : Paragraphs Classic : entity_reference_paragraphs
+ * 
  */
-function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter(&$element, FormStateInterface &$form_state, $context) {
+function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter(&$element, &$form_state, $context) {
 
     // Add the Varbase Bootstrap Paragraphs default admin styling.
-    $form_state['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
+    $element['subform']['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
 
     // If the paragraph type has got a background color field.
     if (isset($element['subform']['bp_background']) && isset($element['subform']['bp_background']['widget'])) {
@@ -131,13 +141,54 @@ function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_f
 
       // If the default active theme has got the vbp-colors library use it.
       if (isset($default_active_theme_libraries['vbp-colors'])) {
-        $form_state['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
+        $element['subform']['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
       }
       else {
-        $form_state['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
+        $element['subform']['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
       }
     }
 }
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * 
+ * Widget type : Paragraphs EXPERIMENTAL : paragraphs 
+ * 
+ */
+function varbase_bootstrap_paragraphs_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * 
+ * Widget : Paragraphs Classic Asymmetric : paragraphs_classic_asymmetric 
+ * 
+ */
+function varbase_bootstrap_paragraphs_field_widget_paragraphs_classic_asymmetric_form_alter(&$element, &$form_state, $context) {
+  varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * 
+ * Widget : Paragraphs Previewer & Paragraphs Classic : entity_reference_paragraphs_previewer 
+ * 
+ */
+function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_previewer_form_alter(&$element, &$form_state, $context) {
+  varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * 
+ * Widget : Paragraphs Previewer & Paragraphs EXPERIMENTAL : paragraphs_previwer 
+ * 
+ */
+function varbase_bootstrap_paragraphs_field_widget_paragraphs_previwer_form_alter(&$element, &$form_state, $context) {
+  varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+}
+
 
 /**
  * Populates TWIG variables with VBP related data.

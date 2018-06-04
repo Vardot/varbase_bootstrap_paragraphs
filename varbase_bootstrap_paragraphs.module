@@ -10,6 +10,7 @@ use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_theme().
@@ -41,9 +42,11 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
       $paragraph = &$variables['paragraph'];
       $target_id = $paragraph->get('bp_image_field')->entity->field_image->target_id;
       $file = File::load($target_id);
-      $file_uri = $file->getFileUri();
-      $style = ImageStyle::load('de2e');
-      $file_path = $style->buildUrl($file_uri);
+      if (isset($file)) {
+        $file_uri = $file->getFileUri();
+        $style = ImageStyle::load('de2e');
+        $file_path = $style->buildUrl($file_uri);
+      }
     }
 
     $width_value = null;
@@ -100,15 +103,15 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
 }
 
 /**
- * Implements hook_form_paragraphs_subform_alter().
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
-function varbase_bootstrap_paragraphs_form_paragraphs_subform_alter(array &$subform, \Drupal\Core\Form\FormStateInterface $form_state, $delta) {
+function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter(&$element, FormStateInterface &$form_state, $context) {
 
     // Add the Varbase Bootstrap Paragraphs default admin styling.
-    $subform['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
+    $form_state['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
 
     // If the paragraph type has got a background color field.
-    if (isset($subform['bp_background']) && isset($subform['bp_background']['widget'])) {
+    if (isset($element['subform']['bp_background']) && isset($element['subform']['bp_background']['widget'])) {
       $configFactory = \Drupal::configFactory()->getEditable('varbase_bootstrap_paragraphs.settings');
       $background_colors = $configFactory->get('background_colors');
 
@@ -120,7 +123,7 @@ function varbase_bootstrap_paragraphs_form_paragraphs_subform_alter(array &$subf
       }
 
       // Updated the bp_background options with the list of vbp colors.
-      $subform['bp_background']['widget']['#options'] = $background_colors_options;
+      $element['subform']['bp_background']['widget']['#options'] = $background_colors_options;
 
       // Get the default active theme for the site.
       $default_system_theme = \Drupal::configFactory()->getEditable('system.theme');
@@ -129,10 +132,10 @@ function varbase_bootstrap_paragraphs_form_paragraphs_subform_alter(array &$subf
 
       // If the default active theme has got the vbp-colors library use it.
       if (isset($default_active_theme_libraries['vbp-colors'])) {
-        $subform['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
+        $form_state['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
       }
       else {
-        $subform['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
+        $form_state['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
       }
     }
 }

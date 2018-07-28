@@ -6,6 +6,7 @@ package: Varbase
 dependencies:
   - varbase_media
   - varbase_webform
+  - better_exposed_filters
   - block
   - ds
   - entity_browser

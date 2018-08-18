@@ -14,5 +14,5 @@ dependencies:
   - varbase_bootstrap_paragraphs
   - varbase_landing
   - varbase_media
-version: 8.x-5.x-dev
+version: 8.x-6.x-dev
 package: Varbase

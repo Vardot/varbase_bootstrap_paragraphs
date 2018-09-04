@@ -2,17 +2,9 @@ name: 'Varbase Bootstrap Paragraphs Text and Image'
 description: 'Text and image paragraph type'
 type: module
 core: 8.x
-dependencies:
-  - entity_browser
-  - entity_reference_revisions
-  - field
-  - field_group
-  - media
-  - options
-  - paragraphs
-  - text
-  - varbase_bootstrap_paragraphs
-  - varbase_landing
-  - varbase_media
 version: 8.x-5.x-dev
 package: Varbase
+dependencies:
+  - varbase_media
+  - varbase_bootstrap_paragraphs
+  - varbase_landing

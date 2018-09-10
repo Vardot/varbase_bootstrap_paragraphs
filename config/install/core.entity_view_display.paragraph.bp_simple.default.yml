@@ -7,9 +7,12 @@ dependencies:
     - field.field.paragraph.bp_simple.bp_gutter
     - field.field.paragraph.bp_simple.bp_image_field
     - field.field.paragraph.bp_simple.bp_text
+    - field.field.paragraph.bp_simple.bp_title
+    - field.field.paragraph.bp_simple.bp_title_status
     - field.field.paragraph.bp_simple.bp_width
     - paragraphs.paragraphs_type.bp_simple
   module:
+    - ds
     - options
     - text
 id: paragraph.bp_simple.default
@@ -18,14 +21,14 @@ bundle: bp_simple
 mode: default
 content:
   bp_background:
-    weight: 3
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
     region: content
   bp_classes:
-    weight: 4
+    weight: 6
     label: hidden
     settings:
       link_to_entity: false
@@ -33,8 +36,8 @@ content:
     type: string
     region: content
   bp_gutter:
-    weight: 5
-    label: above
+    weight: 7
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -43,7 +46,7 @@ content:
     type: boolean
     region: content
   bp_image_field:
-    weight: 2
+    weight: 4
     label: hidden
     settings:
       link: true
@@ -52,14 +55,39 @@ content:
     type: entity_reference_entity_view
     region: content
   bp_text:
-    weight: 0
+    type: text_default
+    weight: 2
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+  bp_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_title_status:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: boolean
     region: content
   bp_width:
-    weight: 1
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }

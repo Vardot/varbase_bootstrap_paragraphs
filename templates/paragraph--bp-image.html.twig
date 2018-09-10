@@ -76,6 +76,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class
 {# Sets Unique ID for paragraph from Paragraph ID. #}
 {% set paragraph_id = 'vbp-' ~ paragraph.id.value %}
 
+{# Sets paragraph title for paragraph. #}
+{% set paragraph_title = content.bp_title|render %}
+
+{# Sets paragraph title status for paragraph. #}
+{% set paragraph_title_status = true %}
+{% if VBP.bp_title_status.value %}
+  {% set paragraph_title_status = false %}
+{% endif %}
+
 {# Add custom paragraph CSS class(es). #}
 {% if VBP.bp_classes.value %}
   {% set striped_custom_classes = VBP.bp_classes.value|striptags|lower %}
@@ -91,13 +100,14 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class
   {% if add_container %}<div class="container">{% endif %}
     <div class="row">
       <div class="{{- VBP.bp_width.value -}}">
-          {% if content.bp_link|render is not empty %}
-            <a href="{{ content.bp_link.0['#url'] }}">
-          {% endif %}
-          {{ content|without('bp_width', 'bp_background', 'bp_link', 'bp_classes', 'bp_gutter') }}
-          {% if content.bp_link|render is not empty %}
-            </a>
-          {% endif %}
+        {% if paragraph_title and paragraph_title_status %}<h2 class="text-center">{{- paragraph_title -}}</h2>{% endif %}
+        {% if content.bp_link|render is not empty %}
+          <a href="{{ content.bp_link.0['#url'] }}">
+        {% endif %}
+        {{ content|without('bp_title', 'bp_title_status', 'bp_title_status', 'bp_width', 'bp_background', 'bp_link', 'bp_classes', 'bp_gutter') }}
+        {% if content.bp_link|render is not empty %}
+          </a>
+        {% endif %}
       </div>
     </div>
   {% if add_container %}</div>{% endif %}

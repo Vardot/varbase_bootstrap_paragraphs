@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_title
+    - paragraphs.paragraphs_type.bp_carousel
+id: paragraph.bp_carousel.bp_title
+field_name: bp_title
+entity_type: paragraph
+bundle: bp_carousel
+label: 'Component title'
+description: 'You could fill in a title for this component, if you want to show the title, or just to use for editorial reference you may hide the title.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

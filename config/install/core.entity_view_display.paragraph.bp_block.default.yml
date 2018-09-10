@@ -7,9 +7,12 @@ dependencies:
     - field.field.paragraph.bp_block.bp_classes
     - field.field.paragraph.bp_block.bp_gutter
     - field.field.paragraph.bp_block.bp_image_field
+    - field.field.paragraph.bp_block.bp_title
+    - field.field.paragraph.bp_block.bp_title_status
     - field.field.paragraph.bp_block.bp_width
     - paragraphs.paragraphs_type.bp_block
   module:
+    - ds
     - options
 id: paragraph.bp_block.default
 targetEntityType: paragraph
@@ -17,14 +20,14 @@ bundle: bp_block
 mode: default
 content:
   bp_background:
-    weight: 2
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
     region: content
   bp_block:
-    weight: 0
+    weight: 2
     label: hidden
     settings:
       link: true
@@ -33,7 +36,7 @@ content:
     type: entity_reference_entity_view
     region: content
   bp_classes:
-    weight: 4
+    weight: 6
     label: hidden
     settings:
       link_to_entity: false
@@ -41,8 +44,8 @@ content:
     type: string
     region: content
   bp_gutter:
-    weight: 5
-    label: above
+    weight: 7
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -51,7 +54,7 @@ content:
     type: boolean
     region: content
   bp_image_field:
-    weight: 3
+    weight: 5
     label: hidden
     settings:
       link: true
@@ -59,8 +62,33 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  bp_width:
+  bp_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_title_status:
     weight: 1
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: boolean
+    region: content
+  bp_width:
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }

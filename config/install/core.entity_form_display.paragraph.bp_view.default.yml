@@ -7,12 +7,16 @@ dependencies:
     - field.field.paragraph.bp_view.bp_classes
     - field.field.paragraph.bp_view.bp_gutter
     - field.field.paragraph.bp_view.bp_image_field
+    - field.field.paragraph.bp_view.bp_title
+    - field.field.paragraph.bp_view.bp_title_status
     - field.field.paragraph.bp_view.bp_view
     - field.field.paragraph.bp_view.bp_width
     - paragraphs.paragraphs_type.bp_view
   module:
+    - advanced_text_formatter
     - entity_browser
     - field_group
+    - maxlength
     - viewsreference
 third_party_settings:
   field_group:
@@ -24,7 +28,7 @@ third_party_settings:
         - bp_image_field
         - bp_classes
       parent_name: ''
-      weight: 1
+      weight: 4
       format_type: details
       format_settings:
         label: 'Styling settings'
@@ -33,6 +37,22 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Styling settings'
+      region: content
+    group_title:
+      children:
+        - bp_title
+        - bp_title_status
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        label: 'Component title'
+        description: ''
+        id: ''
+        classes: ''
+        required_fields: false
+        open: false
+      label: 'Component title'
       region: content
 id: paragraph.bp_view.default
 targetEntityType: paragraph
@@ -70,11 +90,32 @@ content:
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: field_preview
+      field_widget_replace: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
+  bp_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+      advanced_text_formatter:
+        show_token_tree: 0
+    type: string_textfield
+    region: content
+  bp_title_status:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   bp_view:
-    weight: 0
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: '60'

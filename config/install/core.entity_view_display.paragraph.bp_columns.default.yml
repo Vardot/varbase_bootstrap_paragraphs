@@ -7,9 +7,12 @@ dependencies:
     - field.field.paragraph.bp_columns.bp_column_content
     - field.field.paragraph.bp_columns.bp_gutter
     - field.field.paragraph.bp_columns.bp_image_field
+    - field.field.paragraph.bp_columns.bp_title
+    - field.field.paragraph.bp_columns.bp_title_status
     - field.field.paragraph.bp_columns.bp_width
     - paragraphs.paragraphs_type.bp_columns
   module:
+    - ds
     - entity_reference_revisions
     - options
 id: paragraph.bp_columns.default
@@ -19,13 +22,13 @@ mode: default
 content:
   bp_background:
     type: list_default
-    weight: 2
+    weight: 4
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   bp_classes:
-    weight: 4
+    weight: 6
     label: hidden
     settings:
       link_to_entity: false
@@ -34,7 +37,7 @@ content:
     region: content
   bp_column_content:
     type: entity_reference_revisions_entity_view
-    weight: 0
+    weight: 2
     region: content
     label: hidden
     settings:
@@ -42,8 +45,8 @@ content:
       link: ''
     third_party_settings: {  }
   bp_gutter:
-    weight: 5
-    label: above
+    weight: 7
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -53,16 +56,41 @@ content:
     region: content
   bp_image_field:
     type: entity_reference_entity_view
-    weight: 3
+    weight: 5
     region: content
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+  bp_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_title_status:
+    weight: 1
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: boolean
+    region: content
   bp_width:
     type: list_default
-    weight: 1
+    weight: 3
     region: content
     label: hidden
     settings: {  }

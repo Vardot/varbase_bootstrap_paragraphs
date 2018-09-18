@@ -6,6 +6,8 @@ dependencies:
     - field.field.paragraph.text_and_image.bp_classes
     - field.field.paragraph.text_and_image.bp_gutter
     - field.field.paragraph.text_and_image.bp_image_field
+    - field.field.paragraph.text_and_image.bp_title
+    - field.field.paragraph.text_and_image.bp_title_status
     - field.field.paragraph.text_and_image.bp_width
     - field.field.paragraph.text_and_image.field_image
     - field.field.paragraph.text_and_image.field_image_position
@@ -13,6 +15,7 @@ dependencies:
     - field.field.paragraph.text_and_image.text_and_image_style
     - paragraphs.paragraphs_type.text_and_image
   module:
+    - ds
     - options
     - text
 id: paragraph.text_and_image.default
@@ -21,7 +24,7 @@ bundle: text_and_image
 mode: default
 content:
   bp_background:
-    weight: 0
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -29,14 +32,14 @@ content:
     region: content
   bp_classes:
     type: string
-    weight: 7
+    weight: 9
     region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   bp_gutter:
-    weight: 8
+    weight: 10
     label: above
     settings:
       format: default
@@ -46,22 +49,47 @@ content:
     type: boolean
     region: content
   bp_image_field:
-    weight: 6
+    weight: 8
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  bp_width:
+  bp_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_title_status:
     weight: 1
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: boolean
+    region: content
+  bp_width:
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_image:
-    weight: 5
+    weight: 7
     label: hidden
     settings:
       link: true
@@ -70,14 +98,14 @@ content:
     type: entity_reference_entity_view
     region: content
   field_image_position:
-    weight: 3
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_text_content:
-    weight: 4
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -85,7 +113,7 @@ content:
     region: content
   text_and_image_style:
     type: list_default
-    weight: 2
+    weight: 4
     region: content
     label: hidden
     settings: {  }

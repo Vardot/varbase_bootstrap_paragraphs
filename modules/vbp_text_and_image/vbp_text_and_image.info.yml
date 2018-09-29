@@ -5,6 +5,6 @@ core: 8.x
 version: 8.x-6.x-dev
 package: Varbase
 dependencies:
-  - varbase_media
-  - varbase_bootstrap_paragraphs
-  - varbase_landing
+  - varbase_media:varbase_media
+  - varbase_bootstrap_paragraphs:varbase_bootstrap_paragraphs
+  - varbase_landing:varbase_landing

@@ -5,8 +5,8 @@ core: 8.x
 version: 8.x-6.x-dev
 package: Varbase
 dependencies:
-  - varbase_media
-  - varbase_webform
-  - viewsreference
-  - paragraphs
-  - paragraphs_previewer
+  - varbase_media:varbase_media
+  - varbase_core:varbase_webform
+  - viewsreference:viewsreference
+  - paragraphs:paragraphs
+  - paragraphs_previewer:paragraphs_previewer

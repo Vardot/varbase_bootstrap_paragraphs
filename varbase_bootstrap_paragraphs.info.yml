@@ -4,6 +4,7 @@ description: 'A suite of Paragraph bundles to be used for Varbase distribution. 
 core: 8.x
 version: 8.x-5.x-dev
 package: Varbase
+project: varbase_bootstrap_paragraphs
 dependencies:
   - varbase_media:varbase_media
   - varbase_core:varbase_webform

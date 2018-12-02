@@ -4,9 +4,12 @@ description: 'A suite of Paragraph bundles to be used for Varbase distribution. 
 core: 8.x
 version: 8.x-6.x-dev
 package: Varbase
+components:
+  - vbp_text_and_image
 dependencies:
   - varbase_media:varbase_media
-  - varbase_core:varbase_webform
-  - viewsreference:viewsreference
-  - paragraphs:paragraphs
-  - paragraphs_previewer:paragraphs_previewer
+install:
+  - webform
+  - viewsreference
+  - paragraphs
+  - paragraphs_previewer

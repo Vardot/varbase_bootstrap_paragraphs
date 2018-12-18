@@ -9,6 +9,9 @@ components:
 dependencies:
   - varbase_media:varbase_media
 install:
+  - options
+  - link
+  - ckeditor
   - webform
   - viewsreference
   - paragraphs

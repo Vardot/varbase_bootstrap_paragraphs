@@ -9,10 +9,16 @@ components:
 dependencies:
   - varbase_media:varbase_media
 install:
+  - text
   - options
   - link
   - ckeditor
+  - block
+  - advanced_text_formatter
+  - field_group
+  - maxlength
   - webform
   - viewsreference
+  - entity_reference_revisions
   - paragraphs
   - paragraphs_previewer

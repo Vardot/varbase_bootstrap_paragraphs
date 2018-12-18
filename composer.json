@@ -35,7 +35,9 @@
     "drupal/paragraphs": "1.5",
     "drupal/paragraphs_previewer": "1.2",
     "drupal/viewsreference": "~2.0",
-    "drupal/webform": "~5.0"
+    "drupal/webform": "~5.0",
+    "drupal/field_group": "~3.0",
+    "drupal/advanced_text_formatter": "~1.0"
   },
   "extra": {
     "branch-alias": {

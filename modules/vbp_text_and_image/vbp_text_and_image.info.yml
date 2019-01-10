@@ -6,3 +6,5 @@ version: 8.x-6.x-dev
 package: Varbase
 dependencies:
   - varbase_bootstrap_paragraphs:varbase_bootstrap_paragraphs
+install:
+  - varbase_landing

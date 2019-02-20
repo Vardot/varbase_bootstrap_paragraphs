@@ -33,7 +33,7 @@
     "drupal/drupal-library-installer-plugin": "^0.3",
     "drupal/varbase_media": "~6.0",
     "drupal/paragraphs": "1.5",
-    "drupal/paragraphs_previewer": "1.2",
+    "drupal/paragraphs_previewer": "1.4",
     "drupal/viewsreference": "~2.0",
     "drupal/webform": "~5.0",
     "drupal/field_group": "~3.0",

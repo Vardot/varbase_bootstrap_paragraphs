@@ -57,7 +57,7 @@
       },
       "drupal/paragraphs_previewer": {
         "Issue #2904917: Make paragraph previewer work with new UI/UX improvement patch":
-        "https://www.drupal.org/files/issues/2904917-2.patch"
+        "https://www.drupal.org/files/issues/2019-02-20/2904917-8.patch"
       }
     }
   }

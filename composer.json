@@ -32,7 +32,7 @@
     "cweagans/composer-patches": "~1.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
     "drupal/varbase_media": "~6.0",
-    "drupal/paragraphs": "1.6",
+    "drupal/paragraphs": "1.8",
     "drupal/paragraphs_previewer": "1.4",
     "drupal/viewsreference": "~2.0",
     "drupal/webform": "~5.0",

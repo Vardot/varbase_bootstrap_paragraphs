@@ -124,7 +124,18 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                 {# Use the same render array as item and set the '#paragraph'. #}
                 {% set section_body = item %}
                 {# Load the entity for the current translation #}
-                {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_tab_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
+                {# Get the language code #}
+                {% set language = section_body['#paragraph'].langcode[0].value %}
+                {# Check if a translation exists #}
+                {% if section_body['#paragraph'].bp_tab_section_body[body_key].entity.hasTranslation(language) %}
+                {# Load the entity for the current translation #}
+                {% set section_translation = section_body['#paragraph'].bp_tab_section_body[body_key].entity.getTranslation(language) %}
+                {% else %}
+                {# Load the source entity #}
+                {% set section_translation = section_body['#paragraph'].bp_tab_section_body[body_key].entity %}
+                {% endif %}
+                {# Set the final value #}
+                {% set section_body = section_body|merge({'#paragraph': section_translation}) %}
                 {# Remove the cache keys so it doesn't repeat the first value. #}
                 {% set section_body = section_body|merge({'#cache': {}}) %}
                 {# Print the compiled section body. #}

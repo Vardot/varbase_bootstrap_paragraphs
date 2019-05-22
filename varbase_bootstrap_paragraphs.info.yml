@@ -2,7 +2,7 @@ name: 'Varbase Bootstrap Paragraphs'
 type: module
 description: 'A suite of Paragraph bundles to be used for Varbase distribution. Made with the Boostrap framework, based on a fork of Bootstrap Paragraph module (bootstrap_paragraphs).'
 core: 8.x
-version: 8.x-6.x-dev
+version: 8.x-7.x-dev
 package: Varbase
 components:
   - vbp_text_and_image

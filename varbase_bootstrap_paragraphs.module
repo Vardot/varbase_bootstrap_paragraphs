@@ -228,3 +228,49 @@ function _varbase_bootstrap_paragraphs_add_template_variable(array &$variables, 
     }
     return $data;
 }
+
+/**
+ * Implements hook_form_alter().
+ * 
+ */
+function varbase_bootstrap_paragraphs_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  // Only for paragraph entity edit forms.
+  if (preg_match("/paragraph_(.*)_entity_edit_form$/", $form_id)) {
+
+    // If the paragraph type has got a background color field.
+    if (isset($form['bp_background']) && isset($form['bp_background']['widget'])) {
+
+      // Add the Varbase Bootstrap Paragraphs default admin styling.
+      $form['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
+
+
+      $configFactory = \Drupal::configFactory()->getEditable('varbase_bootstrap_paragraphs.settings');
+      $background_colors = $configFactory->get('background_colors');
+
+      $background_colors_options = ['_none' => t('N/A')];
+      $lines = explode(PHP_EOL, $background_colors);
+      foreach($lines as $line) {
+        $line = explode('|', $line);
+        $background_colors_options[$line[0]] = $line[1];
+      }
+
+      // Updated the bp_background options with the list of vbp colors.
+      $form['bp_background']['widget']['#options'] = $background_colors_options;
+
+      // Get the default active theme for the site.
+      $default_system_theme = \Drupal::configFactory()->getEditable('system.theme');
+      $default_active_theme_name = $default_system_theme->get('default');
+      $default_active_theme_libraries = \Drupal::service('library.discovery')->getLibrariesByExtension($default_active_theme_name);
+
+      // If the default active theme has got the vbp-colors library use it.
+      if (isset($default_active_theme_libraries['vbp-colors'])) {
+        $form['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
+      }
+      else {
+        $form['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
+      }
+    }
+
+  }
+}

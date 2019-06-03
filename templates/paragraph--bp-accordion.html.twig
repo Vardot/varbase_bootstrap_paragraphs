@@ -115,7 +115,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
             {% set attributes = attributes.removeClass('bg-edge2edge') %}
             <div class="card-header panel-heading" role="tab" id="heading-{{ paragraph_id }}-{{ key + 1 }}">
               <div class="panel-title">
-                <a data-toggle="collapse" data-parent="{{ paragraph_id }}" href="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-expanded="true" aria-controls="collapse-{{ paragraph_id }}-{{ key + 1 }}">
+                <a data-toggle="collapse" data-target="#collapse-{{ paragraph_id }}-{{ key + 1 }}" href="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-expanded="true" aria-controls="collapse-{{ paragraph_id }}-{{ key + 1 }}">
                   {# Print the accordion section title. #}
                   {{ item['#paragraph'].bp_accordion_section_title.value }}
                 </a>

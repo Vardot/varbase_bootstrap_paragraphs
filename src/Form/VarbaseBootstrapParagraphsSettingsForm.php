@@ -4,7 +4,6 @@ namespace Drupal\varbase_bootstrap_paragraphs\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\ContentEntityTypeInterface;
 use Drupal\Core\Entity\EntityManagerInterface;
@@ -74,12 +73,12 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
       $fieldStorage->save();
     }
     catch (FieldStorageDefinitionUpdateForbiddenException $e) {
-      drupal_set_message($e->getMessage(), 'error');
+      $this->messenger()->addError($e->getMessage());
       $form_state->setRebuild();
       return;
     }
     catch (Exception $e) {
-      drupal_set_message($e->getMessage(), 'error');
+      $this->messenger()->addError($e->getMessage());
       $form_state->setRebuild();
       return;
     }
@@ -105,7 +104,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
     else {
       // Check that keys are valid for the field type.
       foreach ($values as $key => $value) {
-        if (Unicode::strlen($key) > 255) {
+        if (mb_strlen($key) > 255) {
           $form_state->setErrorByName('background_colors', t('Allowed values list: each key must be a string at most 255 characters long.'));
           break;
         }

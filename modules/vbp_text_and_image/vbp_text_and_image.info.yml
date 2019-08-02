@@ -4,6 +4,7 @@ type: module
 core: 8.x
 version: 8.x-7.x-dev
 package: Varbase
+project: varbase_bootstrap_paragraphs
 dependencies:
   - varbase_bootstrap_paragraphs:varbase_bootstrap_paragraphs
 install:

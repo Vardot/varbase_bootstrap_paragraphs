@@ -5,11 +5,9 @@
  * Varbase Bootstrap Paragraphs module file.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Implements hook_theme().
@@ -34,7 +32,7 @@ function varbase_bootstrap_paragraphs_theme($existing, $type, $theme, $path) {
  * Implements hook_preprocess_paragraph().
  */
 function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
-  $file_path = null;
+  $file_path = NULL;
   if (isset($variables['paragraph']->bp_image_field)
     && isset($variables['paragraph']->bp_image_field->target_id)) {
 
@@ -54,7 +52,7 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     }
   }
 
-  $width_value = null;
+  $width_value = NULL;
   if (isset($variables['paragraph']->bp_width)
     && isset($variables['paragraph']->bp_width->value)) {
 
@@ -75,7 +73,7 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
     $width = $width_map[$width_value];
   }
 
-  $custom_paragraph_classes_value = null;
+  $custom_paragraph_classes_value = NULL;
   if (isset($variables['paragraph']->bp_classes)
       && isset($variables['paragraph']->bp_classes->value)) {
     $custom_paragraph_classes_value = $variables['paragraph']->bp_classes->value;
@@ -120,50 +118,48 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
- * 
- * Widget : Paragraphs Classic : entity_reference_paragraphs
- * 
+ *
+ * Widget : Paragraphs Classic : entity_reference_paragraphs.
  */
 function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter(&$element, &$form_state, $context) {
 
-    // Add the Varbase Bootstrap Paragraphs default admin styling.
-    $element['subform']['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
+  // Add the Varbase Bootstrap Paragraphs default admin styling.
+  $element['subform']['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
 
-    // If the paragraph type has got a background color field.
-    if (isset($element['subform']['bp_background']) && isset($element['subform']['bp_background']['widget'])) {
-      $configFactory = \Drupal::configFactory()->getEditable('varbase_bootstrap_paragraphs.settings');
-      $background_colors = $configFactory->get('background_colors');
+  // If the paragraph type has got a background color field.
+  if (isset($element['subform']['bp_background']) && isset($element['subform']['bp_background']['widget'])) {
+    $configFactory = \Drupal::configFactory()->getEditable('varbase_bootstrap_paragraphs.settings');
+    $background_colors = $configFactory->get('background_colors');
 
-      $background_colors_options = ['_none' => t('N/A')];
-      $lines = explode(PHP_EOL, $background_colors);
-      foreach($lines as $line) {
-        $line = explode('|', $line);
-        $background_colors_options[$line[0]] = $line[1];
-      }
-
-      // Updated the bp_background options with the list of vbp colors.
-      $element['subform']['bp_background']['widget']['#options'] = $background_colors_options;
-
-      // Get the default active theme for the site.
-      $default_system_theme = \Drupal::configFactory()->getEditable('system.theme');
-      $default_active_theme_name = $default_system_theme->get('default');
-      $default_active_theme_libraries = \Drupal::service('library.discovery')->getLibrariesByExtension($default_active_theme_name);
-
-      // If the default active theme has got the vbp-colors library use it.
-      if (isset($default_active_theme_libraries['vbp-colors'])) {
-        $element['subform']['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
-      }
-      else {
-        $element['subform']['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
-      }
+    $background_colors_options = ['_none' => t('N/A')];
+    $lines = explode(PHP_EOL, $background_colors);
+    foreach ($lines as $line) {
+      $line = explode('|', $line);
+      $background_colors_options[$line[0]] = $line[1];
     }
+
+    // Updated the bp_background options with the list of vbp colors.
+    $element['subform']['bp_background']['widget']['#options'] = $background_colors_options;
+
+    // Get the default active theme for the site.
+    $default_system_theme = \Drupal::configFactory()->getEditable('system.theme');
+    $default_active_theme_name = $default_system_theme->get('default');
+    $default_active_theme_libraries = \Drupal::service('library.discovery')->getLibrariesByExtension($default_active_theme_name);
+
+    // If the default active theme has got the vbp-colors library use it.
+    if (isset($default_active_theme_libraries['vbp-colors'])) {
+      $element['subform']['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
+    }
+    else {
+      $element['subform']['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
+    }
+  }
 }
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
- * 
- * Widget type : Paragraphs EXPERIMENTAL : paragraphs 
- * 
+ *
+ * Widget type : Paragraphs EXPERIMENTAL : paragraphs .
  */
 function varbase_bootstrap_paragraphs_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
   varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
@@ -171,9 +167,8 @@ function varbase_bootstrap_paragraphs_field_widget_paragraphs_form_alter(&$eleme
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
- * 
- * Widget : Paragraphs Classic Asymmetric : paragraphs_classic_asymmetric 
- * 
+ *
+ * Widget : Paragraphs Classic Asymmetric : paragraphs_classic_asymmetric .
  */
 function varbase_bootstrap_paragraphs_field_widget_paragraphs_classic_asymmetric_form_alter(&$element, &$form_state, $context) {
   varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
@@ -181,9 +176,9 @@ function varbase_bootstrap_paragraphs_field_widget_paragraphs_classic_asymmetric
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
- * 
- * Widget : Paragraphs Previewer & Paragraphs Classic : entity_reference_paragraphs_previewer 
- * 
+ *
+ * Widget : Paragraphs Previewer & Paragraphs Classic :
+ *  entity_reference_paragraphs_previewer .
  */
 function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_previewer_form_alter(&$element, &$form_state, $context) {
   varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
@@ -191,14 +186,13 @@ function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_p
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
- * 
- * Widget : Paragraphs Previewer & Paragraphs EXPERIMENTAL : paragraphs_previwer 
- * 
+ *
+ * Widget : Paragraphs Previewer & Paragraphs EXPERIMENTAL :
+ *  paragraphs_previwer .
  */
 function varbase_bootstrap_paragraphs_field_widget_paragraphs_previwer_form_alter(&$element, &$form_state, $context) {
   varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
 }
-
 
 /**
  * Populates TWIG variables with VBP related data.
@@ -218,22 +212,21 @@ function varbase_bootstrap_paragraphs_field_widget_paragraphs_previwer_form_alte
  */
 function _varbase_bootstrap_paragraphs_add_template_variable(array &$variables, array $data = NULL) {
 
-    static $key = 'VBP';
+  static $key = 'VBP';
 
-    if (!isset($variables[$key])) {
-      $variables[$key] = $data;
-    }
-    else {
-      $variables[$key][] = $data;
-    }
-    return $data;
+  if (!isset($variables[$key])) {
+    $variables[$key] = $data;
+  }
+  else {
+    $variables[$key][] = $data;
+  }
+  return $data;
 }
 
 /**
  * Implements hook_form_alter().
- * 
  */
-function varbase_bootstrap_paragraphs_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function varbase_bootstrap_paragraphs_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   // Only for paragraph entity edit forms.
   if (isset($form['#entity_type'])
@@ -251,7 +244,7 @@ function varbase_bootstrap_paragraphs_form_alter(&$form, \Drupal\Core\Form\FormS
 
       $background_colors_options = ['_none' => t('N/A')];
       $lines = explode(PHP_EOL, $background_colors);
-      foreach($lines as $line) {
+      foreach ($lines as $line) {
         $line = explode('|', $line);
         $background_colors_options[$line[0]] = $line[1];
       }

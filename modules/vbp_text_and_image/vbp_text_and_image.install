@@ -6,7 +6,6 @@
  */
 
 use Symfony\Component\Yaml\Yaml;
-use Drupal\Core\Config;
 use Drupal\Core\Config\InstallStorage;
 use Drupal\Core\Config\StorageInterface;
 use Drupal\Core\Config\FileStorage;
@@ -15,13 +14,13 @@ use Drupal\Core\Config\FileStorage;
  * Implements hook_install().
  */
 function vbp_text_and_image_install() {
-  
+
   $module_name = preg_replace('/_install$/', '', __FUNCTION__);
   $module_path = Drupal::service('module_handler')->getModule($module_name)->getPath();
 
   // Processer for install: in [$module_name].info.yml file.
-  // ---------------------------------------------------------------------------
-  $module_info_file = $module_path . '/'. $module_name . '.info.yml';
+  // --------------------------------------------------------------------------.
+  $module_info_file = $module_path . '/' . $module_name . '.info.yml';
   if (file_exists($module_info_file)) {
     $module_info_data = (array) Yaml::parse(file_get_contents($module_info_file));
     if (isset($module_info_data['install'])
@@ -63,49 +62,46 @@ function vbp_text_and_image_install() {
     }
   }
   // ---------------------------------------------------------------------------
-
   // Add target bundle [text and image] to landing page components
-  // (landing page paragraphs field) without changing old configurations
+  // (landing page paragraphs field) without changing old configurations.
   _add_target_bundle_text_and_image_to_landing_page_components();
 
 }
 
 /**
- * Add target bundle [text and image] to landing page components
+ * Add target bundle [text and image] to landing page components.
+ *
  * (landing page paragraphs field) without changing old configurations.
  */
 function _add_target_bundle_text_and_image_to_landing_page_components() {
   $site_config = \Drupal::configFactory()->getEditable('field.field.node.landing_page.field_lp_paragraphs');
   $config_data = $site_config->get();
 
-/**
- * dependencies:
-    config:
-      - paragraphs.paragraphs_type.text_and_image
- */
+  /* dependencies:
+   * config:
+   * - paragraphs.paragraphs_type.text_and_image
+   */
   if (!isset($config_data['dependencies']['config']['paragraphs.paragraphs_type.text_and_image'])) {
     $config_data['dependencies']['config'][] = 'paragraphs.paragraphs_type.text_and_image';
   }
 
-/**
- * settings:
-    handler_settings:
-      target_bundles:
-        text_and_image: text_and_image
- */
+  /* settings:
+   * handler_settings:
+   * target_bundles:
+   * text_and_image: text_and_image
+   */
   if (!isset($config_data['settings']['handler_settings']['target_bundles']['text_and_image'])) {
     $config_data['settings']['handler_settings']['target_bundles']['text_and_image'] = 'text_and_image';
   }
 
-  /*
-   * target_bundles_drag_drop
-      text_and_image:
-        enabled: true
-        weight: 32
+  /* target_bundles_drag_drop
+   * text_and_image:
+   * enabled: true
+   * weight: 32
    */
   if (!isset($config_data['settings']['handler_settings']['target_bundles_drag_drop']['text_and_image'])) {
     $config_data['settings']['handler_settings']['target_bundles_drag_drop']['text_and_image'] = [
-      'enabled' => true,
+      'enabled' => TRUE,
       'weight' => 32,
     ];
   }
@@ -115,8 +111,10 @@ function _add_target_bundle_text_and_image_to_landing_page_components() {
 }
 
 /**
- * Issue #2904173: Changed [Background Color] in the Styling Settings to use
- * a set of Color set to choose with [Color boxes] with a general color settings
+ * Issue #2904173: Changed [Background Color] in the Styling Settings to use.
+ *
+ * Use a set of Color set to choose with [Color boxes] with a general
+ * color settings.
  */
 function vbp_text_and_image_update_8001() {
 
@@ -134,8 +132,10 @@ function vbp_text_and_image_update_8001() {
 }
 
 /**
- * Issue #3025036: Add target bundle [text and image] to landing page components
- * (landing page paragraphs field) without changing old configurations.
+ * Issue #3025036: Add target bundle [text and image] to landing page.
+ *
+ * Landing page components (landing page paragraphs field) without changing old
+ * configurations.
  */
 function vbp_text_and_image_update_8602() {
   _add_target_bundle_text_and_image_to_landing_page_components();

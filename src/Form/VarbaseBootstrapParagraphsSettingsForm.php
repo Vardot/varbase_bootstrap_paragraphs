@@ -2,19 +2,10 @@
 
 namespace Drupal\varbase_bootstrap_paragraphs\Form;
 
+use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\DependencyInjection\DependencySerializationTrait;
-use Drupal\Core\Entity\ContentEntityTypeInterface;
-use Drupal\Core\Entity\EntityManagerInterface;
-use Drupal\Core\Entity\EntityPublishedInterface;
-use Drupal\Core\Entity\EntityStorageException;
-use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\Exception\FieldStorageDefinitionUpdateForbiddenException;
-use Drupal\Core\Entity\Schema\DynamicallyFieldableEntityStorageSchemaInterface;
-use Drupal\Core\Field\FieldException;
-use Drupal\Core\Field\FieldStorageDefinitionInterface;
-use Drupal\field\FieldStorageConfigInterface;
 
 /**
  * Provides form for managing module settings.
@@ -44,8 +35,8 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
     $form['settings']['background_colors'] = [
       '#type' => 'textarea',
       '#default_value' => $config->get('background_colors'),
-      '#title' => t('Available CSS styles (classes) for Varbase Bootstrap Paragraphs'),
-      '#description' => t('
+      '#title' => $this->t('Available CSS styles (classes) for Varbase Bootstrap Paragraphs'),
+      '#description' => $this->t('
 <p>The list of CSS classes available as background styles for Varbase Bootstrap Pargaraphs. Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the style in administration forms.</p><p>These styles are defined and can be customized in <code>vbp-colors</code> library that is defined in <code>varbase_bootstrap_paragraphs/varbase_bootstrap_paragraphs.libraries.yml</code>.</p><p>To customize the styles to fit your brand with your own theme, do the following:
   <ol>
     <li>Copy the LESS (<code>varbase_bootstrap_paragraphs/less/theme/vbp-colors.theme.less</code>) and CSS (<code>varbase_bootstrap_paragraphs/css/theme/vbp-colors.theme.css</code>) files to your own theme.</li>
@@ -68,7 +59,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
     try {
       // Update the Allowed list text values.
       $newAllowedListTextValues = self::optionsExtractAllowedListTextValues($form_state->getValue('background_colors'));
-      $fieldStorage = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'bp_background');
+      $fieldStorage = FieldStorageConfig::loadByName('paragraph', 'bp_background');
       $fieldStorage->setSetting('allowed_values', $newAllowedListTextValues);
       $fieldStorage->save();
     }
@@ -99,13 +90,13 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
     $values = self::optionsExtractAllowedListTextValues($form_state->getValue('background_colors'));
 
     if (!is_array($values)) {
-      $form_state->setErrorByName('background_colors', t('Allowed values list: invalid input.'));
+      $form_state->setErrorByName('background_colors', $this->t('Allowed values list: invalid input.'));
     }
     else {
       // Check that keys are valid for the field type.
       foreach ($values as $key => $value) {
         if (mb_strlen($key) > 255) {
-          $form_state->setErrorByName('background_colors', t('Allowed values list: each key must be a string at most 255 characters long.'));
+          $form_state->setErrorByName('background_colors', $this->t('Allowed values list: each key must be a string at most 255 characters long.'));
           break;
         }
       }
@@ -119,7 +110,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
    *   The list of allowed values in string format described in
    *   optionsExtractAllowedValues().
    *
-   * @return array/null
+   * @return arraynull
    *   The array of extracted key/value pairs, or NULL if the string is invalid.
    *
    * @see optionsExtractAllowedListTextValues()
@@ -131,7 +122,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
     $list = array_map('trim', $list);
     $list = array_filter($list, 'strlen');
 
-    foreach ($list as $position => $text) {
+    foreach ($list as $text) {
       $value = $key = FALSE;
 
       // Check for an explicit key.
@@ -143,7 +134,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
         $values[$key] = $value;
       }
       else {
-        return;
+        return NULL;
       }
     }
 

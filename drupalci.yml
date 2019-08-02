@@ -2,17 +2,51 @@ build:
   assessment:
     validate_codebase:
       phplint:
+      container_composer: {  }
+      container_command:
+        commands:
+          - cd ${SOURCE_DIR}
+          - sudo -u www-data composer config repositories.asset {"composer","https://asset-packagist.org"}
+          - sudo -u www-data composer config extra.installer-types.0 "npm-asset"
+          - sudo -u www-data composer config extra.installer-types.1 "bower-asset"
+          - sudo -u www-data composer config extra.installer-paths.libraries\/\{\$name\} "[type:bower-asset]"
+          - sudo -u www-data sed -i 's/"\[type:bower-asset\]"/\["type:bower-asset"\]/' composer.json
+          - sudo -u www-data composer config extra.installer-paths.libraries\/\{\$name\} "[type:npm-asset]"
+          - sudo -u www-data sed -i 's/"\[type:npm-asset\]"/\["type:npm-asset"\]/' composer.json
+          - sudo -u www-data composer require "oomphinc/composer-installers-extender:^1.1"
+          - dir libraries
       csslint:
+        halt-on-fail: false
       eslint:
+        halt-on-fail: false
       phpcs:
+        sniff-all-files: true
         halt-on-fail: true
     testing:
-      container_command:
-        commands: "cd ${SOURCE_DIR} && composer config repositories.drupal composer https://packages.drupal.org/8 && composer config repositories.assets composer https://asset-packagist.org"
-      run_tests.standard:
-        types: 'Simpletest,PHPUnit-Unit,PHPUnit-Kernel,PHPUnit-Functional'
+      run_tests.phpunit:
+        types: 'PHPUnit-Unit'
+        testgroups: '--all'
         suppress-deprecations: false
-      run_tests.js:
-        concurrency: 1
+        halt-on-fail: false
+      run_tests.kernel:
+        types: 'PHPUnit-Kernel'
+        testgroups: '--all'
+        suppress-deprecations: false
+        halt-on-fail: false
+      run_tests.simpletest:
+         types: 'Simpletest'
+         testgroups: '--all'
+         suppress-deprecations: false
+         halt-on-fail: false
+      run_tests.functional:
+        types: 'PHPUnit-Functional'
+        testgroups: '--all'
+        suppress-deprecations: false
+        halt-on-fail: false
+      run_tests.javascript:
+        concurrency: 15
         types: 'PHPUnit-FunctionalJavascript'
+        testgroups: '--all'
         suppress-deprecations: false
+        halt-on-fail: false
+      nightwatchjs:

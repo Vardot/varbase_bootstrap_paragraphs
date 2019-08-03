@@ -1,15 +1,12 @@
 build:
-  codebase:
-    assemble_codebase:
-      composer:
+  assessment:
+    validate_codebase:
+      phplint:
+      container_composer:
         - 'config repositories.asset composer https://asset-packagist.org'
         - 'require oomphinc/composer-installers-extender:~1.0'
         - 'require cweagans/composer-patches:~1.0'
         - 'require drupal/drupal-library-installer-plugin:^0.3'
-  assessment:
-    validate_codebase:
-      phplint:
-      container_composer: {  }
       container_command:
         commands:
           - 'cd ${SOURCE_DIR}'

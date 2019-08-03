@@ -1,4 +1,12 @@
 build:
+  codebase:
+    assemble_codebase:
+      composer:
+        - install --prefer-dist --working-dir 
+        - config repositories.asset composer https://asset-packagist.org
+        - require "oomphinc/composer-installers-extender:~1.0"
+        - require "cweagans/composer-patches:~1.0"
+        - require "drupal/drupal-library-installer-plugin:^0.3"
   assessment:
     validate_codebase:
       phplint:
@@ -6,7 +14,6 @@ build:
       container_command:
         commands:
           - cd ${SOURCE_DIR}
-          - sudo -u www-data composer config repositories.asset composer https://asset-packagist.org
           - sudo -u www-data composer config extra.enable-patching true
           - sudo -u www-data composer config extra.composer-exit-on-patch-failure true
           - sudo -u www-data composer config extra.installer-types.0 "npm-asset"
@@ -21,9 +28,6 @@ build:
           - sed -i 's/\"}\"]\"/"}/g' composer.json
           - sed -i 's/\"\[{\"/[{"/g' composer.json
           - sed -i 's/\"}\]\"/"}]/g' composer.json
-          - sudo -u www-data composer require "oomphinc/composer-installers-extender:~1.0"
-          - sudo -u www-data composer require "cweagans/composer-patches:~1.0"
-          - sudo -u www-data composer require "drupal/drupal-library-installer-plugin:^0.3"
           - sudo -u www-data composer require npm-asset/dropzone:~4.0 npm-asset/blazy:~1.0 npm-asset/slick-carousel:~1.0
           - dir libraries
           - sudo -u www-data composer require "drupal/varbase_media:7.x-dev"

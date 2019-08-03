@@ -6,22 +6,27 @@ build:
       container_command:
         commands:
           - cd ${SOURCE_DIR}
-          - sudo -u www-data composer config repositories.drupal composer https://packages.drupal.org/8
           - sudo -u www-data composer config repositories.asset composer https://asset-packagist.org
+          - sudo -u www-data composer config extra.enable-patching true
+          - sudo -u www-data composer config extra.composer-exit-on-patch-failure true
           - sudo -u www-data composer config extra.installer-types.0 "npm-asset"
           - sudo -u www-data composer config extra.installer-types.1 "bower-asset"
-          - sudo -u www-data composer config extra.installer-paths.libraries\/\{\$name\} "[type:bower-asset]"
-          - sudo -u www-data sed -i 's/"\[type:bower-asset\]"/\["type:bower-asset"\]/' composer.json
-          - sudo -u www-data composer config extra.installer-paths.libraries\/\{\$name\} "[type:npm-asset]"
-          - sudo -u www-data sed -i 's/"\[type:npm-asset\]"/\["type:npm-asset"\]/' composer.json
-          - sudo -u www-data composer require "composer/installers:~1.0"
+          - sudo -u www-data composer config extra.installer-paths.web\/libraries\/\{\$name\} [DOUBLE_QUOTATIONtype:drupal-libraryDOUBLE_QUOTATION,DOUBLE_QUOTATIONtype:bower-assetDOUBLE_QUOTATION,DOUBLE_QUOTATIONtype:npm-assetDOUBLE_QUOTATION]
+          - sudo -u www-data composer config extra.installer-paths.web\/libraries\/slick [DOUBLE_QUOTATIONnpm-asset/slick-carouselDOUBLE_QUOTATION]
+          - sudo -u www-data composer config extra.libraries "[{DOUBLE_QUOTATIONnameDOUBLE_QUOTATION: DOUBLE_QUOTATIONdropzoneDOUBLE_QUOTATION,DOUBLE_QUOTATIONpackageDOUBLE_QUOTATION: DOUBLE_QUOTATIONnpm-asset/dropzoneDOUBLE_QUOTATION},{DOUBLE_QUOTATIONnameDOUBLE_QUOTATION: DOUBLE_QUOTATIONblazyDOUBLE_QUOTATION, DOUBLE_QUOTATIONpackageDOUBLE_QUOTATION: DOUBLE_QUOTATIONnpm-asset/blazyDOUBLE_QUOTATION},{DOUBLE_QUOTATIONnameDOUBLE_QUOTATION: DOUBLE_QUOTATIONslickDOUBLE_QUOTATION, DOUBLE_QUOTATIONpackageDOUBLE_QUOTATION: DOUBLE_QUOTATIONnpm-asset/slick-carouselDOUBLE_QUOTATION}]"
+          - sed -i 's/DOUBLE_QUOTATION/"/g' composer.json
+          - sed -i 's/\"\[\"/["/g' composer.json
+          - sed -i 's/\"\]\"/"]/g' composer.json
+          - sed -i 's/\"{\"/{"/g' composer.json
+          - sed -i 's/\"}\"]\"/"}/g' composer.json
+          - sed -i 's/\"\[{\"/[{"/g' composer.json
+          - sed -i 's/\"}\]\"/"}]/g' composer.json
           - sudo -u www-data composer require "oomphinc/composer-installers-extender:~1.0"
           - sudo -u www-data composer require "cweagans/composer-patches:~1.0"
           - sudo -u www-data composer require "drupal/drupal-library-installer-plugin:^0.3"
-          - sudo -u www-data composer require "npm-asset/dropzone:~4.0"
-          - sudo -u www-data composer require "npm-asset/blazy:~1.0"
-          - sudo -u www-data composer require "npm-asset/slick-carousel:~1.0"
+          - sudo -u www-data composer require npm-asset/dropzone:~4.0 npm-asset/blazy:~1.0 npm-asset/slick-carousel:~1.0
           - dir libraries
+          - sudo -u www-data composer require "drupal/varbase_media:7.x-dev"
       csslint:
         halt-on-fail: false
       eslint:

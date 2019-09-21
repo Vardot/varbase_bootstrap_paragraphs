@@ -54,9 +54,9 @@
     'paragraph--style--25-50-25' == column_style_3 ? 'col-lg-3',
     'paragraph--style--50-25-25' == column_style_3 ? 'col-lg-6',
     'paragraph--style--25-25-50' == column_style_3 ? 'col-lg-3',
-    'paragraph--style--16-66-16' == column_style_3 ? 'col-lg-2 col-xs-6',
+    'paragraph--style--16-66-16' == column_style_3 ? 'col-lg-2 col-6',
     'paragraph--style--66-16-16' == column_style_3 ? 'col-lg-8',
-    'paragraph--style--16-16-66' == column_style_3 ? 'col-lg-2 col-xs-6',
+    'paragraph--style--16-16-66' == column_style_3 ? 'col-lg-2 col-6',
   ]
   %}
   {% set col_2 = [
@@ -64,16 +64,16 @@
     'paragraph--style--50-25-25' == column_style_3 ? 'col-lg-3',
     'paragraph--style--25-25-50' == column_style_3 ? 'col-lg-3',
     'paragraph--style--16-66-16' == column_style_3 ? 'col-lg-8',
-    'paragraph--style--66-16-16' == column_style_3 ? 'col-lg-2 col-xs-6',
-    'paragraph--style--16-16-66' == column_style_3 ? 'col-lg-2 col-xs-6',
+    'paragraph--style--66-16-16' == column_style_3 ? 'col-lg-2 col-6',
+    'paragraph--style--16-16-66' == column_style_3 ? 'col-lg-2 col-6',
   ]
   %}
   {% set col_3 = [
     'paragraph--style--25-50-25' == column_style_3 ? 'col-lg-3',
     'paragraph--style--50-25-25' == column_style_3 ? 'col-lg-3',
     'paragraph--style--25-25-50' == column_style_3 ? 'col-lg-6',
-    'paragraph--style--16-66-16' == column_style_3 ? 'col-lg-2 col-xs-6',
-    'paragraph--style--66-16-16' == column_style_3 ? 'col-lg-2 col-xs-6',
+    'paragraph--style--16-66-16' == column_style_3 ? 'col-lg-2 col-6',
+    'paragraph--style--66-16-16' == column_style_3 ? 'col-lg-2 col-6',
     'paragraph--style--16-16-66' == column_style_3 ? 'col-lg-8',
   ]
   %}
@@ -144,26 +144,28 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     <div class="row">
       <div class="{{- VBP.bp_width.value -}}">
         {% if paragraph_title and paragraph_title_status %}<h2 class="text-center">{% spaceless %}{{- paragraph_title|striptags -}}{% endspaceless %}</h2>{% endif %}
-        {% for key, item in content.bp_column_content_3 if key|first != '#' %}
-          {% set attributes = attributes.removeClass('bg-edge2edge') %}
-          {% set column_style_field = content.bp_column_content_3|render %}
-          {% set col_classes= "" %}
-          {% if column_style_field %}
-            {% if loop.index  == 1 %}
-                {% set col_classes = col_1 %}
+        <div class="row">
+          {% for key, item in content.bp_column_content_3 if key|first != '#' %}
+            {% set attributes = attributes.removeClass('bg-edge2edge') %}
+            {% set column_style_field = content.bp_column_content_3|render %}
+            {% set col_classes= "" %}
+            {% if column_style_field %}
+              {% if loop.index  == 1 %}
+                  {% set col_classes = col_1 %}
+              {% endif %}
+              {% if loop.index  == 2 %}
+                  {% set attributes = attributes.removeClass(col_1) %}
+                  {% set col_classes = col_2 %}
+              {% endif %}
+              {% if loop.index  == 3 %}
+                  {% set attributes = attributes.removeClass(col_1) %}
+                  {% set attributes = attributes.removeClass(col_2) %}
+                  {% set col_classes = col_3 %}
+              {% endif %}
             {% endif %}
-            {% if loop.index  == 2 %}
-                {% set attributes = attributes.removeClass(col_1) %}
-                {% set col_classes = col_2 %}
-            {% endif %}
-            {% if loop.index  == 3 %}
-                {% set attributes = attributes.removeClass(col_1) %}
-                {% set attributes = attributes.removeClass(col_2) %}
-                {% set col_classes = col_3 %}
-            {% endif %}
-          {% endif %}
-          <div{{ attributes.removeClass(classes).addClass(col_classes).addClass('no-padding') }}>{{ item }}</div>
-        {% endfor %}
+            <div{{ attributes.removeClass(classes).addClass(col_classes).addClass('p-0') }}>{{ item }}</div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   {% if add_container %}</div>{% endif %}

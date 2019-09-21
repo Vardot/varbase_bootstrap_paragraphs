@@ -1,6 +1,7 @@
 .row {
   margin-bottom: 0px !important;
 }
+
 @media screen and (min-width: 1200px) {
   .align2right {
     float: right !important;
@@ -9,13 +10,17 @@
     float: left !important;
   }
   .paragraph.paragraph--type--text-and-image .row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
   }
   .align2left.wrapper {
     padding-left: 35px;
   }
 }
-@media screen and (max-width: 1200px) {
+
+@media screen and (min-width: 1200px) {
   .paragraph--type--text-and-image {
     margin-bottom: 20px;
     text-align: center;
@@ -25,13 +30,14 @@
     margin-right: 0px !important;
   }
 }
+
 .wrapper {
   display: table;
   height: 100%;
   text-align: left;
 }
+
 .wrapper > div {
   display: table-cell;
   vertical-align: middle;
 }
-/*# sourceMappingURL=default.css.map */

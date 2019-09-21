@@ -1,20 +1,25 @@
 .paragraph--type--bp-modal {
   padding: 10px;
 }
+
 .paragraph--type--bp-modal .btn.btn-modal {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
 .modal .modal-header {
   padding: 15px 30px;
 }
+
 .modal .modal-title {
   font-weight: bold;
 }
+
 .modal .modal-footer {
   text-align: left;
 }
+
 .modal .modal-body .paragraph,
 .modal .modal-footer .paragraph {
   margin-left: 0;

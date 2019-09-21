@@ -1,17 +1,18 @@
 // Varbase Bootstrap Paragraphs Default base styling.
 // -----------------------------------------------------------------------------
-@import "../../../bootstrap/less/variables.less";  // Bootstrap variables.
-@import "../../../bootstrap/less/mixins.less";     // Bootstrap mixins.
+@import "../../node_modules/bootstrap/scss/functions"; // Bootstrap functions.
+@import "../../node_modules/bootstrap/scss/mixins";    // Bootstrap mixins.
+@import "../../node_modules/bootstrap/scss/variables"; // Bootstrap variables.
 // -----------------------------------------------------------------------------
 
 .paragraph {
-  .make-row();
+  @include make-row();
   margin-left: 0;
   margin-right: 0;
 }
 
 .paragraph > .paragraph__column {
-  padding-bottom: @jumbotron-padding;
+  padding-bottom: $jumbotron-padding;
 }
 
 .paragraph__column {
@@ -57,7 +58,14 @@
 
 // Columns Modifiers inside of Columns Element.
 .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__6col {
-  .make-sm-column(2);
+  
+  @include make-col-ready();
+
+
+  @include media-breakpoint-up(md) {
+    @include make-col(2);
+  }
+
 }
 
 .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
@@ -73,12 +81,23 @@
 }
 
 .paragraph--type--bp-columns__1col .paragraph.paragraph--width--narrow > .paragraph__column {
-  .make-sm-column(6);
-  .make-sm-column-offset(3);
-  .make-md-column(6);
-  .make-md-column-offset(3);
-  .make-lg-column(6);
-  .make-lg-column-offset(3);
+  @include make-col-ready();
+
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+    @include make-col-offset(3);
+  }
+  
+  @include media-breakpoint-up(lg) {
+    @include make-col(6);
+    @include make-col-offset(3);
+  }
+  
+  @include media-breakpoint-up(xl) {
+    @include make-col(6);
+    @include make-col-offset(3);
+  }
+  
 }
 
 .background-style {

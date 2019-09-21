@@ -40,7 +40,7 @@
       }
       
       &:hover {
-        opacity: .8;
+        opacity: 0.8;
       }
 
       &._none {
@@ -134,7 +134,7 @@
       }
       
       &:hover {
-        opacity: .8;
+        opacity: 0.8;
       }
     }
   }
@@ -376,9 +376,11 @@
   }
 }
 
-input&.paragraph-type-add-modal-button,
-.widget {
-  padding-left: 10px !important;
+input {
+  &.paragraph-type-add-modal-button,
+  .widget {
+    padding-left: 10px !important;
+  }
 }
 
 .paragraphs-collapsed-description {

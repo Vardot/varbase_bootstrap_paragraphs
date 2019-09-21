@@ -1,8 +1,14 @@
+// -----------------------------------------------------------------------------
+@import "../node_modules/bootstrap/scss/functions"; // Bootstrap functions.
+@import "../node_modules/bootstrap/scss/mixins";    // Bootstrap mixins.
+@import "../node_modules/bootstrap/scss/variables"; // Bootstrap variables.
+// -----------------------------------------------------------------------------
+
 .row {
   margin-bottom: 0px !important;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: map-get($grid-breakpoints, "xl")) {
   .align2right {
     float: right !important;
   }
@@ -17,7 +23,7 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: map-get($grid-breakpoints, "xl")) {
   .paragraph--type--text-and-image {
     margin-bottom: 20px;
     text-align: center;

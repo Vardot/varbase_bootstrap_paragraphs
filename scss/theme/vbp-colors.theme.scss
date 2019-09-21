@@ -1,7 +1,8 @@
 // Varbase Bootstrap Paragraphs colors theme.
 // -----------------------------------------------------------------------------
-@import "../../../bootstrap/less/variables.less";  // Bootstrap variables.
-@import "../../../bootstrap/less/mixins.less";     // Bootstrap mixins.
+@import "../../node_modules/bootstrap/scss/functions"; // Bootstrap functions.
+@import "../../node_modules/bootstrap/scss/mixins";    // Bootstrap mixins.
+@import "../../node_modules/bootstrap/scss/variables"; // Bootstrap variables.
 // -----------------------------------------------------------------------------
 
 // Add display so color shows.
@@ -11,13 +12,13 @@
 
 // Adds padding to fill in color.
 .paragraph.paragraph--color > .paragraph__column {
-  padding-top: @jumbotron-padding;
-  padding-bottom: @jumbotron-padding;
+  padding-top: $jumbotron-padding;
+  padding-bottom: $jumbotron-padding;
 }
 
 // Fills color on colorless .paragraph__column after color .paragraph__column.
 .paragraph.paragraph--color + .paragraph > .paragraph__column {
-  padding-top: @jumbotron-padding;
+  padding-top: $jumbotron-padding;
 }
 
 // Background colours;
@@ -28,11 +29,11 @@
 // vbp_color_04: Light Gray
 // vbp_color_05: Red
 
-@vbp_color_01: #338ec7; // Blue
-@vbp_color_02: #2c3e50; // Madison
-@vbp_color_03: #a4a4a4; // Dark Gray
-@vbp_color_04: #d3d3d3; // Light Gray
-@vbp_color_05: #cc3c2d; // Red
+$vbp_color_01: #338ec7; // Blue
+$vbp_color_02: #2c3e50; // Madison
+$vbp_color_03: #a4a4a4; // Dark Gray
+$vbp_color_04: #d3d3d3; // Light Gray
+$vbp_color_05: #cc3c2d; // Red
 
 // Foreground colours:
 // -----------------------------------------------------------------------------
@@ -42,84 +43,84 @@
 // vbp_foreground_color_04: Black for background vbp_color_04 color.
 // vbp_foreground_color_05: White for background vbp_color_05 color.
 
-@vbp_foreground_color_01: #ffffff; // White
-@vbp_foreground_color_02: #ffffff; // White
-@vbp_foreground_color_03: #ffffff; // White
-@vbp_foreground_color_04: #000000; // Black
-@vbp_foreground_color_05: #ffffff; // White
+$vbp_foreground_color_01: #ffffff; // White
+$vbp_foreground_color_02: #ffffff; // White
+$vbp_foreground_color_03: #ffffff; // White
+$vbp_foreground_color_04: #000000; // Black
+$vbp_foreground_color_05: #ffffff; // White
 
 .vbp_color_01 {
-  background-color: @vbp_color_01;
-  color: @vbp_foreground_color_01;
+  background-color: $vbp_color_01;
+  color: $vbp_foreground_color_01;
   
   a {
-    color: @vbp_foreground_color_01;
+    color: $vbp_foreground_color_01;
     
     &:hover,
     &:focus,
     &:active,
     &.is-active {
-      color: @vbp_foreground_color_01;
+      color: $vbp_foreground_color_01;
     }
   }
 }
 .vbp_color_02 {
-  background-color: @vbp_color_02;
-  color: @vbp_foreground_color_02;
+  background-color: $vbp_color_02;
+  color: $vbp_foreground_color_02;
   
   a {
-    color: @vbp_foreground_color_02;
+    color: $vbp_foreground_color_02;
     
     &:hover,
     &:focus,
     &:active,
     &.is-active {
-      color: @vbp_foreground_color_02;
+      color: $vbp_foreground_color_02;
     }
   }
 }
 .vbp_color_03 {
-  background-color: @vbp_color_03;
-  color: @vbp_foreground_color_03;
+  background-color: $vbp_color_03;
+  color: $vbp_foreground_color_03;
   
   a {
-    color: @vbp_foreground_color_03;
+    color: $vbp_foreground_color_03;
     
     &:hover,
     &:focus,
     &:active,
     &.is-active {
-      color: @vbp_foreground_color_03;
+      color: $vbp_foreground_color_03;
     }
   }
 }
 .vbp_color_04 {
-  background-color: @vbp_color_04;
-  color: @vbp_foreground_color_04;
+  background-color: $vbp_color_04;
+  color: $vbp_foreground_color_04;
   
   a {
-    color: @vbp_foreground_color_04;
+    color: $vbp_foreground_color_04;
     
     &:hover,
     &:focus,
     &:active,
     &.is-active {
-      color: @vbp_foreground_color_04;
+      color: $vbp_foreground_color_04;
     }
   }
 }
 .vbp_color_05 {
-  background-color: @vbp_color_05;
-  color: @vbp_foreground_color_05;
+  background-color: $vbp_color_05;
+  color: $vbp_foreground_color_05;
   
   a {
-    color: @vbp_foreground_color_05;
+    color: $vbp_foreground_color_05;
     
     &:hover,
     &:focus,
     &:active,
     &.is-active {
-      color: @vbp_foreground_color_05;
+      color: $vbp_foreground_color_05;
     }
   }
 }

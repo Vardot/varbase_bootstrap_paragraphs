@@ -188,9 +188,9 @@ function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_p
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  *
  * Widget : Paragraphs Previewer & Paragraphs EXPERIMENTAL :
- *  paragraphs_previwer .
+ *  paragraphs_previewer.
  */
-function varbase_bootstrap_paragraphs_field_widget_paragraphs_previwer_form_alter(&$element, &$form_state, $context) {
+function varbase_bootstrap_paragraphs_field_widget_paragraphs_previewer_form_alter(&$element, &$form_state, $context) {
   varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
 }
 

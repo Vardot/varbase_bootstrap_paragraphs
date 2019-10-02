@@ -30,19 +30,19 @@
 // vbp_color_05: Red
 
 // List of palette background colors by name.
-$vbp-palette-color--boston-blue:      #338ec7;
-$vbp-palette-color--pickled-bluewood: #2c3e50;
-$vbp-palette-color--silver-chalice:   #a4a4a4;
-$vbp-palette-color--alto:             #d3d3d3;
-$vbp-palette-color--persian-red:      #cc3c2d;
-$vbp-palette-color--anzac:            #E4B649;
+$vbp-palette-color-boston-blue:      #338ec7;
+$vbp-palette-color-pickled-bluewood: #2c3e50;
+$vbp-palette-color-silver-chalice:   #a4a4a4;
+$vbp-palette-color-alto:             #d3d3d3;
+$vbp-palette-color-persian-red:      #cc3c2d;
+$vbp-palette-color-anzac:            #E4B649;
 
 // Associate background colors nemas to a function name.
-$vbp_color_01: $vbp-palette-color--boston_blue;       // Blue
-$vbp_color_02: $vbp-palette-color--pickled_bluewood;  // Madison
-$vbp_color_03: $vbp-palette-color--silver_chalice;    // Dark Gray
-$vbp_color_04: $vbp-palette-color--alto;              // Light Gray
-$vbp_color_05: $vbp-palette-color--persian-red;       // Red
+$vbp_color_01: $vbp-palette-color-boston-blue;       // Blue
+$vbp_color_02: $vbp-palette-color-pickled-bluewood;  // Madison
+$vbp_color_03: $vbp-palette-color-silver-chalice;    // Dark Gray
+$vbp_color_04: $vbp-palette-color-alto;              // Light Gray
+$vbp_color_05: $vbp-palette-color-persian-red;       // Red
 
 // Map of background colors by function.
 $vbp-colors: () !default;
@@ -66,15 +66,15 @@ $vbp-colors: map-merge(
 // vbp_foreground_color_05: White for background vbp_color_05 color.
 
 // List of palette foreground colors by name.
-$vbp-palette-color--black:            #000000;
-$vbp-palette-color--white:            #ffffff;
+$vbp-palette-color-black:            #000000;
+$vbp-palette-color-white:            #ffffff;
 
 // Associate foreground colors nemas to a function name.
-$vbp_foreground_color_01: $vbp-palette-color--white; // White
-$vbp_foreground_color_02: $vbp-palette-color--white; // White
-$vbp_foreground_color_03: $vbp-palette-color--white; // White
-$vbp_foreground_color_04: $vbp-palette-color--black; // Black
-$vbp_foreground_color_05: $vbp-palette-color--white; // White
+$vbp_foreground_color_01: $vbp-palette-color-white; // White
+$vbp_foreground_color_02: $vbp-palette-color-white; // White
+$vbp_foreground_color_03: $vbp-palette-color-white; // White
+$vbp_foreground_color_04: $vbp-palette-color-black; // Black
+$vbp_foreground_color_05: $vbp-palette-color-white; // White
 
 // Map of foreground colors by function.
 $vbp-foreground-colors: () !default;

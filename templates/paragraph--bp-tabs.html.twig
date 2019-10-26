@@ -113,7 +113,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
           {# Loops through the tab sections to print the tab section titles. #}
           {% for key, item in content.bp_tab_section if key|first != '#' %}
             {% set attributes = attributes.removeClass('bg-edge2edge') %}
-            <li role="presentation" class="{% if loop.first %}active{% endif %}"><a href="#tab{{ paragraph_id }}-{{ key }}" aria-controls="{{ item['#paragraph'].bp_tab_section_title.value }}" role="tab" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
+            <li role="presentation"><a href="#tab{{ paragraph_id }}-{{ key }}" class="{% if loop.first %}active{% endif %}" aria-controls="{{ item['#paragraph'].bp_tab_section_title.value }}" role="tab" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
           {% endfor %}
         </ul>
         <div class="tab-content">

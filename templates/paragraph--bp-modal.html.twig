@@ -124,14 +124,14 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        {% if content.bp_modal_title|render %}
+          <div class="modal-title" id="{{ paragraph_id_modal }}-label">
+            {{ content.bp_modal_title }}
+          </div>
+        {% endif %}
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-          {% if content.bp_modal_title|render %}
-            <div class="modal-title" id="{{ paragraph_id_modal }}-label">
-                {{ content.bp_modal_title }}
-            </div>
-          {% endif %}
       </div>
         {% if content.bp_modal_body|render %}
           <div class="modal-body">

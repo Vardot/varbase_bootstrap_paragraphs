@@ -126,8 +126,16 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
               {% for body_key, body_item in item['#paragraph'].bp_accordion_section_body %}
                 {# Use the same render array as item and set the '#paragraph'. #}
                 {% set section_body = item %}
-                {# Load the entity for the current translation #}
-                {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_accordion_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
+                {# Get the language code #}
+                {% set language = section_body['#paragraph'].langcode[0].value %}
+                {# Check if a translation exists #}
+                {% if section_body['#paragraph'].bp_accordion_section_body[body_key].entity.hasTranslation(language) %}
+                  {# Load the entity for the current translation #}
+                  {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_accordion_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
+                {% else %}
+                  {# Load the source entity #}
+                  {% set section_translation = section_body['#paragraph'].bp_accordion_section_body[body_key].entity %}
+                {% endif %}
                 {# Remove the cache keys so it doesn't repeat the first value. #}
                 {% set section_body = section_body|merge({'#cache': {}}) %}
                 {# Print the compiled section body. #}

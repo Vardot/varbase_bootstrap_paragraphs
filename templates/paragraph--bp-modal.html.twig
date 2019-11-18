@@ -67,7 +67,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% set paragraph_id = 'vbp-' ~ paragraph.id.value %}
 
 {# Sets paragraph title for paragraph. #}
-{% set paragraph_title = content.bp_title|render %}
+{% set paragraph_title = content.bp_title[0]['#context']['value']|render %}
 
 {# Sets paragraph title status for paragraph. #}
 {% set paragraph_title_status = true %}

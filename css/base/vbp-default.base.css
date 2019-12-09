@@ -19,8 +19,8 @@
   padding-bottom: 0;
 }
 
-.paragraph .paragraph .bg-edge2edge,
-.paragraph .paragraph.bg-edge2edge {
+.paragraph:not(.paragraph--type--from-library) .paragraph .bg-edge2edge,
+.paragraph:not(.paragraph--type--from-library) .paragraph.bg-edge2edge {
   width: 100%;
   position: initial;
   margin: 0;

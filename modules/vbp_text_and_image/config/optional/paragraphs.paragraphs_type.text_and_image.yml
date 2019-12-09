@@ -1,8 +1,13 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
 id: text_and_image
 label: 'Text and image'
 icon_uuid: null
-description: null
+description: ''
 behavior_plugins: {  }

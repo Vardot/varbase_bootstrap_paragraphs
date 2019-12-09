@@ -39,7 +39,8 @@
     "drupal/webform": "~5.0",
     "drupal/field_group": "~3.0",
     "drupal/advanced_text_formatter": "~1.0",
-    "drupal/maxlength": "~1"
+    "drupal/maxlength": "~1",
+    "drupal/entity_usage": "~2.0"
   },
   "extra": {
     "branch-alias": {

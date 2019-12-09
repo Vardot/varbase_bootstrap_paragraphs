@@ -23,5 +23,6 @@ install:
   - viewsreference
   - entity_reference_revisions
   - paragraphs
+  - paragraphs_library
   - paragraphs_previewer
   - paragraphs_edit

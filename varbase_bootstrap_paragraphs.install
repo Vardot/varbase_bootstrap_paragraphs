@@ -62,4 +62,19 @@ function varbase_bootstrap_paragraphs_install() {
     }
   }
   // ---------------------------------------------------------------------------
+  // Import Paragraph Libraray OPTIONAL configs after the custom install.
+  $paragraph_libraray_configs = [
+    'views.view.paragraphs_library_browser',
+    'entity_browser.browser.paragraphs_library_items',
+  ];
+
+  $paragraph_libraray_install_path = Drupal::service('module_handler')->getModule('paragraphs_library')->getPath() . '/' . InstallStorage::CONFIG_OPTIONAL_DIRECTORY;
+
+  foreach ($paragraph_libraray_configs as $config_name) {
+    $config_path = $paragraph_libraray_install_path . '/' . $config_name . '.yml';
+    $config_content = file_get_contents($config_path);
+    $config_data = (array) Yaml::parse($config_content);
+    $config_factory = \Drupal::configFactory()->getEditable($config_name);
+    $config_factory->setData($config_data)->save(TRUE);
+  }
 }

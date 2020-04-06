@@ -1,13 +1,16 @@
-.field--name-bp-background .form-type-radio input {
+.field--name-bp-background .form-type-radio input,
+.field--name-bp-background .form-type--radio input {
   visibility: hidden;
   position: absolute;
 }
 
-.field--name-bp-background .form-type-radio input:checked + label {
+.field--name-bp-background .form-type-radio input:checked + label,
+.field--name-bp-background .form-type--radio input:checked + label {
   border: #000000 2px solid;
 }
 
-.field--name-bp-background .form-type-radio label {
+.field--name-bp-background .form-type-radio label,
+.field--name-bp-background .form-type--radio label {
   cursor: pointer !important;
   border: #000000 1px solid;
   font-size: 0.00001px;
@@ -21,7 +24,8 @@
   white-space: nowrap;
 }
 
-.field--name-bp-background .form-type-radio label:after {
+.field--name-bp-background .form-type-radio label:after,
+.field--name-bp-background .form-type--radio label:after {
   content: 'a';
   display: table;
   position: absolute;
@@ -37,15 +41,18 @@
   height: 100%;
 }
 
-.field--name-bp-background .form-type-radio label:hover {
+.field--name-bp-background .form-type-radio label:hover,
+.field--name-bp-background .form-type--radio label:hover {
   opacity: 0.8;
 }
 
-.field--name-bp-background .form-type-radio label._none {
+.field--name-bp-background .form-type-radio label._none,
+.field--name-bp-background .form-type--radio label._none {
   background: #ffffff !important;
 }
 
-.field--name-bp-background .form-type-radio label._none:after {
+.field--name-bp-background .form-type-radio label._none:after,
+.field--name-bp-background .form-type--radio label._none:after {
   display: inline-block;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
@@ -80,31 +87,49 @@
 }
 
 .field--name-bp-width .form-type-radio input,
+.field--name-bp-width .form-type--radio input,
 .field--name-bp-gutter .form-type-radio input,
+.field--name-bp-gutter .form-type--radio input,
 .field--name-bp-column-style-3 .form-type-radio input,
+.field--name-bp-column-style-3 .form-type--radio input,
 .field--name-bp-column-style-2 .form-type-radio input,
+.field--name-bp-column-style-2 .form-type--radio input,
 .field--name-text-and-image-style .form-type-radio input,
-.field--name-field-image-position .form-type-radio input {
+.field--name-text-and-image-style .form-type--radio input,
+.field--name-field-image-position .form-type-radio input,
+.field--name-field-image-position .form-type--radio input {
   visibility: hidden;
   position: absolute;
 }
 
 .field--name-bp-width .form-type-radio input:checked + label,
+.field--name-bp-width .form-type--radio input:checked + label,
 .field--name-bp-gutter .form-type-radio input:checked + label,
+.field--name-bp-gutter .form-type--radio input:checked + label,
 .field--name-bp-column-style-3 .form-type-radio input:checked + label,
+.field--name-bp-column-style-3 .form-type--radio input:checked + label,
 .field--name-bp-column-style-2 .form-type-radio input:checked + label,
+.field--name-bp-column-style-2 .form-type--radio input:checked + label,
 .field--name-text-and-image-style .form-type-radio input:checked + label,
-.field--name-field-image-position .form-type-radio input:checked + label {
+.field--name-text-and-image-style .form-type--radio input:checked + label,
+.field--name-field-image-position .form-type-radio input:checked + label,
+.field--name-field-image-position .form-type--radio input:checked + label {
   -webkit-filter: invert(25%) sepia(0.9);
   filter: invert(25%) sepia(0.9);
 }
 
 .field--name-bp-width .form-type-radio label,
+.field--name-bp-width .form-type--radio label,
 .field--name-bp-gutter .form-type-radio label,
+.field--name-bp-gutter .form-type--radio label,
 .field--name-bp-column-style-3 .form-type-radio label,
+.field--name-bp-column-style-3 .form-type--radio label,
 .field--name-bp-column-style-2 .form-type-radio label,
+.field--name-bp-column-style-2 .form-type--radio label,
 .field--name-text-and-image-style .form-type-radio label,
-.field--name-field-image-position .form-type-radio label {
+.field--name-text-and-image-style .form-type--radio label,
+.field--name-field-image-position .form-type-radio label,
+.field--name-field-image-position .form-type--radio label {
   cursor: pointer !important;
   font-size: 75%;
   text-align: center;
@@ -122,11 +147,17 @@
 }
 
 .field--name-bp-width .form-type-radio label:after,
+.field--name-bp-width .form-type--radio label:after,
 .field--name-bp-gutter .form-type-radio label:after,
+.field--name-bp-gutter .form-type--radio label:after,
 .field--name-bp-column-style-3 .form-type-radio label:after,
+.field--name-bp-column-style-3 .form-type--radio label:after,
 .field--name-bp-column-style-2 .form-type-radio label:after,
+.field--name-bp-column-style-2 .form-type--radio label:after,
 .field--name-text-and-image-style .form-type-radio label:after,
-.field--name-field-image-position .form-type-radio label:after {
+.field--name-text-and-image-style .form-type--radio label:after,
+.field--name-field-image-position .form-type-radio label:after,
+.field--name-field-image-position .form-type--radio label:after {
   content: '';
   display: table;
   position: absolute;
@@ -143,11 +174,17 @@
 }
 
 .field--name-bp-width .form-type-radio label:hover,
+.field--name-bp-width .form-type--radio label:hover,
 .field--name-bp-gutter .form-type-radio label:hover,
+.field--name-bp-gutter .form-type--radio label:hover,
 .field--name-bp-column-style-3 .form-type-radio label:hover,
+.field--name-bp-column-style-3 .form-type--radio label:hover,
 .field--name-bp-column-style-2 .form-type-radio label:hover,
+.field--name-bp-column-style-2 .form-type--radio label:hover,
 .field--name-text-and-image-style .form-type-radio label:hover,
-.field--name-field-image-position .form-type-radio label:hover {
+.field--name-text-and-image-style .form-type--radio label:hover,
+.field--name-field-image-position .form-type-radio label:hover,
+.field--name-field-image-position .form-type--radio label:hover {
   opacity: 0.8;
 }
 
@@ -156,48 +193,64 @@
 .field--name-bp-width .form-type-radio label.option.paragraph--width--medium,
 .field--name-bp-width .form-type-radio label.option.paragraph--width--wide,
 .field--name-bp-width .form-type-radio label.option.paragraph--width--full,
-.field--name-bp-width .form-type-radio label.option.bg-edge2edge {
+.field--name-bp-width .form-type-radio label.option.bg-edge2edge,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--tiny,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--narrow,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--medium,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--wide,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--full,
+.field--name-bp-width .form-type--radio label.option.bg-edge2edge {
   background-image: none;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
-.field--name-bp-width .form-type-radio label.option.paragraph--width--tiny {
+.field--name-bp-width .form-type-radio label.option.paragraph--width--tiny,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--tiny {
   background-image: url("../../images/icons/paragraph--width--tiny.svg");
 }
 
-.field--name-bp-width .form-type-radio label.option.paragraph--width--narrow {
+.field--name-bp-width .form-type-radio label.option.paragraph--width--narrow,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--narrow {
   background-image: url("../../images/icons/paragraph--width--narrow.svg");
 }
 
-.field--name-bp-width .form-type-radio label.option.paragraph--width--medium {
+.field--name-bp-width .form-type-radio label.option.paragraph--width--medium,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--medium {
   background-image: url("../../images/icons/paragraph--width--medium.svg");
 }
 
-.field--name-bp-width .form-type-radio label.option.paragraph--width--wide {
+.field--name-bp-width .form-type-radio label.option.paragraph--width--wide,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--wide {
   background-image: url("../../images/icons/paragraph--width--wide.svg");
 }
 
-.field--name-bp-width .form-type-radio label.option.paragraph--width--full {
+.field--name-bp-width .form-type-radio label.option.paragraph--width--full,
+.field--name-bp-width .form-type--radio label.option.paragraph--width--full {
   background-image: url("../../images/icons/paragraph--width--full.svg");
 }
 
-.field--name-bp-width .form-type-radio label.option.bg-edge2edge {
+.field--name-bp-width .form-type-radio label.option.bg-edge2edge,
+.field--name-bp-width .form-type--radio label.option.bg-edge2edge {
   background-image: url("../../images/icons/paragraph--width--edge-to-edge.svg");
 }
 
 .field--name-bp-gutter .form-type-radio label.option.gutter-0,
-.field--name-bp-gutter .form-type-radio label.option.gutter-1 {
+.field--name-bp-gutter .form-type-radio label.option.gutter-1,
+.field--name-bp-gutter .form-type--radio label.option.gutter-0,
+.field--name-bp-gutter .form-type--radio label.option.gutter-1 {
   background-image: none;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
-.field--name-bp-gutter .form-type-radio label.option.gutter-0 {
+.field--name-bp-gutter .form-type-radio label.option.gutter-0,
+.field--name-bp-gutter .form-type--radio label.option.gutter-0 {
   background-image: url("../../images/icons/paragraph--gutter--without-gutter.svg");
 }
 
-.field--name-bp-gutter .form-type-radio label.option.gutter-1 {
+.field--name-bp-gutter .form-type-radio label.option.gutter-1,
+.field--name-bp-gutter .form-type--radio label.option.gutter-1 {
   background-image: url("../../images/icons/paragraph--gutter--with-gutter.svg");
 }
 
@@ -206,58 +259,78 @@
 .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-25-50,
 .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-66-16,
 .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--66-16-16,
-.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-16-66 {
+.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-16-66,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--25-50-25,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--50-25-25,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--25-25-50,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--16-66-16,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--66-16-16,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--16-16-66 {
   background-image: none;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
-.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-50-25 {
+.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-50-25,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--25-50-25 {
   background-image: url("../../images/icons/paragraph--style--25-50-25.svg");
 }
 
-.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--50-25-25 {
+.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--50-25-25,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--50-25-25 {
   background-image: url("../../images/icons/paragraph--style--50-25-25.svg");
 }
 
-.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-25-50 {
+.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-25-50,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--25-25-50 {
   background-image: url("../../images/icons/paragraph--style--25-25-50.svg");
 }
 
-.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-66-16 {
+.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-66-16,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--16-66-16 {
   background-image: url("../../images/icons/paragraph--style--16-66-16.svg");
 }
 
-.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--66-16-16 {
+.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--66-16-16,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--66-16-16 {
   background-image: url("../../images/icons/paragraph--style--66-16-16.svg");
 }
 
-.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-16-66 {
+.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-16-66,
+.field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--16-16-66 {
   background-image: url("../../images/icons/paragraph--style--16-16-66.svg");
 }
 
 .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--75-25,
 .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--66-33,
 .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--25-75,
-.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--33-66 {
+.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--33-66,
+.field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--75-25,
+.field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--66-33,
+.field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--25-75,
+.field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--33-66 {
   background-image: none;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
-.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--75-25 {
+.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--75-25,
+.field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--75-25 {
   background-image: url("../../images/icons/paragraph--style--75-25.svg");
 }
 
-.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--66-33 {
+.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--66-33,
+.field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--66-33 {
   background-image: url("../../images/icons/paragraph--style--66-33.svg");
 }
 
-.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--25-75 {
+.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--25-75,
+.field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--25-75 {
   background-image: url("../../images/icons/paragraph--style--25-75.svg");
 }
 
-.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--33-66 {
+.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--33-66,
+.field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--33-66 {
   background-image: url("../../images/icons/paragraph--style--33-66.svg");
 }
 
@@ -265,64 +338,92 @@
 .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--75-25,
 .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--66-33,
 .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--25-75,
-.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--33-66 {
+.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--33-66,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--50-50,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--75-25,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--66-33,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--25-75,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--33-66 {
   background-image: none;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
-.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--50-50 {
+.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--50-50,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--50-50 {
   background-image: url("../../images/icons/paragraph--style--50-50.svg");
 }
 
-.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--75-25 {
+.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--75-25,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--75-25 {
   background-image: url("../../images/icons/paragraph--style--75-25.svg");
 }
 
-.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--66-33 {
+.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--66-33,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--66-33 {
   background-image: url("../../images/icons/paragraph--style--66-33.svg");
 }
 
-.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--25-75 {
+.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--25-75,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--25-75 {
   background-image: url("../../images/icons/paragraph--style--25-75.svg");
 }
 
-.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--33-66 {
+.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--33-66,
+.field--name-text-and-image-style .form-type--radio label.option.paragraph--style--33-66 {
   background-image: url("../../images/icons/paragraph--style--33-66.svg");
 }
 
 .field--name-field-image-position .form-type-radio label.option.right,
-.field--name-field-image-position .form-type-radio label.option.left {
+.field--name-field-image-position .form-type-radio label.option.left,
+.field--name-field-image-position .form-type--radio label.option.right,
+.field--name-field-image-position .form-type--radio label.option.left {
   background-image: none;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
-.field--name-field-image-position .form-type-radio label.option.right {
+.field--name-field-image-position .form-type-radio label.option.right,
+.field--name-field-image-position .form-type--radio label.option.right {
   background-image: url("../../images/icons/paragraph--style--right.svg");
 }
 
-.field--name-field-image-position .form-type-radio label.option.left {
+.field--name-field-image-position .form-type-radio label.option.left,
+.field--name-field-image-position .form-type--radio label.option.left {
   background-image: url("../../images/icons/paragraph--style--left.svg");
 }
 
 [dir=rtl] .field--name-bp-background .form-type-radio label,
+[dir=rtl] .field--name-bp-background .form-type--radio label,
 [dir=rtl] .field--name-bp-width .form-type-radio label,
+[dir=rtl] .field--name-bp-width .form-type--radio label,
 [dir=rtl] .field--name-bp-gutter .form-type-radio label,
+[dir=rtl] .field--name-bp-gutter .form-type--radio label,
 [dir=rtl] .field--name-bp-column-style-3 .form-type-radio label,
+[dir=rtl] .field--name-bp-column-style-3 .form-type--radio label,
 [dir=rtl] .field--name-bp-column-style-2 .form-type-radio label,
+[dir=rtl] .field--name-bp-column-style-2 .form-type--radio label,
 [dir=rtl] .field--name-text-and-image-style .form-type-radio label,
-[dir=rtl] .field--name-field-image-position .form-type-radio label {
+[dir=rtl] .field--name-text-and-image-style .form-type--radio label,
+[dir=rtl] .field--name-field-image-position .form-type-radio label,
+[dir=rtl] .field--name-field-image-position .form-type--radio label {
   float: right !important;
 }
 
 [dir=rtl] .field--name-bp-background .form-type-radio label._none:after,
+[dir=rtl] .field--name-bp-background .form-type--radio label._none:after,
 [dir=rtl] .field--name-bp-width .form-type-radio label._none:after,
+[dir=rtl] .field--name-bp-width .form-type--radio label._none:after,
 [dir=rtl] .field--name-bp-gutter .form-type-radio label._none:after,
+[dir=rtl] .field--name-bp-gutter .form-type--radio label._none:after,
 [dir=rtl] .field--name-bp-column-style-3 .form-type-radio label._none:after,
+[dir=rtl] .field--name-bp-column-style-3 .form-type--radio label._none:after,
 [dir=rtl] .field--name-bp-column-style-2 .form-type-radio label._none:after,
+[dir=rtl] .field--name-bp-column-style-2 .form-type--radio label._none:after,
 [dir=rtl] .field--name-text-and-image-style .form-type-radio label._none:after,
-[dir=rtl] .field--name-field-image-position .form-type-radio label._none:after {
+[dir=rtl] .field--name-text-and-image-style .form-type--radio label._none:after,
+[dir=rtl] .field--name-field-image-position .form-type-radio label._none:after,
+[dir=rtl] .field--name-field-image-position .form-type--radio label._none:after {
   left: 0;
   right: -5px;
 }

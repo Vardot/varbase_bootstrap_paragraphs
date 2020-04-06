@@ -1,6 +1,7 @@
 // bp background colour field at the admin.
 .field--name-bp-background {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     input {
       visibility: hidden;
       position: absolute;
@@ -90,7 +91,8 @@
 .field--name-bp-column-style-2,
 .field--name-text-and-image-style,
 .field--name-field-image-position {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     input {
       visibility: hidden;
       position: absolute;
@@ -142,7 +144,8 @@
 
 // Varbase Bootstrap paragraph width.
 .field--name-bp-width {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     label {
       &.option.paragraph--width--tiny,
       &.option.paragraph--width--narrow,
@@ -184,7 +187,8 @@
 
 // Varbase Bootstrap paragraph gutter.
 .field--name-bp-gutter {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     label {
       &.option.gutter-0,
       &.option.gutter-1 {
@@ -206,7 +210,8 @@
 
 // Varbase Bootstrap paragraph column style 3
 .field--name-bp-column-style-3 {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     label {
       &.option.paragraph--style--25-50-25,
       &.option.paragraph--style--50-25-25,
@@ -249,7 +254,8 @@
 
 // Varbase Bootstrap paragraph column style 2
 .field--name-bp-column-style-2 {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     label {
       &.option.paragraph--style--75-25,
       &.option.paragraph--style--66-33,
@@ -283,7 +289,8 @@
 
 // Varbase Bootstrap paragraph text and image style
 .field--name-text-and-image-style {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     label {
       &.option.paragraph--style--50-50,
       &.option.paragraph--style--75-25,
@@ -320,7 +327,8 @@
 
 // Varbase Bootstrap paragraph text and image field image position.
 .field--name-field-image-position {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     label {
       &.option.right,
       &.option.left {
@@ -348,7 +356,8 @@
 [dir=rtl] .field--name-bp-column-style-2,
 [dir=rtl] .field--name-text-and-image-style,
 [dir=rtl] .field--name-field-image-position {
-  .form-type-radio {
+  .form-type-radio,
+  .form-type--radio {
     label {
       float: right !important;
 

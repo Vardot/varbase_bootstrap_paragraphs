@@ -1,7 +1,6 @@
 build:
   assessment:
     validate_codebase:
-      phplint:
       container_composer:
         - 'config repositories.asset composer https://asset-packagist.org'
         - 'require oomphinc/composer-installers-extender:~1.0'
@@ -27,38 +26,52 @@ build:
           - 'sudo -u www-data composer require npm-asset/dropzone:~4.0 npm-asset/blazy:~1.0 npm-asset/slick-carousel:~1.0'
           - 'dir libraries'
           - 'sudo -u www-data composer require drupal/varbase_media:7.x-dev'
+      phplint:
       csslint:
         halt-on-fail: false
       eslint:
+        # A test must pass eslinting standards check in order to continue processing.
         halt-on-fail: false
       phpcs:
+        # phpcs will use core's specified version of Coder.
         sniff-all-files: false
         halt-on-fail: false
-        coder-version: ^8.2@stable
     testing:
-      run_tests.standard:
-        types: 'Simpletest,PHPUnit-Unit,PHPUnit-Kernel,PHPUnit-Functional'
+      # run_tests task is executed several times in order of performance speeds.
+      # halt-on-fail can be set on the run_tests tasks in order to fail fast.
+      # suppress-deprecations is false in order to be alerted to usages of
+      # deprecated code.
+      run_tests.phpunit:
+        types: 'PHPUnit-Unit'
         testgroups: '--all'
-        color: true
-        die-on-fail: false
-        keep-results: true
-        keep-results-table: false
-        verbose: false
-        concurrency: 0
-        halt-on-fail: false
-        repeat: 1
         suppress-deprecations: false
-      run_tests.js:
-        concurrency: 1
-        types: PHPUnit-FunctionalJavascript
+        halt-on-fail: false
+      run_tests.kernel:
+        types: 'PHPUnit-Kernel'
         testgroups: '--all'
-        color: true
-        die-on-fail: false
-        keep-results: true
-        keep-results-table: false
-        verbose: false
-        halt-on-fail: false
-        repeat: 1
         suppress-deprecations: false
-      nightwatchjs: {  }
-
+        halt-on-fail: false
+      run_tests.simpletest:
+         types: 'Simpletest'
+         testgroups: '--all'
+         suppress-deprecations: false
+         halt-on-fail: false
+      run_tests.build:
+        types: 'PHPUnit-Build'
+        testgroups: '--all'
+        suppress-deprecations: false
+        halt-on-fail: false
+      run_tests.functional:
+        types: 'PHPUnit-Functional'
+        testgroups: '--all'
+        suppress-deprecations: false
+        halt-on-fail: false
+      run_tests.javascript:
+        concurrency: 15
+        types: 'PHPUnit-FunctionalJavascript'
+        testgroups: '--all'
+        suppress-deprecations: false
+        halt-on-fail: false
+      # Run nightwatch testing.
+      # @see https://www.drupal.org/project/drupal/issues/2869825
+      nightwatchjs:

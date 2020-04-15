@@ -38,6 +38,7 @@ class VarbaseBootstrapParagraphsCheckParagraphTypesPageTest extends WebDriverTes
     'viewsreference',
     'entity_reference_revisions',
     'paragraphs',
+    'paragraphs_library',
     'paragraphs_previewer',
     'paragraphs_edit',
     'varbase_media',
@@ -53,6 +54,13 @@ class VarbaseBootstrapParagraphsCheckParagraphTypesPageTest extends WebDriverTes
    * @var \Drupal\user\UserInterface
    */
   protected $webUser;
+
+  /**
+   * Specify the theme to be used in testing.
+   *
+   * @var string
+   */
+  protected $defaultTheme = 'stable';
 
   /**
    * {@inheritdoc}

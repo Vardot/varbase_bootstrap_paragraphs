@@ -81,7 +81,7 @@ class VarbaseBootstrapParagraphsCheckParagraphTypesPageTest extends WebDriverTes
    *
    * @var string
    */
-  protected $defaultTheme = 'stable';
+  protected $defaultTheme = 'bartik';
 
   /**
    * {@inheritdoc}

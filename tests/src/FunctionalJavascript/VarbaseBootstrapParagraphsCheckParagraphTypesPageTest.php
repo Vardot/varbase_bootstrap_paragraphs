@@ -28,22 +28,43 @@ class VarbaseBootstrapParagraphsCheckParagraphTypesPageTest extends WebDriverTes
     'node',
     'text',
     'options',
+    'taxonomy',
+    'block_content',
+    'path',
+    'file',
+    'image',
+    'media',
+    'media_library',
+    'breakpoint',
+    'responsive_image',
+    'ds',
+    'ds_extras',
+    'better_exposed_filters',
+    'crop',
+    'dropzonejs_eb_widget',
+    'embed',
+    'entity_browser',
+    'entity_browser_enhanced',
+    'entity_browser_entity_form',
+    'entity_browser_generic_embed',
+    'entity_embed',
+    'focal_point',
+    'views_infinite_scroll',
+    'varbase_media',
     'link',
     'ckeditor',
-    'block',
     'advanced_text_formatter',
     'field_group',
     'maxlength',
     'webform',
     'viewsreference',
     'entity_reference_revisions',
+    'entity_reference_autocomplete',
     'paragraphs',
     'paragraphs_library',
     'paragraphs_previewer',
     'paragraphs_edit',
-    'varbase_media',
-    'varbase_bootstrap_paragraphs',
-    'vbp_text_and_image',
+    'varbase_bootstrap_paragraphs'
   ];
 
   /**
@@ -99,7 +120,6 @@ class VarbaseBootstrapParagraphsCheckParagraphTypesPageTest extends WebDriverTes
     $this->assertSession()->pageTextContains($this->t('Rich Text'));
     $this->assertSession()->pageTextContains($this->t('Tabs'));
     $this->assertSession()->pageTextContains($this->t('Tab Section'));
-    $this->assertSession()->pageTextContains($this->t('Text and image'));
     $this->assertSession()->pageTextContains($this->t('View'));
     $this->assertSession()->pageTextContains($this->t('Webform'));
 

@@ -28,8 +28,12 @@ build:
           - 'sudo -u www-data composer require drupal/varbase_media:7.x-dev'
       phplint:
       csslint:
+        halt-on-fail: false
       eslint:
+        halt-on-fail: false
       phpcs:
+        sniff-all-files: false
+        halt-on-fail: false
     testing:
       run_tests.functional:
         types: 'PHPUnit-Functional'

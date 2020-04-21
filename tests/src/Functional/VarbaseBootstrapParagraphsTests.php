@@ -62,7 +62,7 @@ class VarbaseBootstrapParagraphsTests extends BrowserTestBase {
     'paragraphs',
     'paragraphs_library',
     'paragraphs_edit',
-    'varbase_bootstrap_paragraphs'
+    'varbase_bootstrap_paragraphs',
   ];
 
   /**

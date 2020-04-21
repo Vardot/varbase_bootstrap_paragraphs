@@ -116,8 +116,7 @@ class VarbaseBootstrapParagraphsTests extends BrowserTestBase {
 
     $this->drupalGet('/admin/config/varbase/varbase-bootstrap-paragraphs');
     $assert_session->pageTextContains($this->t('Varbase Bootstrap Paragraphs settings'));
-    $assert_session->pageTextConteins($this->t('Available CSS styles (classes) for Varbase Bootstrap Paragraphs'));
-
+    $assert_session->pageTextContains($this->t('Available CSS styles (classes) for Varbase Bootstrap Paragraphs'));
   }
 
 }

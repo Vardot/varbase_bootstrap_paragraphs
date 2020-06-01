@@ -146,7 +146,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         {% if paragraph_title and paragraph_title_status %}<h2 class="text-center">{% spaceless %}{{- paragraph_title|striptags -}}{% endspaceless %}</h2>{% endif %}
         <div class="row">
           {% for key, item in content.bp_column_content_3 if key|first != '#' %}
-            {% set attributes = attributes.removeClass('bg-edge2edge') %}
+            {% set attributes = attributes.removeClass('bg-edge2edge').removeAttribute('id') %}
             {% set column_style_field = content.bp_column_content_3|render %}
             {% set col_classes= "" %}
             {% if column_style_field %}

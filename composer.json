@@ -34,7 +34,7 @@
     "drupal/core": "^8.8.0 || ~9.0.0",
     "drupal/varbase_media": "~7.0",
     "drupal/paragraphs": "1.12",
-    "drupal/paragraphs_previewer": "1.4",
+    "drupal/paragraphs_previewer": "1.5",
     "drupal/paragraphs_edit": "~2.0",
     "drupal/viewsreference": "~2.0",
     "drupal/webform": "~5.0",

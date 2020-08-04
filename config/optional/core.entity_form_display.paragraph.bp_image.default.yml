@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.paragraph.bp_image.bp_background
     - field.field.paragraph.bp_image.bp_classes
     - field.field.paragraph.bp_image.bp_gutter
@@ -14,10 +13,11 @@ dependencies:
     - paragraphs.paragraphs_type.bp_image
   module:
     - advanced_text_formatter
-    - entity_browser
     - field_group
     - link
     - maxlength
+    - media_library
+    - media_library_edit
 third_party_settings:
   field_group:
     group_styling_settings:
@@ -30,7 +30,6 @@ third_party_settings:
       weight: 5
       format_type: details
       format_settings:
-        label: 'Styling settings'
         required_fields: true
         id: styling-settings
         classes: ''
@@ -45,7 +44,6 @@ third_party_settings:
       weight: 0
       format_type: details
       format_settings:
-        label: 'Component title'
         description: ''
         id: ''
         classes: ''
@@ -79,20 +77,22 @@ content:
     type: options_buttons
     region: content
   bp_image_field:
-    type: entity_browser_entity_reference
+    type: media_library_widget
     weight: 3
     region: content
     settings:
-      entity_browser: image_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: field_preview
-      field_widget_replace: false
-    third_party_settings: {  }
+      media_types:
+        - audio
+        - file
+        - gallery
+        - image
+        - instagram
+        - remote_video
+        - tweet
+        - video
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   bp_link:
     type: link_default
     weight: 4

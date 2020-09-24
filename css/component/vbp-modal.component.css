@@ -4,8 +4,8 @@
 
 .paragraph--type--bp-modal .btn.btn-modal {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 .modal .modal-header {
@@ -22,9 +22,9 @@
 
 .modal .modal-body .paragraph,
 .modal .modal-footer .paragraph {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
   position: initial;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
   padding: 15px 30px 15px 30px;
 }

@@ -1,52 +1,62 @@
 .paragraph {
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
 
 .paragraph > .paragraph__column {
   padding-bottom: 2rem;
 }
 
-.paragraph__column {
-  padding: 0 25px;
+.paragraph > .paragraph__column .paragraph > .paragraph__column {
+  float: none;
 }
 
-.paragraph--type--bp-carousel .paragraph:last-of-type > .paragraph__column,
-.paragraph--type--bp-columns .paragraph:last-of-type > .paragraph__column,
-.paragraph--type--bp-columns-three-uneven .paragraph:last-of-type > .paragraph__column,
-.paragraph--type--bp-columns-two-uneven .paragraph:last-of-type > .paragraph__column,
-.paragraph--type--bp-tabs .paragraph:last-of-type > .paragraph__column {
-  padding-bottom: 0;
-}
-
-.paragraph .paragraph .bg-edge2edge,
-.paragraph .paragraph.bg-edge2edge {
-  width: 100%;
-  position: initial;
-  margin: 0;
-}
-
-.paragraph .paragraph .paragraph,
-.modal .modal-body .paragraph,
-.modal .modal-footer .paragraph {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-  position: initial;
-}
-
-.paragraph > .paragraph__column .paragraph > .paragraph__column,
 .paragraph > .paragraph__column .paragraph > .paragraph__column .paragraph > .paragraph__column {
   float: none;
 }
 
-.paragraph__column > div > .paragraph,
-.paragraph__column > .tab-content > .tab-pane > .paragraph {
-  width: 100%;
-  margin-right: 0px;
-  margin-left: 0px;
-  left: 0;
+.paragraph > .paragraph__column div > .paragraph {
   right: 0;
+  left: 0;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.paragraph > .paragraph__column > .tab-content > .tab-pane > .paragraph {
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.paragraph .paragraph .bg-edge2edge,
+.paragraph .paragraph.bg-edge2edge {
+  position: initial;
+  width: 100%;
+  margin: 0;
+}
+
+.paragraph .paragraph .paragraph {
+  position: initial;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
+    float: left;
+    width: 20%;
+  }
 }
 
 .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__6col {
@@ -58,26 +68,43 @@
 
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__6col {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 16.66667%;
-    -ms-flex: 0 0 16.66667%;
     flex: 0 0 16.66667%;
     max-width: 16.66667%;
   }
 }
 
-.paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+.paragraph__column {
+  padding: 0 25px;
 }
 
-@media (min-width: 768px) {
-  .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
-    float: left;
-    width: 20%;
-  }
+.paragraph--type--bp-carousel .paragraph:last-of-type > .paragraph__column {
+  padding-bottom: 0;
+}
+
+.paragraph--type--bp-columns .paragraph:last-of-type > .paragraph__column {
+  padding-bottom: 0;
+}
+
+.paragraph--type--bp-columns-three-uneven .paragraph > .paragraph__column {
+  padding-bottom: 0;
+}
+
+.paragraph--type--bp-tabs .paragraph:last-of-type > .paragraph__column {
+  padding-bottom: 0;
+}
+
+.modal .modal-body .paragraph {
+  position: initial;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.modal .modal-footer .paragraph {
+  position: initial;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .paragraph--type--bp-columns__1col .paragraph.paragraph--width--narrow > .paragraph__column {
@@ -89,9 +116,6 @@
 
 @media (min-width: 768px) {
   .paragraph--type--bp-columns__1col .paragraph.paragraph--width--narrow > .paragraph__column {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
     margin-left: 25%;
@@ -100,9 +124,6 @@
 
 @media (min-width: 992px) {
   .paragraph--type--bp-columns__1col .paragraph.paragraph--width--narrow > .paragraph__column {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
     margin-left: 25%;
@@ -111,9 +132,6 @@
 
 @media (min-width: 1200px) {
   .paragraph--type--bp-columns__1col .paragraph.paragraph--width--narrow > .paragraph__column {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
     margin-left: 25%;
@@ -121,7 +139,6 @@
 }
 
 .background-style {
-  -webkit-background-size: cover;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -1,44 +1,44 @@
 .field--name-bp-background .form-type-radio input,
 .field--name-bp-background .form-type--radio input {
-  visibility: hidden;
   position: absolute;
+  visibility: hidden;
 }
 
 .field--name-bp-background .form-type-radio input:checked + label,
 .field--name-bp-background .form-type--radio input:checked + label {
-  border: #000000 2px solid;
+  border: #000 2px solid;
 }
 
 .field--name-bp-background .form-type-radio label,
 .field--name-bp-background .form-type--radio label {
-  cursor: pointer !important;
-  border: #000000 1px solid;
-  font-size: 0.00001px;
   position: relative !important;
   display: inline-block !important;
+  float: left !important;
   width: 25px !important;
   height: 25px !important;
-  float: left !important;
   margin: 10px 10px 10px 0 !important;
   padding: 0 !important;
+  cursor: pointer !important;
   white-space: nowrap;
+  border: #000 1px solid;
+  font-size: 0.00001px;
 }
 
 .field--name-bp-background .form-type-radio label:after,
 .field--name-bp-background .form-type--radio label:after {
-  content: 'a';
-  display: table;
   position: absolute;
-  top: 3px;
-  left: 0;
-  right: 0px;
-  bottom: 0;
   z-index: 1;
-  font-size: 20px !important;
-  text-align: center;
-  vertical-align: middle;
+  top: 3px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: table;
   width: 100%;
   height: 100%;
+  content: "a";
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px !important;
 }
 
 .field--name-bp-background .form-type-radio label:hover,
@@ -48,42 +48,34 @@
 
 .field--name-bp-background .form-type-radio label._none,
 .field--name-bp-background .form-type--radio label._none {
-  background: #ffffff !important;
+  background: #fff !important;
 }
 
 .field--name-bp-background .form-type-radio label._none:after,
 .field--name-bp-background .form-type--radio label._none:after {
-  display: inline-block;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  float: none;
-  z-index: auto;
-  width: 35px;
-  height: 2px;
   position: absolute;
-  content: "";
-  cursor: pointer !important;
-  opacity: 1;
+  z-index: auto;
   top: 12px;
-  left: -5px;
   right: 0;
   bottom: 0;
+  left: -5px;
+  display: inline-block;
+  float: none;
+  box-sizing: content-box;
+  width: 35px;
+  height: 2px;
   margin: 0;
   padding: 0;
+  content: "";
+  cursor: pointer !important;
+  transition: none;
+  transform: rotateZ(-45deg);
+  transform-origin: 50% 50% 0;
   -o-text-overflow: clip;
+  opacity: 1;
   background: #f00;
-  -webkit-box-shadow: none;
   box-shadow: none;
   text-shadow: none;
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
-  -webkit-transform: rotateZ(-45deg);
-  -o-transform: rotateZ(-45deg);
-  transform: rotateZ(-45deg);
-  -webkit-transform-origin: 50% 50% 0;
-  -o-transform-origin: 50% 50% 0;
-  transform-origin: 50% 50% 0;
 }
 
 .field--name-bp-width .form-type-radio input,
@@ -98,8 +90,8 @@
 .field--name-text-and-image-style .form-type--radio input,
 .field--name-field-image-position .form-type-radio input,
 .field--name-field-image-position .form-type--radio input {
-  visibility: hidden;
   position: absolute;
+  visibility: hidden;
 }
 
 .field--name-bp-width .form-type-radio input:checked + label,
@@ -114,7 +106,6 @@
 .field--name-text-and-image-style .form-type--radio input:checked + label,
 .field--name-field-image-position .form-type-radio input:checked + label,
 .field--name-field-image-position .form-type--radio input:checked + label {
-  -webkit-filter: invert(25%) sepia(0.9);
   filter: invert(25%) sepia(0.9);
 }
 
@@ -130,20 +121,18 @@
 .field--name-text-and-image-style .form-type--radio label,
 .field--name-field-image-position .form-type-radio label,
 .field--name-field-image-position .form-type--radio label {
-  cursor: pointer !important;
-  font-size: 75%;
-  text-align: center;
   position: relative !important;
   display: inline-block !important;
+  float: left !important;
   min-width: 50px !important;
   height: 20px !important;
-  float: left !important;
   margin: 10px 10px 10px 0 !important;
-  padding: 40px 0px 0 !important;
-  white-space: nowrap;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
+  padding: 40px 0 0 !important;
+  cursor: pointer !important;
   transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 75%;
 }
 
 .field--name-bp-width .form-type-radio label:after,
@@ -158,19 +147,19 @@
 .field--name-text-and-image-style .form-type--radio label:after,
 .field--name-field-image-position .form-type-radio label:after,
 .field--name-field-image-position .form-type--radio label:after {
-  content: '';
-  display: table;
   position: absolute;
-  top: 3px;
-  left: 0;
-  right: 0px;
-  bottom: 0;
   z-index: 1;
-  font-size: 20px !important;
-  text-align: center;
-  vertical-align: middle;
+  top: 3px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: table;
   width: 100%;
   height: 100%;
+  content: "";
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px !important;
 }
 
 .field--name-bp-width .form-type-radio label:hover,
@@ -201,8 +190,8 @@
 .field--name-bp-width .form-type--radio label.option.paragraph--width--full,
 .field--name-bp-width .form-type--radio label.option.bg-edge2edge {
   background-image: none;
-  background-position: top center;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .field--name-bp-width .form-type-radio label.option.paragraph--width--tiny,
@@ -240,8 +229,8 @@
 .field--name-bp-gutter .form-type--radio label.option.gutter-0,
 .field--name-bp-gutter .form-type--radio label.option.gutter-1 {
   background-image: none;
-  background-position: top center;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .field--name-bp-gutter .form-type-radio label.option.gutter-0,
@@ -267,8 +256,8 @@
 .field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--66-16-16,
 .field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--16-16-66 {
   background-image: none;
-  background-position: top center;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-50-25,
@@ -310,8 +299,8 @@
 .field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--25-75,
 .field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--33-66 {
   background-image: none;
-  background-position: top center;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--75-25,
@@ -345,8 +334,8 @@
 .field--name-text-and-image-style .form-type--radio label.option.paragraph--style--25-75,
 .field--name-text-and-image-style .form-type--radio label.option.paragraph--style--33-66 {
   background-image: none;
-  background-position: top center;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--50-50,
@@ -379,8 +368,8 @@
 .field--name-field-image-position .form-type--radio label.option.right,
 .field--name-field-image-position .form-type--radio label.option.left {
   background-image: none;
-  background-position: top center;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .field--name-field-image-position .form-type-radio label.option.right,
@@ -424,8 +413,8 @@
 [dir=rtl] .field--name-text-and-image-style .form-type--radio label._none:after,
 [dir=rtl] .field--name-field-image-position .form-type-radio label._none:after,
 [dir=rtl] .field--name-field-image-position .form-type--radio label._none:after {
-  left: 0;
   right: -5px;
+  left: 0;
 }
 
 .paragraph--view-mode--preview .field--name-bp-image-field img {
@@ -433,7 +422,7 @@
 }
 
 .paragraph-type-add-modal input.paragraph-type-add-modal-button:hover {
-  color: #000000;
+  color: #000;
 }
 
 input.paragraph-type-add-modal-button,
@@ -450,7 +439,7 @@ input .widget {
 }
 
 .paragraphs-subform .paragraph-type-top {
-  top: 0px;
+  top: 0;
 }
 
 .paragraphs-previewer.button {

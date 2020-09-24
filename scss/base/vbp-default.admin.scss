@@ -1,8 +1,4 @@
 // bp background colour field at the admin.
-// -----------------------------------------------------------------------------
-@import "../../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
-// -----------------------------------------------------------------------------
-
 .field--name-bp-background {
   .form-type-radio,
   .form-type--radio {
@@ -21,10 +17,10 @@
       font-size: 0.00001px;
       position: relative !important;
       display: inline-block !important;
-      width: 1.5625rem !important;
-      height: 1.5625rem !important;
+      width: 25px !important;
+      height: 25px!important;
       float: left !important;
-      @include margin(0.625rem 0.625rem 0.625rem 0 !important);
+      margin: 10px 10px 10px 0 !important;
       padding : 0 !important;
       white-space: nowrap;
 
@@ -32,12 +28,12 @@
         content: 'a';
         display: table;
         position: absolute;
-        top: 0.1875rem;
+        top: 3px;
         left: 0;
-        right: 0;
+        right: 0px;
         bottom: 0;
         z-index: 1;
-        @include font-size(1.25rem !important);
+        font-size: 20px !important;
         text-align: center;
         vertical-align: middle;
         width: 100%;
@@ -58,14 +54,14 @@
           box-sizing: content-box;
           float: none;
           z-index: auto;
-          width: 2.1875rem;
-          height: 0.125rem;
+          width: 35px;
+          height: 2px;
           position: absolute;
           content: "";
           cursor: pointer !important;
           opacity: 1;
-          top: 0.75rem;
-          left: -0.3125rem;
+          top: 12px;
+          left: -5px;
           right: 0;
           bottom: 0;
           margin: 0;
@@ -113,11 +109,11 @@
       text-align: center;
       position: relative !important;
       display: inline-block !important;
-      min-width: 3.125rem !important;
-      height: 1.25rem !important;
+      min-width: 50px !important;
+      height: 20px !important;
       float: left !important;
-      @include margin(0.625rem 0.625rem 0.625rem 0 !important);
-      @include padding(2.5 0 0 !important);
+      margin: 10px 10px 10px 0 !important;
+      padding: 40px 0px 0 !important;
       white-space: nowrap;
       -webkit-transition: opacity 0.3s ease-in-out;
       -moz-transition: opacity 0.3s ease-in-out;
@@ -127,12 +123,12 @@
         content: '';
         display: table;
         position: absolute;
-        top: 0.1875rem;
+        top: 3px;
         left: 0;
-        right: 0;
+        right: 0px;
         bottom: 0;
         z-index: 1;
-        @include font-size(1.25rem !important);
+        font-size: 20px !important;
         text-align: center;
         vertical-align: middle;
         width: 100%;
@@ -368,7 +364,7 @@
       &._none {
         &:after {
           left: 0;
-          right: -0.3125rem;
+          right: -5px;
         }
       }
     }
@@ -392,7 +388,7 @@
 input {
   &.paragraph-type-add-modal-button,
   .widget {
-    @include padding-left(0.625rem !important);
+    padding-left: 10px !important;
   }
 }
 
@@ -406,7 +402,7 @@ input {
 
 .paragraphs-subform {
   .paragraph-type-top {
-    top: 0;
+    top: 0px;
   }
 }
 
@@ -425,7 +421,7 @@ input {
 .paragraphs-tabs-wrapper {
   .form-item {
     .clearfix {
-      @include margin-top(0.625rem);
+      margin-top: 10px;
     }
   }
 }

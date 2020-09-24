@@ -3,6 +3,7 @@
 @import "../../node_modules/bootstrap/scss/functions"; // Bootstrap functions.
 @import "../../node_modules/bootstrap/scss/mixins";    // Bootstrap mixins.
 @import "../../node_modules/bootstrap/scss/variables"; // Bootstrap variables.
+@import "../../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
 // -----------------------------------------------------------------------------
 
 // Add display so color shows.
@@ -12,13 +13,13 @@
 
 // Adds padding to fill in color.
 .paragraph.paragraph--color > .paragraph__column {
-  padding-top: $jumbotron-padding;
-  padding-bottom: $jumbotron-padding;
+  @include padding-top($jumbotron-padding);
+  @include padding-bottom($jumbotron-padding);
 }
 
 // Fills color on colorless .paragraph__column after color .paragraph__column.
 .paragraph.paragraph--color + .paragraph > .paragraph__column {
-  padding-top: $jumbotron-padding;
+  @include padding-top($jumbotron-padding);
 }
 
 // Background colours;

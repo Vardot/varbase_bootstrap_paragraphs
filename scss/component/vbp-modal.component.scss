@@ -1,9 +1,11 @@
 // Modal Paragraph.
 // .paragraph--bp-modal.html.twig
 // -----------------------------------------------------------------------------
+@import "../../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
+// -----------------------------------------------------------------------------
 
 .paragraph--type--bp-modal {
-  padding: 10px;
+  @include padding(0.625rem);
 }
 
 .paragraph--type--bp-modal {
@@ -17,7 +19,7 @@
 .modal {
 
   .modal-header {
-    padding: 15px 30px;
+    @include padding(0.9375rem 1.875rem);
   }
 
   .modal-title {
@@ -34,6 +36,6 @@
     margin-right: 0;
     width: 100%;
     position: initial;
-    padding: 15px 30px 15px 30px;
+    @include padding(0.9375rem 1.875rem 0.9375rem 1.875rem);
   }
 }

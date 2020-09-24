@@ -3,12 +3,30 @@
 }
 
 .paragraph.paragraph--color > .paragraph__column {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: calc(1.325rem + 0.9vw);
+  padding-bottom: calc(1.325rem + 0.9vw);
+}
+
+@media (min-width: 1200px) {
+  .paragraph.paragraph--color > .paragraph__column {
+    padding-top: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .paragraph.paragraph--color > .paragraph__column {
+    padding-bottom: 2rem;
+  }
 }
 
 .paragraph.paragraph--color + .paragraph > .paragraph__column {
-  padding-top: 2rem;
+  padding-top: calc(1.325rem + 0.9vw);
+}
+
+@media (min-width: 1200px) {
+  .paragraph.paragraph--color + .paragraph > .paragraph__column {
+    padding-top: 2rem;
+  }
 }
 
 .vbp_color_01 {

@@ -1,5 +1,5 @@
 .paragraph--type--bp-modal {
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .paragraph--type--bp-modal .btn.btn-modal {
@@ -9,7 +9,13 @@
 }
 
 .modal .modal-header {
-  padding: 15px 30px;
+  padding: 0.9375rem calc(1.3125rem + 0.75vw);
+}
+
+@media (min-width: 1200px) {
+  .modal .modal-header {
+    padding: 0.9375rem 1.875rem;
+  }
 }
 
 .modal .modal-title {
@@ -26,5 +32,12 @@
   width: 100%;
   margin-right: 0;
   margin-left: 0;
-  padding: 15px 30px 15px 30px;
+  padding: 0.9375rem calc(1.3125rem + 0.75vw) 0.9375rem calc(1.3125rem + 0.75vw);
+}
+
+@media (min-width: 1200px) {
+  .modal .modal-body .paragraph,
+  .modal .modal-footer .paragraph {
+    padding: 0.9375rem 1.875rem 0.9375rem 1.875rem;
+  }
 }

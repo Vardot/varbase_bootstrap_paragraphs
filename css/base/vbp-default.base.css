@@ -4,7 +4,13 @@
 }
 
 .paragraph > .paragraph__column {
-  padding-bottom: 2rem;
+  padding-bottom: calc(1.325rem + 0.9vw);
+}
+
+@media (min-width: 1200px) {
+  .paragraph > .paragraph__column {
+    padding-bottom: 2rem;
+  }
 }
 
 .paragraph > .paragraph__column .paragraph > .paragraph__column {
@@ -48,8 +54,8 @@
 .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
   position: relative;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
 }
 
 @media (min-width: 768px) {
@@ -74,7 +80,13 @@
 }
 
 .paragraph__column {
-  padding: 0 25px;
+  padding: 0 calc(1.28125rem + 0.375vw);
+}
+
+@media (min-width: 1200px) {
+  .paragraph__column {
+    padding: 0 1.5625rem;
+  }
 }
 
 .paragraph--type--bp-carousel .paragraph:last-of-type > .paragraph__column {

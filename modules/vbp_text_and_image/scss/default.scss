@@ -2,10 +2,11 @@
 @import "../node_modules/bootstrap/scss/functions"; // Bootstrap functions.
 @import "../node_modules/bootstrap/scss/mixins";    // Bootstrap mixins.
 @import "../node_modules/bootstrap/scss/variables"; // Bootstrap variables.
+@import "../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
 // -----------------------------------------------------------------------------
 
 .row {
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
 }
 
 @media screen and (min-width: map-get($grid-breakpoints, "xl")) {
@@ -19,18 +20,18 @@
     display: flex;
   }
   .align2left.wrapper {
-    padding-left: 35px;
+    @include padding-left(2.1875rem);
   }
 }
 
 @media screen and (min-width: map-get($grid-breakpoints, "xl")) {
   .paragraph--type--text-and-image {
-    margin-bottom: 20px;
+    @include margin-bottom(1.25rem);
     text-align: center;
   }
   .paragraph--type--text-and-image > .row {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 

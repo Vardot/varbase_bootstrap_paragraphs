@@ -3,6 +3,7 @@
 @import "../../node_modules/bootstrap/scss/functions"; // Bootstrap functions.
 @import "../../node_modules/bootstrap/scss/mixins";    // Bootstrap mixins.
 @import "../../node_modules/bootstrap/scss/variables"; // Bootstrap variables.
+@import "../../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
 // -----------------------------------------------------------------------------
 
 .paragraph {
@@ -11,7 +12,7 @@
 
   > {
     .paragraph__column {
-      padding-bottom: $jumbotron-padding;
+      @include padding-bottom($jumbotron-padding);
       
       .paragraph {
         > {
@@ -33,8 +34,8 @@
         > {
           .paragraph {
             width: 100%;
-            margin-right: 0px;
-            margin-left: 0px;
+            margin-right: 0;
+            margin-left: 0;
             left: 0;
             right: 0;
           }
@@ -48,8 +49,8 @@
               > {
                 .paragraph {
                   width: 100%;
-                  margin-right: 0px;
-                  margin-left: 0px;
+                  margin-right: 0;
+                  margin-left: 0;
                   left: 0;
                   right: 0;
                 }
@@ -84,8 +85,8 @@
     .paragraph--type--bp-columns__5col {
       position: relative;
       min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
+      @include padding-left(0.9375rem);
+      @include padding-right(0.9375rem);
 
       @media (min-width: 768px) {
         float: left;
@@ -107,7 +108,7 @@
 }
 
 .paragraph__column {
-  padding: 0 25px;
+  @include padding(0 1.5625rem);
 }
 
 .paragraph--type--bp-carousel {

@@ -1,11 +1,13 @@
 // Tabs Paragraph.
 // .paragraph--bp-tabs.html.twig
 // -----------------------------------------------------------------------------
+@import "../../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
+// -----------------------------------------------------------------------------
 
 .paragraph {
   &.paragraph--type--bp-tabs {
     .tab-content .paragraph > .paragraph__column {
-      padding-top: 15px;
+      @include padding-top(0.9375rem);
     }
   }
 }

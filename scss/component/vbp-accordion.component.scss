@@ -2,9 +2,11 @@
 // paragraph--bp-accordion.html.twig
 // Adds margin and padding to paragraphs in accordion Section bodies.
 // -----------------------------------------------------------------------------
+@import "../../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
+// -----------------------------------------------------------------------------
 
 .collapse.in {
   .paragraph {
-    padding-bottom: 20px;
+    @include padding-bottom(1.25rem);
   }
 }

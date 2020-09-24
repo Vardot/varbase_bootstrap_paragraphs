@@ -14,9 +14,9 @@
   position: relative !important;
   display: inline-block !important;
   float: left !important;
-  width: 25px !important;
-  height: 25px !important;
-  margin: 10px 10px 10px 0 !important;
+  width: 1.5625rem !important;
+  height: 1.5625rem !important;
+  margin: 0.625rem 0.625rem 0.625rem 0 !important;
   padding: 0 !important;
   cursor: pointer !important;
   white-space: nowrap;
@@ -28,7 +28,7 @@
 .field--name-bp-background .form-type--radio label:after {
   position: absolute;
   z-index: 1;
-  top: 3px;
+  top: 0.1875rem;
   right: 0;
   bottom: 0;
   left: 0;
@@ -38,7 +38,7 @@
   content: "a";
   text-align: center;
   vertical-align: middle;
-  font-size: 20px !important;
+  font-size: 1.25rem !important;
 }
 
 .field--name-bp-background .form-type-radio label:hover,
@@ -55,15 +55,15 @@
 .field--name-bp-background .form-type--radio label._none:after {
   position: absolute;
   z-index: auto;
-  top: 12px;
+  top: 0.75rem;
   right: 0;
   bottom: 0;
-  left: -5px;
+  left: -0.3125rem;
   display: inline-block;
   float: none;
   box-sizing: content-box;
-  width: 35px;
-  height: 2px;
+  width: 2.1875rem;
+  height: 0.125rem;
   margin: 0;
   padding: 0;
   content: "";
@@ -124,10 +124,10 @@
   position: relative !important;
   display: inline-block !important;
   float: left !important;
-  min-width: 50px !important;
-  height: 20px !important;
-  margin: 10px 10px 10px 0 !important;
-  padding: 40px 0 0 !important;
+  min-width: 3.125rem !important;
+  height: 1.25rem !important;
+  margin: 0.625rem 0.625rem 0.625rem 0 !important;
+  padding: 2.5 0 0 !important;
   cursor: pointer !important;
   transition: opacity 0.3s ease-in-out;
   text-align: center;
@@ -149,7 +149,7 @@
 .field--name-field-image-position .form-type--radio label:after {
   position: absolute;
   z-index: 1;
-  top: 3px;
+  top: 0.1875rem;
   right: 0;
   bottom: 0;
   left: 0;
@@ -159,7 +159,7 @@
   content: "";
   text-align: center;
   vertical-align: middle;
-  font-size: 20px !important;
+  font-size: 1.25rem !important;
 }
 
 .field--name-bp-width .form-type-radio label:hover,
@@ -413,7 +413,7 @@
 [dir=rtl] .field--name-text-and-image-style .form-type--radio label._none:after,
 [dir=rtl] .field--name-field-image-position .form-type-radio label._none:after,
 [dir=rtl] .field--name-field-image-position .form-type--radio label._none:after {
-  right: -5px;
+  right: -0.3125rem;
   left: 0;
 }
 
@@ -427,7 +427,7 @@
 
 input.paragraph-type-add-modal-button,
 input .widget {
-  padding-left: 10px !important;
+  padding-left: 0.625rem !important;
 }
 
 .paragraphs-collapsed-description {
@@ -452,5 +452,5 @@ input .widget {
 }
 
 .paragraphs-tabs-wrapper .form-item .clearfix {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }

@@ -1,7 +1,7 @@
 {
   "name": "vbp_text_and_image",
   "private": true,
-  "version": "8.7.0",
+  "version": "9.0.0",
   "description": "Varbase Bootstrap Paragraphs Text and Image",
   "main": "index.js",
   "scripts": {

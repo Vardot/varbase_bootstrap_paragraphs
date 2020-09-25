@@ -1,7 +1,7 @@
 {
   "name": "varbase_bootstrap_paragraphs",
   "private": true,
-  "version": "8.7.0",
+  "version": "9.0.0",
   "description": "Varbase Bootstrap Paragraphs",
   "main": "index.js",
   "scripts": {

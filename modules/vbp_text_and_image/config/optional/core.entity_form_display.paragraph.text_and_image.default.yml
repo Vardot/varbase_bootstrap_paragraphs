@@ -59,7 +59,7 @@ third_party_settings:
       children:
         - field_text_content
       parent_name: group_components
-      weight: 9
+      weight: 11
       format_type: tab
       format_settings:
         id: ''
@@ -73,7 +73,7 @@ third_party_settings:
       children:
         - field_image
       parent_name: group_components
-      weight: 10
+      weight: 12
       format_type: tab
       format_settings:
         id: ''

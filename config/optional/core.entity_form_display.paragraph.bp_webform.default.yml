@@ -112,6 +112,7 @@ content:
     region: content
     settings:
       default_data: true
+      webforms: {  }
     third_party_settings: {  }
   bp_width:
     weight: 24

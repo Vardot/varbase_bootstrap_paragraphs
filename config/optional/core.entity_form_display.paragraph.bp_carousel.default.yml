@@ -28,7 +28,6 @@ third_party_settings:
       weight: 4
       format_type: details
       format_settings:
-        label: 'Styling settings'
         required_fields: true
         id: styling-settings
         classes: ''
@@ -43,7 +42,6 @@ third_party_settings:
       weight: 0
       format_type: details
       format_settings:
-        label: 'Component title'
         description: ''
         id: ''
         classes: ''
@@ -89,8 +87,9 @@ content:
       closed_mode: summary
       autocollapse: none
       features:
-        duplicate: duplicate
         collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+      closed_mode_threshold: 0
     third_party_settings: {  }
     region: content
   bp_slide_interval:

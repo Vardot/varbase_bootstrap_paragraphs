@@ -24,6 +24,10 @@ content:
       default_paragraph_type: _none
       closed_mode: summary
       autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   bp_accordion_section_title:

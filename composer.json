@@ -55,7 +55,7 @@
         "Issue #2924774: Let Editors add/delete/clone paragraphs When [Editing a translation]":
         "https://www.drupal.org/files/issues/2018-06-03/2924774-29.patch",
         "Issue #3138609: Fixe Field group support broken":
-        "https://www.drupal.org/files/issues/2020-05-25/3138609-9.patch"
+        "https://www.drupal.org/files/issues/2020-06-03/3138609-24.patch"
       },
       "drupal/paragraphs_previewer": {
         "Issue #2904917: Make paragraph previewer work with new UI/UX improvement patch":

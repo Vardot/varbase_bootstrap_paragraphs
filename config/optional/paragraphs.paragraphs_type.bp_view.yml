@@ -9,5 +9,5 @@ third_party_settings:
 id: bp_view
 label: View
 icon_uuid: null
-description: ''
-behavior_plugins: {  }
+description: ""
+behavior_plugins: {}

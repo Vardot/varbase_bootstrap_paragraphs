@@ -11,14 +11,14 @@ id: paragraph.bp_accordion.bp_accordion_section
 field_name: bp_accordion_section
 entity_type: paragraph
 bundle: bp_accordion
-label: 'Accordion section'
-description: ''
+label: "Accordion section"
+description: ""
 required: false
 translatable: false
-default_value: {  }
-default_value_callback: ''
+default_value: {}
+default_value_callback: ""
 settings:
-  handler: 'default:paragraph'
+  handler: "default:paragraph"
   handler_settings:
     negate: 0
     target_bundles:

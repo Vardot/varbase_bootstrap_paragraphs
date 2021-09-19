@@ -10,11 +10,11 @@ id: paragraph.bp_tabs.bp_background
 field_name: bp_background
 entity_type: paragraph
 bundle: bp_tabs
-label: 'Background color'
-description: ''
+label: "Background color"
+description: ""
 required: false
 translatable: true
-default_value: {  }
-default_value_callback: ''
-settings: {  }
+default_value: {}
+default_value_callback: ""
+settings: {}
 field_type: list_string

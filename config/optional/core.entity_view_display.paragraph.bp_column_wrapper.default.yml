@@ -19,14 +19,14 @@ content:
     label: hidden
     settings:
       view_mode: default
-      link: ''
+      link: ""
     third_party_settings:
       ds:
-        ds_limit: ''
+        ds_limit: ""
         ft:
           id: default
           settings:
-            lb: ''
+            lb: ""
             lb-col: false
-            classes: {  }
-hidden: {  }
+            classes: {}
+hidden: {}

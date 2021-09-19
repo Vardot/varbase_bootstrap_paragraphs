@@ -21,14 +21,14 @@ id: paragraph.bp_modal.bp_modal_footer
 field_name: bp_modal_footer
 entity_type: paragraph
 bundle: bp_modal
-label: 'Modal footer'
-description: ''
+label: "Modal footer"
+description: ""
 required: false
 translatable: false
-default_value: {  }
-default_value_callback: ''
+default_value: {}
+default_value_callback: ""
 settings:
-  handler: 'default:paragraph'
+  handler: "default:paragraph"
   handler_settings:
     negate: 0
     target_bundles:

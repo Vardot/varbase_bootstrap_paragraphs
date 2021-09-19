@@ -8,11 +8,11 @@ id: paragraph.bp_text
 field_name: bp_text
 entity_type: paragraph
 type: text_long
-settings: {  }
+settings: {}
 module: text
 locked: false
 cardinality: 1
 translatable: true
-indexes: {  }
+indexes: {}
 persist_with_no_fields: false
 custom_storage: false

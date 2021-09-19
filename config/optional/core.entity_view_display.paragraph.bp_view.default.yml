@@ -23,8 +23,8 @@ content:
   bp_background:
     weight: 4
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     type: list_key
     region: content
   bp_classes:
@@ -32,7 +32,7 @@ content:
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: string
     region: content
   bp_gutter:
@@ -40,9 +40,9 @@ content:
     label: hidden
     settings:
       format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
+      format_custom_false: ""
+      format_custom_true: ""
+    third_party_settings: {}
     type: boolean
     region: content
   bp_image_field:
@@ -51,7 +51,7 @@ content:
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: entity_reference_entity_view
     region: content
   bp_title:
@@ -59,7 +59,7 @@ content:
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: string
     region: content
   bp_title_status:
@@ -67,16 +67,16 @@ content:
     label: hidden
     settings:
       format: true-false
-      format_custom_true: ''
-      format_custom_false: ''
+      format_custom_true: ""
+      format_custom_false: ""
     third_party_settings:
       ds:
         ft:
           id: default
           settings:
-            lb: ''
+            lb: ""
             lb-col: false
-            classes: {  }
+            classes: {}
     type: boolean
     region: content
   bp_view:
@@ -85,14 +85,14 @@ content:
     settings:
       plugin_types:
         - block
-    third_party_settings: {  }
+    third_party_settings: {}
     type: viewsreference_formatter
     region: content
   bp_width:
     weight: 3
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     type: list_key
     region: content
 hidden:

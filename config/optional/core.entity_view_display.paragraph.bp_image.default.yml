@@ -25,14 +25,14 @@ content:
     weight: 5
     region: content
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
   bp_classes:
     weight: 6
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: string
     region: content
   bp_gutter:
@@ -40,9 +40,9 @@ content:
     label: hidden
     settings:
       format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
+      format_custom_false: ""
+      format_custom_true: ""
+    third_party_settings: {}
     type: boolean
     region: content
   bp_image_field:
@@ -53,7 +53,7 @@ content:
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
+    third_party_settings: {}
   bp_link:
     type: link
     weight: 4
@@ -63,15 +63,15 @@ content:
       trim_length: 80
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
+      rel: ""
+      target: ""
+    third_party_settings: {}
   bp_title:
     weight: 0
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: string
     region: content
   bp_title_status:
@@ -79,16 +79,16 @@ content:
     label: hidden
     settings:
       format: true-false
-      format_custom_true: ''
-      format_custom_false: ''
+      format_custom_true: ""
+      format_custom_false: ""
     third_party_settings:
       ds:
         ft:
           id: default
           settings:
-            lb: ''
+            lb: ""
             lb-col: false
-            classes: {  }
+            classes: {}
     type: boolean
     region: content
   bp_width:
@@ -96,6 +96,6 @@ content:
     weight: 3
     region: content
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+    settings: {}
+    third_party_settings: {}
+hidden: {}

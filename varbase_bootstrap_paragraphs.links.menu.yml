@@ -1,5 +1,5 @@
 varbase_bootstrap_paragraphs.settings:
-  title: 'Varbase Bootstrap Paragraphs settings'
-  description: 'Configuring Varbase Bootstrap Paragraphs.'
+  title: "Varbase Bootstrap Paragraphs settings"
+  description: "Configuring Varbase Bootstrap Paragraphs."
   parent: varbase_core.settings_index
   route_name: varbase_bootstrap_paragraphs.settings

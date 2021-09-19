@@ -27,30 +27,30 @@ third_party_settings:
         - bp_background
         - bp_image_field
         - bp_classes
-      parent_name: ''
+      parent_name: ""
       weight: 3
       format_type: details
       format_settings:
         required_fields: true
         id: styling-settings
-        classes: ''
+        classes: ""
         open: false
-      label: 'Styling settings'
+      label: "Styling settings"
       region: content
     group_title:
       children:
         - bp_title
         - bp_title_status
-      parent_name: ''
+      parent_name: ""
       weight: 0
       format_type: details
       format_settings:
-        description: ''
-        id: ''
-        classes: ''
+        description: ""
+        id: ""
+        classes: ""
         required_fields: false
         open: false
-      label: 'Component title'
+      label: "Component title"
       region: content
 id: paragraph.bp_accordion.default
 targetEntityType: paragraph
@@ -66,33 +66,33 @@ content:
       edit_mode: closed
       add_mode: modal
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: ""
       closed_mode: summary
       autocollapse: none
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
       closed_mode_threshold: 0
-    third_party_settings: {  }
+    third_party_settings: {}
     region: content
   bp_background:
     type: options_buttons
     weight: 27
     region: content
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
   bp_classes:
     weight: 29
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      placeholder: ""
+    third_party_settings: {}
     type: string_textfield
     region: content
   bp_gutter:
     weight: 26
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     type: options_buttons
     region: content
   bp_image_field:
@@ -100,19 +100,19 @@ content:
     weight: 28
     region: content
     settings:
-      media_types: {  }
+      media_types: {}
     third_party_settings:
       media_library_edit:
-        show_edit: '1'
+        show_edit: "1"
   bp_title:
     weight: 1
     settings:
       size: 60
-      placeholder: ''
+      placeholder: ""
     third_party_settings:
       maxlength:
         maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_label: "Content limited to @limit characters, remaining: <strong>@remaining</strong>"
       advanced_text_formatter:
         show_token_tree: 0
     type: string_textfield
@@ -121,15 +121,15 @@ content:
     weight: 2
     settings:
       display_label: true
-    third_party_settings: {  }
+    third_party_settings: {}
     type: boolean_checkbox
     region: content
   bp_width:
     type: options_buttons
     weight: 25
     region: content
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
 hidden:
   created: true
   status: true

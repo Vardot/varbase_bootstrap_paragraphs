@@ -1,7 +1,7 @@
 varbase_bootstrap_paragraphs.settings:
-  path: '/admin/config/varbase/varbase-bootstrap-paragraphs'
+  path: "/admin/config/varbase/varbase-bootstrap-paragraphs"
   defaults:
     _form: '\Drupal\varbase_bootstrap_paragraphs\Form\VarbaseBootstrapParagraphsSettingsForm'
-    _title: 'Varbase Bootstrap Paragraphs settings'
+    _title: "Varbase Bootstrap Paragraphs settings"
   requirements:
-    _permission: 'administer varbase bootstrap paragraphs settings'
+    _permission: "administer varbase bootstrap paragraphs settings"

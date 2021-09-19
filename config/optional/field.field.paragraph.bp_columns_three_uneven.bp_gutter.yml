@@ -9,14 +9,13 @@ field_name: bp_gutter
 entity_type: paragraph
 bundle: bp_columns_three_uneven
 label: Gutter
-description: ''
+description: ""
 required: true
 translatable: true
 default_value:
-  -
-    value: 0
-default_value_callback: ''
+  - value: 0
+default_value_callback: ""
 settings:
-  on_label: 'With gutter'
-  off_label: 'Without gutter'
+  on_label: "With gutter"
+  off_label: "Without gutter"
 field_type: boolean

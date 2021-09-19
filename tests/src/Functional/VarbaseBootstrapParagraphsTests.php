@@ -15,62 +15,27 @@ class VarbaseBootstrapParagraphsTests extends BrowserTestBase {
   use StringTranslationTrait;
 
   /**
-   * Modules to install.
-   *
-   * @var array
+   * {@inheritdoc}
    */
-  public static $modules = [
-    'user',
-    'filter',
-    'toolbar',
-    'block',
-    'views',
-    'node',
-    'text',
-    'options',
-    'taxonomy',
-    'block_content',
-    'path',
-    'file',
-    'image',
-    'media',
-    'media_library',
-    'breakpoint',
-    'responsive_image',
-    'ds',
-    'ds_extras',
-    'better_exposed_filters',
-    'crop',
-    'dropzonejs_eb_widget',
-    'embed',
-    'entity_browser',
-    'entity_browser_enhanced',
-    'entity_browser_entity_form',
-    'entity_browser_generic_embed',
-    'entity_embed',
-    'focal_point',
-    'views_infinite_scroll',
-    'varbase_media',
-    'link',
-    'ckeditor',
-    'advanced_text_formatter',
-    'field_group',
-    'maxlength',
-    'webform',
-    'viewsreference',
-    'entity_reference_revisions',
-    'paragraphs',
-    'paragraphs_library',
-    'paragraphs_edit',
-    'varbase_bootstrap_paragraphs',
-  ];
+  protected $profile = 'standard';
 
   /**
-   * Specify the theme to be used in testing.
-   *
-   * @var string
+   * {@inheritdoc}
    */
-  protected $defaultTheme = 'bartik';
+  protected $defaultTheme = 'vartheme_bs4';
+
+  /**
+   * {@inheritdoc}
+   */
+  protected static $modules = [
+    'varbase_core',
+    'varbase_media',
+    'varbase_editor',
+    'varbase_admin',
+    'varbase_seo',
+    'varbase_workflow',
+    'varbase_bootstrap_paragraphs',
+  ];
 
   /**
    * {@inheritdoc}
@@ -78,33 +43,39 @@ class VarbaseBootstrapParagraphsTests extends BrowserTestBase {
   protected function setUp() {
     parent::setUp();
 
-    $this->drupalLogin($this->rootUser);
+    // Insall the Claro admin theme.
+    $this->container->get('theme_installer')->install(['claro']);
+
+    // Set the Claro theme as the default admin theme.
+    $this->config('system.theme')->set('admin', 'claro')->save();
   }
 
   /**
    * Check Varbase Bootstrap Paragraphs default paragraphs Types.
    */
   public function testCheckVarbaseBootstrapParagraphsCheckParagraphTypesPage() {
-    $assert_session = $this->assertSession();
+
+    // Given that the root super user was logged in to the site.
+    $this->drupalLogin($this->rootUser);
 
     $this->drupalGet('admin/structure/paragraphs_type');
 
-    $assert_session->pageTextContains($this->t('Paragraphs types'));
-    $assert_session->pageTextContains($this->t('Accordion'));
-    $assert_session->pageTextContains($this->t('Accordion Section'));
-    $assert_session->pageTextContains($this->t('Carousel'));
-    $assert_session->pageTextContains($this->t('Columns (Equal)'));
-    $assert_session->pageTextContains($this->t('Columns (Three Uneven)'));
-    $assert_session->pageTextContains($this->t('Columns (Two Uneven)'));
-    $assert_session->pageTextContains($this->t('Column Wrapper'));
-    $assert_session->pageTextContains($this->t('Drupal Block'));
-    $assert_session->pageTextContains($this->t('Image'));
-    $assert_session->pageTextContains($this->t('Modal'));
-    $assert_session->pageTextContains($this->t('Rich Text'));
-    $assert_session->pageTextContains($this->t('Tabs'));
-    $assert_session->pageTextContains($this->t('Tab Section'));
-    $assert_session->pageTextContains($this->t('View'));
-    $assert_session->pageTextContains($this->t('Webform'));
+    $this->assertSession()->pageTextContains($this->t('Paragraphs types'));
+    $this->assertSession()->pageTextContains($this->t('Accordion'));
+    $this->assertSession()->pageTextContains($this->t('Accordion Section'));
+    $this->assertSession()->pageTextContains($this->t('Carousel'));
+    $this->assertSession()->pageTextContains($this->t('Columns (Equal)'));
+    $this->assertSession()->pageTextContains($this->t('Columns (Three Uneven)'));
+    $this->assertSession()->pageTextContains($this->t('Columns (Two Uneven)'));
+    $this->assertSession()->pageTextContains($this->t('Column Wrapper'));
+    $this->assertSession()->pageTextContains($this->t('Drupal Block'));
+    $this->assertSession()->pageTextContains($this->t('Image'));
+    $this->assertSession()->pageTextContains($this->t('Modal'));
+    $this->assertSession()->pageTextContains($this->t('Rich Text'));
+    $this->assertSession()->pageTextContains($this->t('Tabs'));
+    $this->assertSession()->pageTextContains($this->t('Tab Section'));
+    $this->assertSession()->pageTextContains($this->t('View'));
+    $this->assertSession()->pageTextContains($this->t('Webform'));
 
   }
 
@@ -112,11 +83,13 @@ class VarbaseBootstrapParagraphsTests extends BrowserTestBase {
    * Check Varbase Bootstrap Paragraphs settings.
    */
   public function testCheckVarbaseBootstrapParagraphsSettings() {
-    $assert_session = $this->assertSession();
+
+    // Given that the root super user was logged in to the site.
+    $this->drupalLogin($this->rootUser);
 
     $this->drupalGet('/admin/config/varbase/varbase-bootstrap-paragraphs');
-    $assert_session->pageTextContains($this->t('Varbase Bootstrap Paragraphs settings'));
-    $assert_session->pageTextContains($this->t('Available CSS styles (classes) for Varbase Bootstrap Paragraphs'));
+    $this->assertSession()->pageTextContains($this->t('Varbase Bootstrap Paragraphs settings'));
+    $this->assertSession()->pageTextContains($this->t('Available CSS styles (classes) for Varbase Bootstrap Paragraphs'));
   }
 
 }

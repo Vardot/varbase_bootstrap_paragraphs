@@ -21,14 +21,14 @@ content:
       edit_mode: closed
       add_mode: modal
       form_display_mode: default
-    third_party_settings: {  }
+    third_party_settings: {}
     region: content
   bp_tab_section_title:
     weight: 0
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      placeholder: ""
+    third_party_settings: {}
     type: string_textfield
     region: content
 hidden:

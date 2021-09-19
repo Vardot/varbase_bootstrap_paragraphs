@@ -26,30 +26,30 @@ third_party_settings:
         - bp_gutter
         - bp_background
         - bp_classes
-      parent_name: ''
+      parent_name: ""
       weight: 5
       format_type: details
       format_settings:
         required_fields: true
         id: styling-settings
-        classes: ''
+        classes: ""
         open: false
-      label: 'Styling settings'
+      label: "Styling settings"
       region: content
     group_title:
       children:
         - bp_title
         - bp_title_status
-      parent_name: ''
+      parent_name: ""
       weight: 0
       format_type: details
       format_settings:
-        description: ''
-        id: ''
-        classes: ''
+        description: ""
+        id: ""
+        classes: ""
         required_fields: false
         open: false
-      label: 'Component title'
+      label: "Component title"
       region: content
 id: paragraph.bp_image.default
 targetEntityType: paragraph
@@ -60,20 +60,20 @@ content:
     type: options_buttons
     weight: 9
     region: content
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
   bp_classes:
     weight: 10
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      placeholder: ""
+    third_party_settings: {}
     type: string_textfield
     region: content
   bp_gutter:
     weight: 8
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     type: options_buttons
     region: content
   bp_image_field:
@@ -92,24 +92,24 @@ content:
         - video
     third_party_settings:
       media_library_edit:
-        show_edit: '1'
+        show_edit: "1"
   bp_link:
     type: link_default
     weight: 4
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
+      placeholder_url: ""
+      placeholder_title: ""
+    third_party_settings: {}
   bp_title:
     weight: 1
     settings:
       size: 60
-      placeholder: ''
+      placeholder: ""
     third_party_settings:
       maxlength:
         maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_label: "Content limited to @limit characters, remaining: <strong>@remaining</strong>"
       advanced_text_formatter:
         show_token_tree: 0
     type: string_textfield
@@ -118,15 +118,15 @@ content:
     weight: 2
     settings:
       display_label: true
-    third_party_settings: {  }
+    third_party_settings: {}
     type: boolean_checkbox
     region: content
   bp_width:
     type: options_buttons
     weight: 7
     region: content
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
 hidden:
   created: true
   status: true

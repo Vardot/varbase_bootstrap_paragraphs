@@ -5,7 +5,7 @@ vbp-default:
       css/base/vbp-default.base.css: {}
   dependencies:
     - core/jquery
-    
+
 # Varbase Bootstrap Paragraphs default admin styling.
 vbp-default-admin:
   css:

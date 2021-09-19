@@ -97,7 +97,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Prints div with classes, and content. #}
-<div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} {% if VBP.background_image.url %} style="background-image:url({{- VBP.background_image.url -}});" {% endif %}>
+<div{{ attributes.addClass(classes).setAttribute('id', paragraph_id) }} {% if VBP.background_image.url %} style="background-image: url({{- VBP.background_image.url -}});" {% endif %}>
   {% if add_container %}<div class="container">{% endif %}
     <div class="row">
       <div class="{{- VBP.bp_width.value -}}">

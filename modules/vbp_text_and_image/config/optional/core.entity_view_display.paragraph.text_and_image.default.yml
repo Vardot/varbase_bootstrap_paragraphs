@@ -26,8 +26,8 @@ content:
   bp_background:
     weight: 2
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     type: list_default
     region: content
   bp_classes:
@@ -37,15 +37,15 @@ content:
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
   bp_gutter:
     weight: 10
     label: above
     settings:
       format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
+      format_custom_false: ""
+      format_custom_true: ""
+    third_party_settings: {}
     type: boolean
     region: content
   bp_image_field:
@@ -53,7 +53,7 @@ content:
     label: above
     settings:
       link: true
-    third_party_settings: {  }
+    third_party_settings: {}
     type: entity_reference_label
     region: content
   bp_title:
@@ -61,7 +61,7 @@ content:
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: string
     region: content
   bp_title_status:
@@ -69,23 +69,23 @@ content:
     label: hidden
     settings:
       format: true-false
-      format_custom_true: ''
-      format_custom_false: ''
+      format_custom_true: ""
+      format_custom_false: ""
     third_party_settings:
       ds:
         ft:
           id: default
           settings:
-            lb: ''
+            lb: ""
             lb-col: false
-            classes: {  }
+            classes: {}
     type: boolean
     region: content
   bp_width:
     weight: 3
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     type: list_default
     region: content
   field_image:
@@ -94,21 +94,21 @@ content:
     settings:
       link: true
       view_mode: default
-    third_party_settings: {  }
+    third_party_settings: {}
     type: entity_reference_entity_view
     region: content
   field_image_position:
     weight: 5
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     type: list_default
     region: content
   field_text_content:
     weight: 6
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     type: text_default
     region: content
   text_and_image_style:
@@ -116,6 +116,6 @@ content:
     weight: 4
     region: content
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+    settings: {}
+    third_party_settings: {}
+hidden: {}

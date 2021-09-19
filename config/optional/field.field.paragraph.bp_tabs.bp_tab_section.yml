@@ -12,13 +12,13 @@ field_name: bp_tab_section
 entity_type: paragraph
 bundle: bp_tabs
 label: Tab
-description: ''
+description: ""
 required: false
 translatable: false
-default_value: {  }
-default_value_callback: ''
+default_value: {}
+default_value_callback: ""
 settings:
-  handler: 'default:paragraph'
+  handler: "default:paragraph"
   handler_settings:
     target_bundles:
       bp_tab_section: bp_tab_section

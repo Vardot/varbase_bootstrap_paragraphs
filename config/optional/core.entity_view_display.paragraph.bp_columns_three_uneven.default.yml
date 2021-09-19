@@ -26,14 +26,14 @@ content:
     weight: 5
     region: content
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
   bp_classes:
     weight: 7
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: string
     region: content
   bp_column_content_3:
@@ -42,24 +42,24 @@ content:
     label: hidden
     settings:
       view_mode: default
-      link: ''
-    third_party_settings: {  }
+      link: ""
+    third_party_settings: {}
     region: content
   bp_column_style_3:
     type: list_default
     weight: 3
     region: content
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
   bp_gutter:
     weight: 8
     label: hidden
     settings:
       format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
+      format_custom_false: ""
+      format_custom_true: ""
+    third_party_settings: {}
     type: boolean
     region: content
   bp_image_field:
@@ -70,13 +70,13 @@ content:
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
+    third_party_settings: {}
   bp_title:
     weight: 0
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     type: string
     region: content
   bp_title_status:
@@ -84,16 +84,16 @@ content:
     label: hidden
     settings:
       format: true-false
-      format_custom_true: ''
-      format_custom_false: ''
+      format_custom_true: ""
+      format_custom_false: ""
     third_party_settings:
       ds:
         ft:
           id: default
           settings:
-            lb: ''
+            lb: ""
             lb-col: false
-            classes: {  }
+            classes: {}
     type: boolean
     region: content
   bp_width:
@@ -101,8 +101,8 @@ content:
     weight: 4
     region: content
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
 hidden:
   created: true
   uid: true

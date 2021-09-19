@@ -8,11 +8,11 @@ id: paragraph.bp_modal.bp_classes
 field_name: bp_classes
 entity_type: paragraph
 bundle: bp_modal
-label: 'CSS class(es)'
-description: 'Customize the styling by adding CSS classes. Separate multiple classes by spaces.'
+label: "CSS class(es)"
+description: "Customize the styling by adding CSS classes. Separate multiple classes by spaces."
 required: false
 translatable: true
-default_value: {  }
-default_value_callback: ''
-settings: {  }
+default_value: {}
+default_value_callback: ""
+settings: {}
 field_type: string

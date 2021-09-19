@@ -8,11 +8,11 @@ id: paragraph.bp_tab_section.bp_tab_section_title
 field_name: bp_tab_section_title
 entity_type: paragraph
 bundle: bp_tab_section
-label: 'Tab name'
-description: ''
+label: "Tab name"
+description: ""
 required: true
 translatable: false
-default_value: {  }
-default_value_callback: ''
-settings: {  }
+default_value: {}
+default_value_callback: ""
+settings: {}
 field_type: string

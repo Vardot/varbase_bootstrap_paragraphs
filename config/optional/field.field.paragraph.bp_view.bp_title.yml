@@ -8,11 +8,11 @@ id: paragraph.bp_view.bp_title
 field_name: bp_title
 entity_type: paragraph
 bundle: bp_view
-label: 'Component title'
+label: "Component title"
 description: 'Fill in a title for this component to appear on the page, or just use it for editorial reference if you check the "Don''t show title on page" checkbox below.'
 required: false
 translatable: true
-default_value: {  }
-default_value_callback: ''
-settings: {  }
+default_value: {}
+default_value_callback: ""
+settings: {}
 field_type: string

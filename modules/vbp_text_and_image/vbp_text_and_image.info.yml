@@ -1,5 +1,5 @@
-name: 'Varbase Bootstrap Paragraphs Text and Image'
-description: 'Text and image paragraph type'
+name: "Varbase Bootstrap Paragraphs Text and Image"
+description: "Text and image paragraph type"
 type: module
 core_version_requirement: ^9
 package: Varbase

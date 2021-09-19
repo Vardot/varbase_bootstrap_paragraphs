@@ -10,29 +10,23 @@ entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
-    -
-      value: paragraph--width--tiny
+    - value: paragraph--width--tiny
       label: Tiny
-    -
-      value: paragraph--width--narrow
+    - value: paragraph--width--narrow
       label: Narrow
-    -
-      value: paragraph--width--medium
+    - value: paragraph--width--medium
       label: Medium
-    -
-      value: paragraph--width--wide
+    - value: paragraph--width--wide
       label: Wide
-    -
-      value: paragraph--width--full
-      label: 'Full width'
-    -
-      value: bg-edge2edge
-      label: 'Edge to Edge'
-  allowed_values_function: ''
+    - value: paragraph--width--full
+      label: "Full width"
+    - value: bg-edge2edge
+      label: "Edge to Edge"
+  allowed_values_function: ""
 module: options
 locked: false
 cardinality: 1
 translatable: true
-indexes: {  }
+indexes: {}
 persist_with_no_fields: false
 custom_storage: false

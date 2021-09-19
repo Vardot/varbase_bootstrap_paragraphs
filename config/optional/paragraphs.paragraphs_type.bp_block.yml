@@ -7,7 +7,7 @@ third_party_settings:
   paragraphs_library:
     allow_library_conversion: true
 id: bp_block
-label: 'Drupal Block'
+label: "Drupal Block"
 icon_uuid: null
-description: ''
-behavior_plugins: {  }
+description: ""
+behavior_plugins: {}

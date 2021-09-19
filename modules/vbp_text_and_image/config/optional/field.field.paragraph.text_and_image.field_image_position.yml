@@ -10,13 +10,12 @@ id: paragraph.text_and_image.field_image_position
 field_name: field_image_position
 entity_type: paragraph
 bundle: text_and_image
-label: 'Image position'
-description: ''
+label: "Image position"
+description: ""
 required: true
 translatable: false
 default_value:
-  -
-    value: right
-default_value_callback: ''
-settings: {  }
+  - value: right
+default_value_callback: ""
+settings: {}
 field_type: list_string

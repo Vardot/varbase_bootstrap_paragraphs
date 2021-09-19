@@ -9,19 +9,19 @@ id: paragraph.bp_modal.bp_image_field
 field_name: bp_image_field
 entity_type: paragraph
 bundle: bp_modal
-label: 'Background image'
-description: ''
+label: "Background image"
+description: ""
 required: false
 translatable: true
-default_value: {  }
-default_value_callback: ''
+default_value: {}
+default_value_callback: ""
 settings:
-  handler: 'default:media'
+  handler: "default:media"
   handler_settings:
     target_bundles:
       image: image
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: ""
 field_type: entity_reference

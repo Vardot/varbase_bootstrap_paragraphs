@@ -10,26 +10,21 @@ entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
-    -
-      value: vbp_color_01
+    - value: vbp_color_01
       label: Blue
-    -
-      value: vbp_color_02
+    - value: vbp_color_02
       label: Madison
-    -
-      value: vbp_color_03
-      label: 'Dark Gray'
-    -
-      value: vbp_color_04
-      label: 'Light Gray'
-    -
-      value: vbp_color_05
+    - value: vbp_color_03
+      label: "Dark Gray"
+    - value: vbp_color_04
+      label: "Light Gray"
+    - value: vbp_color_05
       label: Red
-  allowed_values_function: ''
+  allowed_values_function: ""
 module: options
 locked: false
 cardinality: 1
 translatable: true
-indexes: {  }
+indexes: {}
 persist_with_no_fields: false
 custom_storage: false

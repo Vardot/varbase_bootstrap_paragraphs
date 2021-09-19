@@ -7,7 +7,7 @@ third_party_settings:
   paragraphs_library:
     allow_library_conversion: true
 id: bp_columns_three_uneven
-label: 'Columns (Three Uneven)'
+label: "Columns (Three Uneven)"
 icon_uuid: null
-description: ''
-behavior_plugins: {  }
+description: ""
+behavior_plugins: {}

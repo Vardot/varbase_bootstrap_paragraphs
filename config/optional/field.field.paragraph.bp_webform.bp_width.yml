@@ -11,12 +11,11 @@ field_name: bp_width
 entity_type: paragraph
 bundle: bp_webform
 label: Width
-description: ''
+description: ""
 required: true
 translatable: true
 default_value:
-  -
-    value: paragraph--width--full
-default_value_callback: ''
-settings: {  }
+  - value: paragraph--width--full
+default_value_callback: ""
+settings: {}
 field_type: list_string

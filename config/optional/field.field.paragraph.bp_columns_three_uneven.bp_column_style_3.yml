@@ -10,13 +10,12 @@ id: paragraph.bp_columns_three_uneven.bp_column_style_3
 field_name: bp_column_style_3
 entity_type: paragraph
 bundle: bp_columns_three_uneven
-label: 'Column style'
-description: ''
+label: "Column style"
+description: ""
 required: true
 translatable: false
 default_value:
-  -
-    value: paragraph--style--25-50-25
-default_value_callback: ''
-settings: {  }
+  - value: paragraph--style--25-50-25
+default_value_callback: ""
+settings: {}
 field_type: list_string

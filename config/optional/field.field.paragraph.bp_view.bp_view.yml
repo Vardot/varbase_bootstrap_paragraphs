@@ -11,13 +11,13 @@ field_name: bp_view
 entity_type: paragraph
 bundle: bp_view
 label: View
-description: ''
+description: ""
 required: false
 translatable: false
-default_value: {  }
-default_value_callback: ''
+default_value: {}
+default_value_callback: ""
 settings:
-  handler: 'default:view'
+  handler: "default:view"
   handler_settings:
     target_bundles: null
     auto_create: 0

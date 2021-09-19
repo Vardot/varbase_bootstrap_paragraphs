@@ -21,7 +21,7 @@ third_party_settings:
       library: layout_discovery/onecol
       disable_css: false
       entity_classes: all_classes
-      settings: {  }
+      settings: {}
     regions:
       content:
         - bp_title
@@ -40,22 +40,22 @@ content:
         ft:
           id: expert
           settings:
-            lb: ''
-            prefix: ''
-            lbw-el: ''
-            lbw-cl: ''
-            lbw-at: ''
-            ow-el: ''
-            ow-cl: ''
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
+            lb: ""
+            prefix: ""
+            lbw-el: ""
+            lbw-cl: ""
+            lbw-at: ""
+            ow-el: ""
+            ow-cl: ""
+            ow-at: ""
+            fis-el: ""
+            fis-cl: ""
+            fis-at: ""
             fi: true
             fi-el: h5
-            fi-cl: ''
-            fi-at: ''
-            suffix: ''
+            fi-cl: ""
+            fi-at: ""
+            suffix: ""
             lbw: false
             lb-col: false
             ow: false

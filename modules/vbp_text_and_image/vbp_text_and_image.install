@@ -9,6 +9,7 @@ use Symfony\Component\Yaml\Yaml;
 use Drupal\Core\Config\InstallStorage;
 use Drupal\Core\Config\StorageInterface;
 use Drupal\Core\Config\FileStorage;
+use Vardot\Entity\EntityDefinitionUpdateManager;
 
 /**
  * Implements hook_install().
@@ -61,10 +62,17 @@ function vbp_text_and_image_install() {
       }
     }
   }
+
   // ---------------------------------------------------------------------------
   // Add target bundle [text and image] to landing page components
   // (landing page paragraphs field) without changing old configurations.
   _add_target_bundle_text_and_image_to_landing_page_components();
+
+  // Entity updates to clear up any mismatched entity and/or field definitions
+  // And Fix changes were detected in the entity type and field definitions.
+  \Drupal::classResolver()
+    ->getInstanceFromDefinition(EntityDefinitionUpdateManager::class)
+    ->applyUpdates();
 
 }
 

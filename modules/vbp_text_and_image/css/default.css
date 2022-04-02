@@ -6,34 +6,35 @@
   .align2right {
     float: right !important;
   }
+
   .align2left {
     float: left !important;
   }
+
   .paragraph.paragraph--type--text-and-image .row {
     display: flex;
   }
+
   .align2left.wrapper {
     padding-left: calc(1.34375rem + 1.125vw);
   }
 }
-
 @media screen and (min-width: 1200px) and (min-width: 1200px) {
   .align2left.wrapper {
     padding-left: 2.1875rem;
   }
 }
-
 @media screen and (min-width: 1200px) {
   .paragraph--type--text-and-image {
     margin-bottom: 1.25rem;
     text-align: center;
   }
+
   .paragraph--type--text-and-image > .row {
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
 }
-
 .wrapper {
   display: table;
   height: 100%;

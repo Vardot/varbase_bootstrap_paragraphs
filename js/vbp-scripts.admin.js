@@ -5,52 +5,52 @@
 
 (function ($, _, Drupal) {
   Drupal.behaviors.varbaseBootstrapParagraphsAdmin = {
-    attach: function () {
+    attach() {
       $(
-        ".field--name-bp-background.field--widget-options-buttons input:radio"
+        '.field--name-bp-background.field--widget-options-buttons input:radio',
       ).each(function () {
-        $(this).next("label").addClass($(this).val());
+        $(this).next('label').addClass($(this).val());
       });
 
-      $(".field--name-bp-width.field--widget-options-buttons input:radio").each(
+      $('.field--name-bp-width.field--widget-options-buttons input:radio').each(
         function () {
-          $(this).next("label").addClass($(this).val());
-        }
+          $(this).next('label').addClass($(this).val());
+        },
       );
 
       $(
-        ".field--name-bp-gutter.field--widget-options-buttons input:radio"
+        '.field--name-bp-gutter.field--widget-options-buttons input:radio',
       ).each(function () {
         $(this)
-          .next("label")
-          .addClass("gutter-" + $(this).val());
+          .next('label')
+          .addClass(`gutter-${$(this).val()}`);
       });
 
       $(
-        ".field--name-bp-column-style-3.field--widget-options-buttons input:radio"
+        '.field--name-bp-column-style-3.field--widget-options-buttons input:radio',
       ).each(function () {
-        $(this).next("label").addClass($(this).val());
+        $(this).next('label').addClass($(this).val());
       });
 
       $(
-        ".field--name-bp-column-style-2.field--widget-options-buttons input:radio"
+        '.field--name-bp-column-style-2.field--widget-options-buttons input:radio',
       ).each(function () {
-        $(this).next("label").addClass($(this).val());
+        $(this).next('label').addClass($(this).val());
       });
 
       $(
-        ".field--name-text-and-image-style.field--widget-options-buttons input:radio"
+        '.field--name-text-and-image-style.field--widget-options-buttons input:radio',
       ).each(function () {
-        $(this).next("label").addClass($(this).val());
+        $(this).next('label').addClass($(this).val());
       });
 
       $(
-        ".field--name-field-image-position.field--widget-options-buttons input:radio"
+        '.field--name-field-image-position.field--widget-options-buttons input:radio',
       ).each(function () {
-        $(this).next("label").addClass($(this).val());
+        $(this).next('label').addClass($(this).val());
       });
 
-      $(".paragraphs-tabs-wrapper .form-item .clearfix").show();
-    }
+      $('.paragraphs-tabs-wrapper .form-item .clearfix').show();
+    },
   };
 })(window.jQuery, window._, window.Drupal);

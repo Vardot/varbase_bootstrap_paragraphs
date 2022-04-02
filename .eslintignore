@@ -3,3 +3,6 @@
 **/node_modules
 drupalci.yml
 **/drupalci.yml
+modules/vbp_text_and_image/node_modules/
+modules/vbp_text_and_image/**/*.min.js
+modules/vbp_text_and_image/**/gulpfile.js

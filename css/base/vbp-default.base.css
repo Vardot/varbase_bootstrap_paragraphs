@@ -2,7 +2,6 @@
   margin-right: 0;
   margin-left: 0;
 }
-
 .paragraph > .paragraph__column {
   padding-bottom: calc(1.325rem + 0.9vw);
 }
@@ -12,15 +11,12 @@
     padding-bottom: 2rem;
   }
 }
-
 .paragraph > .paragraph__column .paragraph > .paragraph__column {
   float: none;
 }
-
 .paragraph > .paragraph__column .paragraph > .paragraph__column .paragraph > .paragraph__column {
   float: none;
 }
-
 .paragraph > .paragraph__column div > .paragraph {
   right: 0;
   left: 0;
@@ -28,7 +24,6 @@
   margin-right: 0;
   margin-left: 0;
 }
-
 .paragraph > .paragraph__column > .tab-content > .tab-pane > .paragraph {
   right: 0;
   left: 0;
@@ -36,21 +31,18 @@
   margin-right: 0;
   margin-left: 0;
 }
-
 .paragraph .paragraph .bg-edge2edge,
 .paragraph .paragraph.bg-edge2edge {
   position: initial;
   width: 100%;
   margin: 0;
 }
-
 .paragraph .paragraph .paragraph {
   position: initial;
   width: 100%;
   margin-right: 0;
   margin-left: 0;
 }
-
 .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
   position: relative;
   min-height: 1px;
@@ -64,7 +56,6 @@
     width: 20%;
   }
 }
-
 .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__6col {
   position: relative;
   width: 100%;
@@ -74,8 +65,8 @@
 
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__6col {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    flex: 0 0 16.66666667%;
+    max-width: 16.66666667%;
   }
 }
 
@@ -111,7 +102,6 @@
   margin-right: 0;
   margin-left: 0;
 }
-
 .modal .modal-footer .paragraph {
   position: initial;
   width: 100%;

@@ -17,15 +17,12 @@
     padding: 0.9375rem 1.875rem;
   }
 }
-
 .modal .modal-title {
   font-weight: bold;
 }
-
 .modal .modal-footer {
   text-align: left;
 }
-
 .modal .modal-body .paragraph,
 .modal .modal-footer .paragraph {
   position: initial;

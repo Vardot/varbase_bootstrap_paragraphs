@@ -106,3 +106,14 @@ function vbp_text_and_image_update_8001() {
 function vbp_text_and_image_update_8602() {
   _add_target_bundle_text_and_image_to_landing_page_components();
 }
+
+/**
+ * Issue #3272278: Switch to use the Module Installer Factory.
+ *
+ * In the Varbase Bootstrap Paragraphs Text and Image module.
+ */
+function vbp_text_and_image_update_90001() {
+  // Set the weight of the module after installation of list of modules.
+  // To make sure that any hook or event subscriber workes after all used modules.
+  ModuleInstallerFactory::setModuleWeightAfterInstallation('vbp_text_and_image');
+}

@@ -28,7 +28,7 @@ function varbase_bootstrap_paragraphs_install() {
     'entity_browser.browser.paragraphs_library_items',
   ];
 
-  ModuleInstallerFactory::importConfigsFromList('paragraphs_library', $forced_configs, InstallStorage::CONFIG_OPTIONAL_DIRECTORY);
+  ModuleInstallerFactory::importConfigsFromList('paragraphs_library', $paragraph_libraray_configs, InstallStorage::CONFIG_OPTIONAL_DIRECTORY);
 
   // Entity updates to clear up any mismatched entity and/or field definitions
   // And Fix changes were detected in the entity type and field definitions.

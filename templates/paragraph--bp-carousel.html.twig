@@ -110,7 +110,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {# Prints Carousel template. #}
 {{ content|without('bp_title', 'bp_title_status', 'bp_slide_content','bp_slide_interval', 'bp_width', 'bp_background', 'bp_classes', 'bp_gutter') }}
 <div{{ attributes.addClass(classes).setAttribute('id', paragraph_id).setAttribute('data-interval', slide_interval_classes).setAttribute('data-ride', 'carousel') }} {% if VBP.background_image.url %} style="background-image: url({{- VBP.background_image.url -}});" {% endif %}>
-  {% if paragraph_title and paragraph_title_status %}<h2 class="text-center">{% spaceless %}{{- paragraph_title|striptags -}}{% endspaceless %}</h2>{% endif %}
+  {% if paragraph_title and paragraph_title_status %}<h2 class="text-center">{% apply spaceless %}{{- paragraph_title|striptags -}}{% endapply %}</h2>{% endif %}
   {{ title_suffix }}
   {% if add_container %}<div class="container">{% endif %}
     <div class="row">

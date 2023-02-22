@@ -100,7 +100,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class
   {% if add_container %}<div class="container">{% endif %}
     <div class="row">
       <div class="{{- VBP.bp_width.value -}}">
-        {% if paragraph_title and paragraph_title_status %}<h2 class="text-center">{% spaceless %}{{- paragraph_title|striptags -}}{% endspaceless %}</h2>{% endif %}
+        {% if paragraph_title and paragraph_title_status %}<h2 class="text-center">{% apply spaceless %}{{- paragraph_title|striptags -}}{% endapply %}</h2>{% endif %}
         {% if content.bp_link|render is not empty %}
           <a href="{{ content.bp_link.0['#url'] }}">
         {% endif %}

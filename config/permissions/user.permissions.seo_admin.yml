@@ -4,3 +4,4 @@ permissions:
   - 'create paragraph library item'
   - 'edit paragraph library item'
   - 'view any paragraphs previewer'
+  - 'access paragraphs_library_items entity browser pages'

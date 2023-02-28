@@ -1,0 +1,4 @@
+id: editor
+permissions:
+  - 'view unpublished paragraphs'
+  - 'view any paragraphs previewer'

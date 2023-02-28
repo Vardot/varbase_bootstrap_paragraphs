@@ -15,8 +15,7 @@ use Vardot\Installer\ModuleInstallerFactory;
  */
 function vbp_text_and_image_install() {
 
-  // Processer for install: in vbp_text_and_image.info.yml file.
-  // ---------------------------------------------------------------------------.
+  // Processor for install: in vbp_text_and_image.info.yml file.
   ModuleInstallerFactory::installList('vbp_text_and_image');
 
   // Install optional configs.
@@ -32,6 +31,9 @@ function vbp_text_and_image_install() {
   \Drupal::classResolver()
     ->getInstanceFromDefinition(EntityDefinitionUpdateManager::class)
     ->applyUpdates();
+
+  // Add permissions.
+  ModuleInstallerFactory::addPermissions('vbp_text_and_image');
 
 }
 
@@ -114,6 +116,6 @@ function vbp_text_and_image_update_8602() {
  */
 function vbp_text_and_image_update_90001() {
   // Set the weight of the module after installation of list of modules.
-  // To make sure that any hook or event subscriber workes after all used modules.
+  // To make sure that any hook or event subscriber workers after all used modules.
   ModuleInstallerFactory::setModuleWeightAfterInstallation('vbp_text_and_image');
 }

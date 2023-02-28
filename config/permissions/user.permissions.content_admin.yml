@@ -1,0 +1,6 @@
+id: content_admin
+permissions:
+  - 'view unpublished paragraphs'
+  - 'create paragraph library item'
+  - 'edit paragraph library item'
+  - 'view any paragraphs previewer'

@@ -111,37 +111,41 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         {{ title_suffix }}
         <ul class="nav nav-tabs" role="tablist">
           {# Loops through the tab sections to print the tab section titles. #}
-          {% for key, item in content.bp_tab_section if key|first != '#' %}
-            {% set attributes = attributes.removeClass('bg-edge2edge') %}
-            <li role="tab"><a href="#tab{{ paragraph_id }}-{{ key }}" class="{% if loop.first %}active{% endif %}" aria-controls="{{ paragraph_id }}" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
+          {% for key, item in content.bp_tab_section %}
+            {% if key|first != '#' %}
+              {% set attributes = attributes.removeClass('bg-edge2edge') %}
+              <li role="tab"><a href="#tab{{ paragraph_id }}-{{ key }}" class="{% if loop.first %}active{% endif %}" aria-controls="{{ paragraph_id }}" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
         <div class="tab-content">
           {# Loops through the tab sections again to print the tab section bodies. #}
-          {% for key, item in content.bp_tab_section if key|first != '#' %}
-            <div role="tabpanel" class="tab-pane{% if loop.first %} active{% endif %}" id="tab{{ paragraph_id }}-{{ key }}">
-              {% for body_key, body_item in item['#paragraph'].bp_tab_section_body %}
-                {# Use the same render array as item and set the '#paragraph'. #}
-                {% set section_body = item %}
-                {# Load the entity for the current translation #}
-                {# Get the language code #}
-                {% set language = section_body['#paragraph'].langcode[0].value %}
-                {# Check if a translation exists #}
-                {% if section_body['#paragraph'].bp_tab_section_body[body_key].entity.hasTranslation(language) %}
-                {# Load the entity for the current translation #}
-                {% set section_translation = section_body['#paragraph'].bp_tab_section_body[body_key].entity.getTranslation(language) %}
-                {% else %}
-                {# Load the source entity #}
-                {% set section_translation = section_body['#paragraph'].bp_tab_section_body[body_key].entity %}
-                {% endif %}
-                {# Set the final value #}
-                {% set section_body = section_body|merge({'#paragraph': section_translation}) %}
-                {# Remove the cache keys so it doesn't repeat the first value. #}
-                {% set section_body = section_body|merge({'#cache': {}}) %}
-                {# Print the compiled section body. #}
-                {{ section_body }}
-              {% endfor %}
-            </div>
+          {% for key, item in content.bp_tab_section %}
+            {% if key|first != '#' %}
+              <div role="tabpanel" class="tab-pane{% if loop.first %} active{% endif %}" id="tab{{ paragraph_id }}-{{ key }}">
+                {% for body_key, body_item in item['#paragraph'].bp_tab_section_body %}
+                  {# Use the same render array as item and set the '#paragraph'. #}
+                  {% set section_body = item %}
+                  {# Load the entity for the current translation #}
+                  {# Get the language code #}
+                  {% set language = section_body['#paragraph'].langcode[0].value %}
+                  {# Check if a translation exists #}
+                  {% if section_body['#paragraph'].bp_tab_section_body[body_key].entity.hasTranslation(language) %}
+                  {# Load the entity for the current translation #}
+                  {% set section_translation = section_body['#paragraph'].bp_tab_section_body[body_key].entity.getTranslation(language) %}
+                  {% else %}
+                  {# Load the source entity #}
+                  {% set section_translation = section_body['#paragraph'].bp_tab_section_body[body_key].entity %}
+                  {% endif %}
+                  {# Set the final value #}
+                  {% set section_body = section_body|merge({'#paragraph': section_translation}) %}
+                  {# Remove the cache keys so it doesn't repeat the first value. #}
+                  {% set section_body = section_body|merge({'#cache': {}}) %}
+                  {# Print the compiled section body. #}
+                  {{ section_body }}
+                {% endfor %}
+              </div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>

@@ -111,37 +111,39 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         {{ title_suffix }}
         <div class="card panel panel-default">
           {# Loop through all of the accordion sections. #}
-          {% for key, item in content.bp_accordion_section if key|first != '#' %}
-            {% set attributes = attributes.removeClass('bg-edge2edge') %}
-            <div class="card-header panel-heading" role="tab" id="heading-{{ paragraph_id }}-{{ key + 1 }}">
-              <div class="panel-title">
-                <a data-toggle="collapse" data-target="#collapse-{{ paragraph_id }}-{{ key + 1 }}" href="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-expanded="false" class="collapsed" aria-controls="collapse-{{ paragraph_id }}-{{ key + 1 }}">
-                  {# Print the accordion section title. #}
-                  {{ item['#paragraph'].bp_accordion_section_title.value }}
-                </a>
+          {% for key, item in content.bp_accordion_section %}
+            {% if key|first != '#' %}
+              {% set attributes = attributes.removeClass('bg-edge2edge') %}
+              <div class="card-header panel-heading" role="tab" id="heading-{{ paragraph_id }}-{{ key + 1 }}">
+                <div class="panel-title">
+                  <a data-toggle="collapse" data-target="#collapse-{{ paragraph_id }}-{{ key + 1 }}" href="#collapse-{{ paragraph_id }}-{{ key + 1 }}" aria-expanded="false" class="collapsed" aria-controls="collapse-{{ paragraph_id }}-{{ key + 1 }}">
+                    {# Print the accordion section title. #}
+                    {{ item['#paragraph'].bp_accordion_section_title.value }}
+                  </a>
+                </div>
               </div>
-            </div>
-            <div id="collapse-{{ paragraph_id }}-{{ key + 1 }}" class="card-block panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ paragraph_id }}-{{ key + 1 }}">
-              {# Loop through all of the accordion section bodies. #}
-              {% for body_key, body_item in item['#paragraph'].bp_accordion_section_body %}
-                {# Use the same render array as item and set the '#paragraph'. #}
-                {% set section_body = item %}
-                {# Get the language code #}
-                {% set language = section_body['#paragraph'].langcode[0].value %}
-                {# Check if a translation exists #}
-                {% if section_body['#paragraph'].bp_accordion_section_body[body_key].entity.hasTranslation(language) %}
-                  {# Load the entity for the current translation #}
-                  {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_accordion_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
-                {% else %}
-                  {# Load the source entity #}
-                  {% set section_translation = section_body['#paragraph'].bp_accordion_section_body[body_key].entity %}
-                {% endif %}
-                {# Remove the cache keys so it doesn't repeat the first value. #}
-                {% set section_body = section_body|merge({'#cache': {}}) %}
-                {# Print the compiled section body. #}
-                {{ section_body }}
-              {% endfor %}
-            </div>
+              <div id="collapse-{{ paragraph_id }}-{{ key + 1 }}" class="card-block panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ paragraph_id }}-{{ key + 1 }}">
+                {# Loop through all of the accordion section bodies. #}
+                {% for body_key, body_item in item['#paragraph'].bp_accordion_section_body %}
+                  {# Use the same render array as item and set the '#paragraph'. #}
+                  {% set section_body = item %}
+                  {# Get the language code #}
+                  {% set language = section_body['#paragraph'].langcode[0].value %}
+                  {# Check if a translation exists #}
+                  {% if section_body['#paragraph'].bp_accordion_section_body[body_key].entity.hasTranslation(language) %}
+                    {# Load the entity for the current translation #}
+                    {% set section_body = section_body|merge({'#paragraph': section_body['#paragraph'].bp_accordion_section_body[body_key].entity.getTranslation(section_body['#paragraph'].langcode[0].value)}) %}
+                  {% else %}
+                    {# Load the source entity #}
+                    {% set section_translation = section_body['#paragraph'].bp_accordion_section_body[body_key].entity %}
+                  {% endif %}
+                  {# Remove the cache keys so it doesn't repeat the first value. #}
+                  {% set section_body = section_body|merge({'#cache': {}}) %}
+                  {# Print the compiled section body. #}
+                  {{ section_body }}
+                {% endfor %}
+              </div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>

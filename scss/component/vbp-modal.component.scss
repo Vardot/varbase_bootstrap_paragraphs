@@ -1,8 +1,7 @@
 // Modal Paragraph.
 // .paragraph--bp-modal.html.twig
 // -----------------------------------------------------------------------------
-@import "../../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
-// -----------------------------------------------------------------------------
+@import "../defaults";   // Global defaults.
 
 .paragraph--type--bp-modal {
   @include padding(0.625rem);

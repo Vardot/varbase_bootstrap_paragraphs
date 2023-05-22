@@ -1,8 +1,8 @@
-**/*.min.js
-**/gulpfile.js
-**/node_modules
+node_modules/**/*
+# Ignore deliberately malformed YAML files.
 drupalci.yml
-**/drupalci.yml
-modules/vbp_text_and_image/node_modules/
-modules/vbp_text_and_image/**/*.min.js
-modules/vbp_text_and_image/**/gulpfile.js
+
+webpack.config.build.js
+webpack.config.components.js
+webpack.config.dev.js
+webpack.config.js

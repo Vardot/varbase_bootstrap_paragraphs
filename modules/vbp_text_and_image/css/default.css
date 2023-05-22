@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) and (min-width: 1200px) {
+@media screen and (min-width: 1200px)and (min-width: 1200px) {
   .align2left.wrapper {
     padding-left: 2.1875rem;
   }
@@ -32,18 +32,19 @@
     text-align: center;
   }
 
-  .paragraph--type--text-and-image > .row {
-    margin-right: 0 !important;
+  .paragraph--type--text-and-image>.row {
     margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
+
 .wrapper {
   display: table;
   height: 100%;
   text-align: left;
 }
 
-.wrapper > div {
+.wrapper>div {
   display: table-cell;
   vertical-align: middle;
 }

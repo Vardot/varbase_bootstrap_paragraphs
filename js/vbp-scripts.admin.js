@@ -3,7 +3,7 @@
  * Behaviors Varbase hero slider media general scripts.
  */
 
-(function ($, _, Drupal) {
+(function ($, Drupal) {
   Drupal.behaviors.varbaseBootstrapParagraphsAdmin = {
     attach() {
       $(
@@ -53,4 +53,4 @@
       $('.paragraphs-tabs-wrapper .form-item .clearfix').show();
     },
   };
-})(window.jQuery, window._, window.Drupal);
+})(window.jQuery, window.Drupal);

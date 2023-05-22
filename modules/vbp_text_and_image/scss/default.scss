@@ -1,9 +1,6 @@
+// Varbase Bootstrap Paragraphs Text and Image
 // -----------------------------------------------------------------------------
-@import "../node_modules/bootstrap/scss/functions"; // Bootstrap functions.
-@import "../node_modules/bootstrap/scss/mixins";    // Bootstrap mixins.
-@import "../node_modules/bootstrap/scss/variables"; // Bootstrap variables.
-@import "../node_modules/rfs/scss";                 // RFS ~9.0 mixins.
-// -----------------------------------------------------------------------------
+@import "../../../scss/defaults";   // Global defaults.
 
 .row {
   margin-bottom: 0 !important;

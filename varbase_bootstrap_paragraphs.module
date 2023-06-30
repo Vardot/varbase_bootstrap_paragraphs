@@ -7,7 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
-use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_theme().
@@ -45,9 +45,13 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
       $target_id = $paragraph->get('bp_image_field')->entity->field_media_image->target_id;
       $file = File::load($target_id);
       if (isset($file)) {
-        $file_uri = $file->getFileUri();
-        $style = ImageStyle::load('de2e');
-        $file_path = $style->buildUrl($file_uri);
+
+        $url = Url::fromUri('internal:/')->toString();
+        if (substr($url, -1) === '/') {
+          $url = substr($url, 0, -1);
+        }
+        // Display Edge-to-Edge auto) fall back default background image using Drimage.
+        $file_path = $url . '/drimage/1600/0/' . $target_id . '/-' . $url . \Drupal::service('file_url_generator')->generateString($file->getFileUri());
       }
     }
   }

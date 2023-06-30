@@ -26,7 +26,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'css'),
     pathinfo: true,
-    publicPath: '../../',
+    publicPath: '',
   },
   module: {
     rules: [

@@ -27,33 +27,34 @@
 // vbp_color_05: Red
 
 // List of palette background colors by name.
-$vbp-palette-color-boston-blue:      #338ec7;
-$vbp-palette-color-pickled-bluewood: #2c3e50;
-$vbp-palette-color-silver-chalice:   #a4a4a4;
-$vbp-palette-color-alto:             #d3d3d3;
-$vbp-palette-color-persian-red:      #cc3c2d;
-$vbp-palette-color-anzac:            #E4B649;
+:root {
+  /* VBP Palette background colors */
+  --vbp-palette-color-boston-blue:      #338ec7;
+  --vbp-palette-color-pickled-bluewood: #2c3e50;
+  --vbp-palette-color-silver-chalice:   #a4a4a4;
+  --vbp-palette-color-alto:             #d3d3d3;
+  --vbp-palette-color-persian-red:      #cc3c2d;
+  --vbp-palette-color-anzac:            #E4B649;
+}
 
 // Associate background colors names to a function name.
-$vbp_color_01: $vbp-palette-color-boston-blue;       // Blue
-$vbp_color_02: $vbp-palette-color-pickled-bluewood;  // Madison
-$vbp_color_03: $vbp-palette-color-silver-chalice;    // Dark Gray
-$vbp_color_04: $vbp-palette-color-alto;              // Light Gray
-$vbp_color_05: $vbp-palette-color-persian-red;       // Red
+body {
+  /* VBP Associate background colors */
+  --vbp_color_01: var(--vbp-palette-color-boston-blue);       // Blue
+  --vbp_color_02: var(--vbp-palette-color-pickled-bluewood);  // Madison
+  --vbp_color_03: var(--vbp-palette-color-silver-chalice);    // Dark Gray
+  --vbp_color_04: var(--vbp-palette-color-alto);              // Light Gray
+  --vbp_color_05: var(--vbp-palette-color-persian-red);       // Red
+}
 
 // Map of background colors by function.
-$vbp-colors: () !default;
-$vbp-colors: map-merge(
-  (
-    "vbp_color_01": $vbp_color_01,
-    "vbp_color_02": $vbp_color_02,
-    "vbp_color_03": $vbp_color_03,
-    "vbp_color_04": $vbp_color_04,
-    "vbp_color_05": $vbp_color_05
-  ),
-  $vbp-colors
+$vbp-colors: (
+  "vbp_color_01": var(--vbp_color_01),
+  "vbp_color_02": var(--vbp_color_02),
+  "vbp_color_03": var(--vbp_color_03),
+  "vbp_color_04": var(--vbp_color_04),
+  "vbp_color_05": var(--vbp_color_05)
 );
-
 // Foreground colors:
 // -----------------------------------------------------------------------------
 // vbp_foreground_color_01: White for background vbp_color_01 color.
@@ -63,34 +64,36 @@ $vbp-colors: map-merge(
 // vbp_foreground_color_05: White for background vbp_color_05 color.
 
 // List of palette foreground colors by name.
-$vbp-palette-color-black:            #000000;
-$vbp-palette-color-white:            #ffffff;
+:root {
+  /* VBP palette foreground colors */
+  --vbp-palette-color-black: #000000;
+  --vbp-palette-color-white: #ffffff;
+}
 
 // Associate foreground colors names to a function name.
-$vbp_foreground_color_01: $vbp-palette-color-white; // White
-$vbp_foreground_color_02: $vbp-palette-color-white; // White
-$vbp_foreground_color_03: $vbp-palette-color-white; // White
-$vbp_foreground_color_04: $vbp-palette-color-black; // Black
-$vbp_foreground_color_05: $vbp-palette-color-white; // White
+body {
+  /* VBP Associate foreground colors */
+  --vbp_foreground_color_01: var(--vbp-palette-color-white); // White
+  --vbp_foreground_color_02: var(--vbp-palette-color-white); // White
+  --vbp_foreground_color_03: var(--vbp-palette-color-white); // White
+  --vbp_foreground_color_04: var(--vbp-palette-color-black); // Black
+  --vbp_foreground_color_05: var(--vbp-palette-color-white); // White
+}
 
 // Map of foreground colors by function.
-$vbp-foreground-colors: () !default;
-$vbp-foreground-colors: map-merge(
-  (
-    "vbp_color_01": $vbp_foreground_color_01,
-    "vbp_color_02": $vbp_foreground_color_02,
-    "vbp_color_03": $vbp_foreground_color_03,
-    "vbp_color_04": $vbp_foreground_color_04,
-    "vbp_color_05": $vbp_foreground_color_05
-  ),
-  $vbp-foreground-colors
+$vbp-foreground-colors: (
+  "vbp_color_01": var(--vbp_foreground_color_01),
+  "vbp_color_02": var(--vbp_foreground_color_02),
+  "vbp_color_03": var(--vbp_foreground_color_03),
+  "vbp_color_04": var(--vbp_foreground_color_04),
+  "vbp_color_05": var(--vbp_foreground_color_05)
 );
 
 // Varbase Bootstrap Paragraphs color default template for the vbp_color_{NUM}
 // we could copy this mixin and change it for other type of styling options.
 // This could be changed in your sub-theme, in the way you custom sites.
 @mixin vbp_color($vbp_color_name, $vbp_background_color, $vbp_foreground_color) {
-  .#{$vbp_color_name} {
+  body .#{$vbp_color_name} {
     background-color: $vbp_background_color;
     color: $vbp_foreground_color;
 

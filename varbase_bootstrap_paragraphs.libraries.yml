@@ -17,7 +17,7 @@ vbp-default-admin:
     - core/drupal
     - core/jquery
     - core/drupal.debounce
-
+    - varbase_bootstrap_paragraphs/vbp-colors
 
 # Varbase Bootstrap Paragraphs colors theme.
 vbp-colors:

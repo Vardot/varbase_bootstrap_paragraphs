@@ -1,0 +1,8 @@
+id: site_admin
+permissions:
+  - 'administer varbase bootstrap paragraphs settings'
+  - 'view unpublished paragraphs'
+  - 'create paragraph library item'
+  - 'edit paragraph library item'
+  - 'view any paragraphs previewer'
+  - 'access paragraphs_library_items entity browser pages'

@@ -7,8 +7,6 @@
 
 use Symfony\Component\Yaml\Yaml;
 use Drupal\Core\Config\InstallStorage;
-use Drupal\Core\Config\StorageInterface;
-use Drupal\Core\Config\FileStorage;
 use Vardot\Entity\EntityDefinitionUpdateManager;
 use Vardot\Installer\ModuleInstallerFactory;
 
@@ -17,8 +15,7 @@ use Vardot\Installer\ModuleInstallerFactory;
  */
 function vbp_text_and_image_install() {
 
-  // Processer for install: in vbp_text_and_image.info.yml file.
-  // ---------------------------------------------------------------------------.
+  // Processor for install: in vbp_text_and_image.info.yml file.
   ModuleInstallerFactory::installList('vbp_text_and_image');
 
   // Install optional configs.
@@ -34,6 +31,9 @@ function vbp_text_and_image_install() {
   \Drupal::classResolver()
     ->getInstanceFromDefinition(EntityDefinitionUpdateManager::class)
     ->applyUpdates();
+
+  // Add permissions.
+  ModuleInstallerFactory::addPermissions('vbp_text_and_image');
 
 }
 

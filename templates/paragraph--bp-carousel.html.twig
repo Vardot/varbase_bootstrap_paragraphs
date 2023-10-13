@@ -116,13 +116,17 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     <div class="row">
       <div class="{{- VBP.bp_width.value -}}">
         <ol class="carousel-indicators">
-          {% for key, item in content.bp_slide_content if key|first != '#' %}
-            <li class="{% if loop.first %}active{% endif %}" data-slide-to="{{ key }}" data-target="#{{ paragraph_id }}"></li>
+          {% for key, item in content.bp_slide_content %}
+            {% if key|first != '#' %}
+              <li class="{% if loop.first %}active{% endif %}" data-slide-to="{{ key }}" data-target="#{{ paragraph_id }}"></li>
+            {% endif %}
           {% endfor %}
         </ol>
         <div class="carousel-inner" role="listbox">
-          {% for key, item in content.bp_slide_content if key|first != '#' %}
-            <div class="paragraph--layout-slideshow__slide-{{ key + 1 }} item carousel-item{% if loop.first %} active{% endif %}">{{ item }}</div>
+          {% for key, item in content.bp_slide_content %}
+            {% if key|first != '#' %}
+              <div class="paragraph--layout-slideshow__slide-{{ key + 1 }} item carousel-item{% if loop.first %} active{% endif %}">{{ item }}</div>
+            {% endif %}
           {% endfor %}
         </div>
         <a class="left carousel-control" href="#{{ paragraph_id }}" role="button" data-slide="prev">

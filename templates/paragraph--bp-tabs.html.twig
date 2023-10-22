@@ -111,14 +111,17 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         {{ title_suffix }}
         <ul class="nav nav-tabs" role="tablist">
           {# Loops through the tab sections to print the tab section titles. #}
-          {% for key, item in content.bp_tab_section|filter((value, key) => key|first != '#') %}
-            {% set attributes = attributes.removeClass('bg-edge2edge') %}
-            <li role="tab"><a href="#tab{{ paragraph_id }}-{{ key }}" class="{% if loop.first %}active{% endif %}" aria-controls="{{ paragraph_id }}" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
+          {% for key, item in content.bp_tab_section %}
+            {% if key|first != '#' %}
+              {% set attributes = attributes.removeClass('bg-edge2edge') %}
+              <li role="tab"><a href="#tab{{ paragraph_id }}-{{ key }}" class="{% if loop.first %}active{% endif %}" aria-controls="{{ paragraph_id }}" data-toggle="tab">{{ item['#paragraph'].bp_tab_section_title.value }}</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
         <div class="tab-content">
           {# Loops through the tab sections again to print the tab section bodies. #}
-          {% for key, item in content.bp_tab_section|filter((value, key) => key|first != '#') %}
+          {% for key, item in content.bp_tab_section %}
+            {% if key|first != '#' %}
               <div role="tabpanel" class="tab-pane{% if loop.first %} active{% endif %}" id="tab{{ paragraph_id }}-{{ key }}">
                 {% for body_key, body_item in item['#paragraph'].bp_tab_section_body %}
                   {# Use the same render array as item and set the '#paragraph'. #}
@@ -142,6 +145,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                   {{ section_body }}
                 {% endfor %}
               </div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>

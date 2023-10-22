@@ -1,0 +1,5 @@
+id: editor
+permissions:
+  - 'view unpublished paragraphs'
+  - 'view any paragraphs previewer'
+  - 'access paragraphs_library_items entity browser pages'

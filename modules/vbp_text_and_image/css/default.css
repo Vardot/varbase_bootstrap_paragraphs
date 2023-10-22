@@ -19,13 +19,11 @@
     padding-left: calc(1.34375rem + 1.125vw);
   }
 }
-
 @media screen and (min-width: 1200px) and (min-width: 1200px) {
   .align2left.wrapper {
     padding-left: 2.1875rem;
   }
 }
-
 @media screen and (min-width: 1200px) {
   .paragraph--type--text-and-image {
     margin-bottom: 1.25rem;

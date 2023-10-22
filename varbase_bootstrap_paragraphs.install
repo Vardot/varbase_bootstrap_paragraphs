@@ -14,7 +14,7 @@ use Vardot\Installer\ModuleInstallerFactory;
  */
 function varbase_bootstrap_paragraphs_install() {
 
-  // Processer for install: in varbase_bootstrap_paragraphs.info.yml file.
+  // Processor for install: in varbase_bootstrap_paragraphs.info.yml file.
   // ---------------------------------------------------------------------------.
   ModuleInstallerFactory::installList('varbase_bootstrap_paragraphs');
 
@@ -36,6 +36,8 @@ function varbase_bootstrap_paragraphs_install() {
     ->getInstanceFromDefinition(EntityDefinitionUpdateManager::class)
     ->applyUpdates();
 
+  // Add permissions.
+  ModuleInstallerFactory::addPermissions('varbase_bootstrap_paragraphs');
 }
 
 /**

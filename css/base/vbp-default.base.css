@@ -32,7 +32,7 @@
 }
 .paragraph .paragraph .bg-edge2edge,
 .paragraph .paragraph.bg-edge2edge {
-  position: absolute;
+  position: initial;
   right: 0 !important;
   left: 0 !important;
   width: 100%;

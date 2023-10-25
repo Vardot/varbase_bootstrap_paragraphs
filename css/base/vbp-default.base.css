@@ -5,7 +5,6 @@
 .paragraph > .paragraph__column {
   padding-bottom: calc(1.325rem + 0.9vw);
 }
-
 @media (min-width: 1200px) {
   .paragraph > .paragraph__column {
     padding-bottom: 2rem;
@@ -33,9 +32,13 @@
 }
 .paragraph .paragraph .bg-edge2edge,
 .paragraph .paragraph.bg-edge2edge {
-  position: initial;
+  position: absolute;
+  right: 0 !important;
+  left: 0 !important;
   width: 100%;
   margin: 0;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 .paragraph .paragraph .paragraph {
   position: initial;
@@ -49,7 +52,6 @@
   padding-right: 0.9375rem;
   padding-left: 0.9375rem;
 }
-
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__5col {
     float: left;
@@ -62,7 +64,6 @@
   padding-right: 15px;
   padding-left: 15px;
 }
-
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-columns .paragraph--type--bp-columns__6col {
     flex: 0 0 16.66666667%;
@@ -73,7 +74,6 @@
 .paragraph__column {
   padding: 0 calc(1.28125rem + 0.375vw);
 }
-
 @media (min-width: 1200px) {
   .paragraph__column {
     padding: 0 1.5625rem;
@@ -115,7 +115,6 @@
   padding-right: 15px;
   padding-left: 15px;
 }
-
 @media (min-width: 768px) {
   .paragraph--type--bp-columns__1col .paragraph.paragraph--width--narrow > .paragraph__column {
     flex: 0 0 50%;
@@ -123,7 +122,6 @@
     margin-left: 25%;
   }
 }
-
 @media (min-width: 992px) {
   .paragraph--type--bp-columns__1col .paragraph.paragraph--width--narrow > .paragraph__column {
     flex: 0 0 50%;
@@ -131,7 +129,6 @@
     margin-left: 25%;
   }
 }
-
 @media (min-width: 1200px) {
   .paragraph--type--bp-columns__1col .paragraph.paragraph--width--narrow > .paragraph__column {
     flex: 0 0 50%;

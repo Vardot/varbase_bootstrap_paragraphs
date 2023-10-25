@@ -13,6 +13,11 @@ vbp-default-admin:
       css/base/vbp-default.admin.css: {}
   js:
     js/vbp-scripts.admin.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupal.debounce
+    - varbase_bootstrap_paragraphs/vbp-colors
 
 # Varbase Bootstrap Paragraphs colors theme.
 vbp-colors:
@@ -21,7 +26,7 @@ vbp-colors:
       css/theme/vbp-colors.theme.css: {}
 
 # ------------------------------------------------------------------------------
-# Libraries for Varbase Bootstrap Paraghraph types.
+# Libraries for Varbase Bootstrap Paragraph types.
 # ------------------------------------------------------------------------------
 
 # Varbase Bootstrap Paragraphs accordion component.

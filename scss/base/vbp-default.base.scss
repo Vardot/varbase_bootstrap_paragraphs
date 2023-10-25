@@ -63,8 +63,12 @@
   .paragraph {
     .bg-edge2edge,
     &.bg-edge2edge {
-      width: 100%;
       position: initial;
+      right: 0 !important;
+      left: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: 100%;
       margin: 0;
     }
 

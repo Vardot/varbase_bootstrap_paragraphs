@@ -177,12 +177,7 @@
   opacity: .8;
 }
 
-.field--name-bp-width .form-type-radio label.option.paragraph--width--tiny,
- .field--name-bp-width .form-type-radio label.option.paragraph--width--narrow,
- .field--name-bp-width .form-type-radio label.option.paragraph--width--medium,
- .field--name-bp-width .form-type-radio label.option.paragraph--width--wide,
- .field--name-bp-width .form-type-radio label.option.paragraph--width--full,
- .field--name-bp-width .form-type-radio label.option.bg-edge2edge,
+.field--name-bp-width .form-type-radio label.option.paragraph--width--tiny, .field--name-bp-width .form-type-radio label.option.paragraph--width--narrow, .field--name-bp-width .form-type-radio label.option.paragraph--width--medium, .field--name-bp-width .form-type-radio label.option.paragraph--width--wide, .field--name-bp-width .form-type-radio label.option.paragraph--width--full, .field--name-bp-width .form-type-radio label.option.bg-edge2edge,
 .field--name-bp-width .form-type--radio label.option.paragraph--width--tiny,
 .field--name-bp-width .form-type--radio label.option.paragraph--width--narrow,
 .field--name-bp-width .form-type--radio label.option.paragraph--width--medium,
@@ -224,8 +219,7 @@
   background-image: url(../../images/icons/paragraph--width--edge-to-edge.svg);
 }
 
-.field--name-bp-gutter .form-type-radio label.option.gutter-0,
- .field--name-bp-gutter .form-type-radio label.option.gutter-1,
+.field--name-bp-gutter .form-type-radio label.option.gutter-0, .field--name-bp-gutter .form-type-radio label.option.gutter-1,
 .field--name-bp-gutter .form-type--radio label.option.gutter-0,
 .field--name-bp-gutter .form-type--radio label.option.gutter-1 {
   background-image: none;
@@ -243,12 +237,7 @@
   background-image: url(../../images/icons/paragraph--gutter--with-gutter.svg);
 }
 
-.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-50-25,
- .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--50-25-25,
- .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-25-50,
- .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-66-16,
- .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--66-16-16,
- .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-16-66,
+.field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-50-25, .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--50-25-25, .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--25-25-50, .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-66-16, .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--66-16-16, .field--name-bp-column-style-3 .form-type-radio label.option.paragraph--style--16-16-66,
 .field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--25-50-25,
 .field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--50-25-25,
 .field--name-bp-column-style-3 .form-type--radio label.option.paragraph--style--25-25-50,
@@ -290,10 +279,7 @@
   background-image: url(../../images/icons/paragraph--style--16-16-66.svg);
 }
 
-.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--75-25,
- .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--66-33,
- .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--25-75,
- .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--33-66,
+.field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--75-25, .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--66-33, .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--25-75, .field--name-bp-column-style-2 .form-type-radio label.option.paragraph--style--33-66,
 .field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--75-25,
 .field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--66-33,
 .field--name-bp-column-style-2 .form-type--radio label.option.paragraph--style--25-75,
@@ -323,11 +309,7 @@
   background-image: url(../../images/icons/paragraph--style--33-66.svg);
 }
 
-.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--50-50,
- .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--75-25,
- .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--66-33,
- .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--25-75,
- .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--33-66,
+.field--name-text-and-image-style .form-type-radio label.option.paragraph--style--50-50, .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--75-25, .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--66-33, .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--25-75, .field--name-text-and-image-style .form-type-radio label.option.paragraph--style--33-66,
 .field--name-text-and-image-style .form-type--radio label.option.paragraph--style--50-50,
 .field--name-text-and-image-style .form-type--radio label.option.paragraph--style--75-25,
 .field--name-text-and-image-style .form-type--radio label.option.paragraph--style--66-33,
@@ -363,8 +345,7 @@
   background-image: url(../../images/icons/paragraph--style--33-66.svg);
 }
 
-.field--name-field-image-position .form-type-radio label.option.right,
- .field--name-field-image-position .form-type-radio label.option.left,
+.field--name-field-image-position .form-type-radio label.option.right, .field--name-field-image-position .form-type-radio label.option.left,
 .field--name-field-image-position .form-type--radio label.option.right,
 .field--name-field-image-position .form-type--radio label.option.left {
   background-image: none;
@@ -454,3 +435,4 @@ input .widget {
 .paragraphs-tabs-wrapper .form-item .clearfix {
   margin-top: 10px;
 }
+

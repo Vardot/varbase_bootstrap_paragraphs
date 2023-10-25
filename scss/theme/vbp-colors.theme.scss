@@ -22,7 +22,7 @@
   @include padding-top($jumbotron-padding);
 }
 
-// Background colours;
+// Background colors;
 // -----------------------------------------------------------------------------
 // vbp_color_01: Blue
 // vbp_color_02: Madison
@@ -38,7 +38,7 @@ $vbp-palette-color-alto:             #d3d3d3;
 $vbp-palette-color-persian-red:      #cc3c2d;
 $vbp-palette-color-anzac:            #E4B649;
 
-// Associate background colors nemas to a function name.
+// Associate background colors names to a function name.
 $vbp_color_01: $vbp-palette-color-boston-blue;       // Blue
 $vbp_color_02: $vbp-palette-color-pickled-bluewood;  // Madison
 $vbp_color_03: $vbp-palette-color-silver-chalice;    // Dark Gray
@@ -70,7 +70,7 @@ $vbp-colors: map-merge(
 $vbp-palette-color-black:            #000000;
 $vbp-palette-color-white:            #ffffff;
 
-// Associate foreground colors nemas to a function name.
+// Associate foreground colors names to a function name.
 $vbp_foreground_color_01: $vbp-palette-color-white; // White
 $vbp_foreground_color_02: $vbp-palette-color-white; // White
 $vbp_foreground_color_03: $vbp-palette-color-white; // White
@@ -94,7 +94,7 @@ $vbp-foreground-colors: map-merge(
 // we could copy this mixin and change it for other type of styling options.
 // This could be changed in your sub-theme, in the way you custom sites.
 @mixin vbp_color($vbp_color_name, $vbp_background_color, $vbp_foreground_color) {
-  .#{$vbp_color_name} {
+  body .#{$vbp_color_name} {
     background-color: $vbp_background_color;
     color: $vbp_foreground_color;
 

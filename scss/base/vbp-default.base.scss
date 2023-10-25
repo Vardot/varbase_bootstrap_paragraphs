@@ -67,8 +67,12 @@
   .paragraph {
     .bg-edge2edge,
     &.bg-edge2edge {
+      position: absolute;
+      right: 0 !important;
+      left: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
       width: 100%;
-      position: initial;
       margin: 0;
     }
 
@@ -79,7 +83,7 @@
       position: initial;
     }
   }
-  
+
   // Columns Modifiers inside of Columns Element.
   &.paragraph--type--bp-columns {
     .paragraph--type--bp-columns__5col {

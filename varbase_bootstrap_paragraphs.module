@@ -146,13 +146,6 @@ function varbase_bootstrap_paragraphs_field_widget_entity_reference_paragraphs_f
     $default_active_theme_name = $default_system_theme->get('default');
     $default_active_theme_libraries = \Drupal::service('library.discovery')->getLibrariesByExtension($default_active_theme_name);
 
-    // If the default active theme has got the vbp-colors library use it.
-    if (isset($default_active_theme_libraries['vbp-colors'])) {
-      $element['subform']['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
-    }
-    else {
-      $element['subform']['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
-    }
   }
 }
 
@@ -257,13 +250,6 @@ function varbase_bootstrap_paragraphs_form_alter(&$form, FormStateInterface $for
       $default_active_theme_name = $default_system_theme->get('default');
       $default_active_theme_libraries = \Drupal::service('library.discovery')->getLibrariesByExtension($default_active_theme_name);
 
-      // If the default active theme has got the vbp-colors library use it.
-      if (isset($default_active_theme_libraries['vbp-colors'])) {
-        $form['#attached']['library'][] = $default_active_theme_name . '/vbp-colors';
-      }
-      else {
-        $form['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-colors';
-      }
     }
 
   }

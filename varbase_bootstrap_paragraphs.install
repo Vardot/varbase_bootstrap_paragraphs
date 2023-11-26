@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, uninstall and update hooks for Varbase Boostrap Paragraphs module.
+ * Install, uninstall and update hooks for Varbase Bootstrap Paragraphs module.
  */
 
 use Drupal\Core\Config\InstallStorage;

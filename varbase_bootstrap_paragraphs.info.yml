@@ -1,7 +1,7 @@
-name: "Varbase Bootstrap Paragraphs"
+name: Varbase Bootstrap Paragraphs
 type: module
-description: "A suite of Paragraph bundles to be used for Varbase distribution. Made with the Bootstrap framework, based on a fork of Bootstrap Paragraph module (bootstrap_paragraphs)."
-core_version_requirement: ~10.1.0
+description: A suite of Paragraph bundles to be used for Varbase distribution. Made with the Bootstrap framework, based on a fork of Bootstrap Paragraph module (bootstrap_paragraphs).
+core_version_requirement: ~10
 package: Varbase
 configure: varbase_bootstrap_paragraphs.settings
 dependencies:

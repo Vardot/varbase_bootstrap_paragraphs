@@ -5,6 +5,8 @@
  * Contains varbase_bootstrap_paragraphs_update_9###(s) hook updates.
  */
 
+use Vardot\Installer\ModuleInstallerFactory;
+
 /**
  * Issue #3272278: Switch to use the Module Installer Factory.
  *

@@ -37,7 +37,8 @@
   right: 0;
 }
 
-.paragraph .paragraph .bg-edge2edge, .paragraph .paragraph.bg-edge2edge {
+.paragraph .paragraph .bg-edge2edge,
+ .paragraph .paragraph.bg-edge2edge {
   position: initial;
   right: 0 !important;
   left: 0 !important;
@@ -161,4 +162,3 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-

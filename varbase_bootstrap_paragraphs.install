@@ -9,6 +9,10 @@ use Drupal\Core\Config\InstallStorage;
 use Vardot\Entity\EntityDefinitionUpdateManager;
 use Vardot\Installer\ModuleInstallerFactory;
 
+// Include all helpers and updates.
+include_once __DIR__ . '/includes/helpers.inc';
+include_once __DIR__ . '/includes/updates.inc';
+
 /**
  * Implements hook_install().
  */
@@ -40,6 +44,3 @@ function varbase_bootstrap_paragraphs_install() {
   ModuleInstallerFactory::addPermissions('varbase_bootstrap_paragraphs');
 
 }
-
-// Load include all updates and apply them.
-\Drupal::moduleHandler()->loadInclude('varbase_bootstrap_paragraphs', 'inc', 'include/updates/all');

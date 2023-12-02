@@ -5,7 +5,7 @@
  * Text and image sub-module file.
  */
 
-// Include all helpers and updates.
+// Include all helpers.
 include_once __DIR__ . '/includes/helpers.inc';
 
 /**

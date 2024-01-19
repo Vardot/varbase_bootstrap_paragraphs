@@ -35,5 +35,5 @@ function vbp_text_and_image_update_8001() {
  * configurations.
  */
 function vbp_text_and_image_update_8602() {
-  _add_target_bundle_text_and_image_to_landing_page_components();
+  vbp_text_and_image__add_target_bundle_text_and_image_to_landing_page_components();
 }

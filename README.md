@@ -13,7 +13,7 @@ layout of your own design.
 This suite of [Paragraphs](https://www.drupal.org/project/paragraphs) bundles
  works within the [Bootstrap](http://getbootstrap.com) framework.
 
-This module is built on the premise that all good things in Drupal 8 are
+This module is built on the premise that all good things in Drupal are
 entities, and we can use Paragraphs and Reference fields to allow our content
 creators to harness the power of the Bootstrap framework for functionality
 and layout.

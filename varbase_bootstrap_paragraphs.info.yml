@@ -10,7 +10,6 @@ install:
   - text
   - options
   - link
-  - ckeditor
   - block
   - advanced_text_formatter
   - field_group

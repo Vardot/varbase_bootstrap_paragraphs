@@ -35,7 +35,7 @@
     "drupal/webform": "~6",
     "drupal/field_group": "~3",
     "drupal/advanced_text_formatter": "~2 || ~3",
-    "drupal/maxlength": "~2",
+    "drupal/maxlength": "~2 || ~3",
     "drupal/entity_usage": "~2"
   }
 }

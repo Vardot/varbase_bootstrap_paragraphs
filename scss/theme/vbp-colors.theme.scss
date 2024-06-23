@@ -128,6 +128,6 @@ $vbp-foreground-colors: map-merge(
 @include vbp_colors;
 
 // Add support for drupal off canvas editor and the layout builder settings try.
-#drupal-off-canvas {
+#drupal-off-canvas-wrapper {
   @include vbp_colors;
 }

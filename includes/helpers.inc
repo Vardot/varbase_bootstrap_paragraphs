@@ -23,7 +23,7 @@
  *
  * @internal
  */
-function varbase_bootstrap_paragraphs__add_template_variable(array &$variables, array $data = NULL) {
+function varbase_bootstrap_paragraphs__add_template_variable(array &$variables, ?array $data = NULL) {
 
   static $key = 'VBP';
 

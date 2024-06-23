@@ -65,7 +65,7 @@ function vbp_text_and_image__add_target_bundle_text_and_image_to_landing_page_co
  *
  * @internal
  */
-function vbp_text_and_image__add_template_variable(array &$variables, array $data = NULL) {
+function vbp_text_and_image__add_template_variable(array &$variables, ?array $data = NULL) {
 
   static $key = 'VBP';
 

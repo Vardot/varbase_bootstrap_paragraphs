@@ -148,87 +148,87 @@ body .vbp_color_05 a:hover,
   color: var(--vbp_foreground_color_05);
 }
 
-#drupal-off-canvas body .vbp_color_01 {
+#drupal-off-canvas-wrapper body .vbp_color_01 {
   background-color: var(--vbp_color_01);
   color: var(--vbp_foreground_color_01);
 }
 
-#drupal-off-canvas body .vbp_color_01 a {
+#drupal-off-canvas-wrapper body .vbp_color_01 a {
   color: var(--vbp_foreground_color_01);
 }
 
-#drupal-off-canvas body .vbp_color_01 a:hover,
- #drupal-off-canvas body .vbp_color_01 a:focus,
- #drupal-off-canvas body .vbp_color_01 a:active,
- #drupal-off-canvas body .vbp_color_01 a.is-active,
- #drupal-off-canvas body .vbp_color_01 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_01 a:hover,
+ #drupal-off-canvas-wrapper body .vbp_color_01 a:focus,
+ #drupal-off-canvas-wrapper body .vbp_color_01 a:active,
+ #drupal-off-canvas-wrapper body .vbp_color_01 a.is-active,
+ #drupal-off-canvas-wrapper body .vbp_color_01 a.active {
   color: var(--vbp_foreground_color_01);
 }
 
-#drupal-off-canvas body .vbp_color_02 {
+#drupal-off-canvas-wrapper body .vbp_color_02 {
   background-color: var(--vbp_color_02);
   color: var(--vbp_foreground_color_02);
 }
 
-#drupal-off-canvas body .vbp_color_02 a {
+#drupal-off-canvas-wrapper body .vbp_color_02 a {
   color: var(--vbp_foreground_color_02);
 }
 
-#drupal-off-canvas body .vbp_color_02 a:hover,
- #drupal-off-canvas body .vbp_color_02 a:focus,
- #drupal-off-canvas body .vbp_color_02 a:active,
- #drupal-off-canvas body .vbp_color_02 a.is-active,
- #drupal-off-canvas body .vbp_color_02 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_02 a:hover,
+ #drupal-off-canvas-wrapper body .vbp_color_02 a:focus,
+ #drupal-off-canvas-wrapper body .vbp_color_02 a:active,
+ #drupal-off-canvas-wrapper body .vbp_color_02 a.is-active,
+ #drupal-off-canvas-wrapper body .vbp_color_02 a.active {
   color: var(--vbp_foreground_color_02);
 }
 
-#drupal-off-canvas body .vbp_color_03 {
+#drupal-off-canvas-wrapper body .vbp_color_03 {
   background-color: var(--vbp_color_03);
   color: var(--vbp_foreground_color_03);
 }
 
-#drupal-off-canvas body .vbp_color_03 a {
+#drupal-off-canvas-wrapper body .vbp_color_03 a {
   color: var(--vbp_foreground_color_03);
 }
 
-#drupal-off-canvas body .vbp_color_03 a:hover,
- #drupal-off-canvas body .vbp_color_03 a:focus,
- #drupal-off-canvas body .vbp_color_03 a:active,
- #drupal-off-canvas body .vbp_color_03 a.is-active,
- #drupal-off-canvas body .vbp_color_03 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_03 a:hover,
+ #drupal-off-canvas-wrapper body .vbp_color_03 a:focus,
+ #drupal-off-canvas-wrapper body .vbp_color_03 a:active,
+ #drupal-off-canvas-wrapper body .vbp_color_03 a.is-active,
+ #drupal-off-canvas-wrapper body .vbp_color_03 a.active {
   color: var(--vbp_foreground_color_03);
 }
 
-#drupal-off-canvas body .vbp_color_04 {
+#drupal-off-canvas-wrapper body .vbp_color_04 {
   background-color: var(--vbp_color_04);
   color: var(--vbp_foreground_color_04);
 }
 
-#drupal-off-canvas body .vbp_color_04 a {
+#drupal-off-canvas-wrapper body .vbp_color_04 a {
   color: var(--vbp_foreground_color_04);
 }
 
-#drupal-off-canvas body .vbp_color_04 a:hover,
- #drupal-off-canvas body .vbp_color_04 a:focus,
- #drupal-off-canvas body .vbp_color_04 a:active,
- #drupal-off-canvas body .vbp_color_04 a.is-active,
- #drupal-off-canvas body .vbp_color_04 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_04 a:hover,
+ #drupal-off-canvas-wrapper body .vbp_color_04 a:focus,
+ #drupal-off-canvas-wrapper body .vbp_color_04 a:active,
+ #drupal-off-canvas-wrapper body .vbp_color_04 a.is-active,
+ #drupal-off-canvas-wrapper body .vbp_color_04 a.active {
   color: var(--vbp_foreground_color_04);
 }
 
-#drupal-off-canvas body .vbp_color_05 {
+#drupal-off-canvas-wrapper body .vbp_color_05 {
   background-color: var(--vbp_color_05);
   color: var(--vbp_foreground_color_05);
 }
 
-#drupal-off-canvas body .vbp_color_05 a {
+#drupal-off-canvas-wrapper body .vbp_color_05 a {
   color: var(--vbp_foreground_color_05);
 }
 
-#drupal-off-canvas body .vbp_color_05 a:hover,
- #drupal-off-canvas body .vbp_color_05 a:focus,
- #drupal-off-canvas body .vbp_color_05 a:active,
- #drupal-off-canvas body .vbp_color_05 a.is-active,
- #drupal-off-canvas body .vbp_color_05 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_05 a:hover,
+ #drupal-off-canvas-wrapper body .vbp_color_05 a:focus,
+ #drupal-off-canvas-wrapper body .vbp_color_05 a:active,
+ #drupal-off-canvas-wrapper body .vbp_color_05 a.is-active,
+ #drupal-off-canvas-wrapper body .vbp_color_05 a.active {
   color: var(--vbp_foreground_color_05);
 }

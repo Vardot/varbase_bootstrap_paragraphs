@@ -217,4 +217,9 @@ function varbase_bootstrap_paragraphs_form_alter(&$form, FormStateInterface $for
     }
 
   }
+
+  // If the field_lp_paragraphs will attached the library.
+  if (isset($form['field_lp_paragraphs'])) {
+    $form['#attached']['library'][] = 'varbase_bootstrap_paragraphs/vbp-default-admin';
+  }
 }

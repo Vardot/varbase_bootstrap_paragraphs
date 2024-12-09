@@ -32,7 +32,7 @@
     "drupal/paragraphs_previewer": "~1",
     "drupal/paragraphs_edit": "~3",
     "drupal/viewsreference": "~2",
-    "drupal/webform": "~6",
+    "drupal/webform": "~6.3.0",
     "drupal/field_group": "~4",
     "drupal/advanced_text_formatter": "~3",
     "drupal/maxlength": "~3",

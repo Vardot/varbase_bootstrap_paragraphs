@@ -24,10 +24,10 @@
   },
   "require": {
     "drupal/core": ">=11.1",
-    "vardot/varbase-patches": "~10.1.0 || 10.1.x-dev",
+    "vardot/varbase-patches": "~10.1.0",
     "vardot/entity-definition-update-manager": "~1",
     "vardot/module-installer-factory": "~1",
-    "drupal/varbase_media": "~10.1.0 || 10.1.x-dev",
+    "drupal/varbase_media": "~10.1.0",
     "drupal/paragraphs": "~1",
     "drupal/paragraphs_previewer": "~1",
     "drupal/paragraphs_edit": "~3",

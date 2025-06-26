@@ -31,7 +31,7 @@
     "drupal/paragraphs_edit": "~2 || ~3",
     "drupal/viewsreference": "~2",
     "drupal/webform": "~6",
-    "drupal/field_group": "~3",
+    "drupal/field_group": "~3 || ~4",
     "drupal/advanced_text_formatter": "~3",
     "drupal/maxlength": "~2 || ~3",
     "drupal/entity_usage": "~2"

@@ -24,10 +24,6 @@ function vbp_text_and_image_install() {
   ModuleInstallerFactory::importConfigsFromScanedDirectory('vbp_text_and_image', '/^field.storage.*\\.(yml)$/i');
   ModuleInstallerFactory::importConfigsFromScanedDirectory('vbp_text_and_image', '/^.*(settings.yml)$/i');
 
-  // Add target bundle [text and image] to landing page components
-  // (landing page paragraphs field) without changing old configurations.
-  vbp_text_and_image__add_target_bundle_text_and_image_to_landing_page_components();
-
   // Entity updates to clear up any mismatched entity and/or field definitions
   // And Fix changes were detected in the entity type and field definitions.
   \Drupal::classResolver()

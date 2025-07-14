@@ -5,5 +5,3 @@ core_version_requirement: ~11.2.0
 package: Varbase
 dependencies:
   - varbase_bootstrap_paragraphs:varbase_bootstrap_paragraphs
-install:
-  - varbase_landing

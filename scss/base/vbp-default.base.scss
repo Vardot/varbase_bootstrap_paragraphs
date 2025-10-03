@@ -1,20 +1,20 @@
 // Varbase Bootstrap Paragraphs Default base styling.
 // -----------------------------------------------------------------------------
-@import "../defaults";   // Global defaults.
+@import '../defaults'; // Global defaults.
 
 .paragraph {
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 
   > {
     .paragraph__column {
       @include padding-bottom(4rem);
-      
+
       .paragraph {
         > {
           .paragraph__column {
             float: none;
-            
+
             .paragraph {
               > {
                 .paragraph__column {
@@ -25,40 +25,39 @@
           }
         }
       }
-      
+
       div {
         > {
           .paragraph {
+            right: 0;
+            left: 0;
             width: 100%;
             margin-right: 0;
             margin-left: 0;
-            left: 0;
-            right: 0;
           }
         }
       }
-      
+
       > {
         .tab-content {
           > {
             .tab-pane {
               > {
                 .paragraph {
+                  right: 0;
+                  left: 0;
                   width: 100%;
                   margin-right: 0;
                   margin-left: 0;
-                  left: 0;
-                  right: 0;
                 }
               }
             }
           }
         }
       }
-      
-
     }
   }
+
   // Nesting paragraphs.
   .paragraph {
     .bg-edge2edge,
@@ -66,27 +65,28 @@
       position: initial;
       right: 0 !important;
       left: 0 !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
       width: 100%;
       margin: 0;
+      margin-right: 0 !important;
+      margin-left: 0 !important;
     }
 
     .paragraph {
-      margin-left: 0;
-      margin-right: 0;
-      width: 100%;
       position: initial;
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
-  
+
   // Columns Modifiers inside of Columns Element.
   &.paragraph--type--bp-columns {
     .paragraph--type--bp-columns__5col {
-      position: relative;
-      min-height: 1px;
       @include padding-left(0.9375rem);
       @include padding-right(0.9375rem);
+
+      position: relative;
+      min-height: 1px;
 
       @media (min-width: 768px) {
         float: left;
@@ -95,16 +95,13 @@
     }
 
     .paragraph--type--bp-columns__6col {
-
-      @include make-col-ready();
+      @include make-col-ready;
 
       @include media-breakpoint-up(md) {
         @include make-col(2);
       }
-
     }
   }
-
 }
 
 .paragraph__column {
@@ -161,19 +158,19 @@
 .modal {
   .modal-body {
     .paragraph {
-      margin-left: 0;
-      margin-right: 0;
-      width: 100%;
       position: initial;
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 
   .modal-footer {
     .paragraph {
-      margin-left: 0;
-      margin-right: 0;
-      width: 100%;
       position: initial;
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 }
@@ -182,7 +179,7 @@
   .paragraph.paragraph--width--narrow {
     > {
       .paragraph__column {
-        @include make-col-ready();
+        @include make-col-ready;
 
         @include media-breakpoint-up(md) {
           @include make-col(6);
@@ -198,13 +195,12 @@
           @include make-col(6);
           @include make-col-offset(3);
         }
-
       }
     }
   }
 }
 
 .background-style {
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -4,13 +4,16 @@
 
 .paragraph.paragraph--color > .paragraph__column {
   padding-top: calc(1.525rem + 3.3vw);
-  padding-bottom: calc(1.525rem + 3.3vw);
 }
 
 @media (min-width: 1200px) {
   .paragraph.paragraph--color > .paragraph__column {
     padding-top: 4rem;
   }
+}
+
+.paragraph.paragraph--color > .paragraph__column {
+  padding-bottom: calc(1.525rem + 3.3vw);
 }
 
 @media (min-width: 1200px) {
@@ -64,171 +67,132 @@ body {
 }
 
 body .vbp_color_01 {
-  background-color: var(--vbp_color_01);
   color: var(--vbp_foreground_color_01);
+  background-color: var(--vbp_color_01);
 }
 
 body .vbp_color_01 a {
   color: var(--vbp_foreground_color_01);
 }
 
-body .vbp_color_01 a:hover,
- body .vbp_color_01 a:focus,
- body .vbp_color_01 a:active,
- body .vbp_color_01 a.is-active,
- body .vbp_color_01 a.active {
+body .vbp_color_01 a:hover, body .vbp_color_01 a:focus, body .vbp_color_01 a:active, body .vbp_color_01 a.is-active, body .vbp_color_01 a.active {
   color: var(--vbp_foreground_color_01);
 }
 
 body .vbp_color_02 {
-  background-color: var(--vbp_color_02);
   color: var(--vbp_foreground_color_02);
+  background-color: var(--vbp_color_02);
 }
 
 body .vbp_color_02 a {
   color: var(--vbp_foreground_color_02);
 }
 
-body .vbp_color_02 a:hover,
- body .vbp_color_02 a:focus,
- body .vbp_color_02 a:active,
- body .vbp_color_02 a.is-active,
- body .vbp_color_02 a.active {
+body .vbp_color_02 a:hover, body .vbp_color_02 a:focus, body .vbp_color_02 a:active, body .vbp_color_02 a.is-active, body .vbp_color_02 a.active {
   color: var(--vbp_foreground_color_02);
 }
 
 body .vbp_color_03 {
-  background-color: var(--vbp_color_03);
   color: var(--vbp_foreground_color_03);
+  background-color: var(--vbp_color_03);
 }
 
 body .vbp_color_03 a {
   color: var(--vbp_foreground_color_03);
 }
 
-body .vbp_color_03 a:hover,
- body .vbp_color_03 a:focus,
- body .vbp_color_03 a:active,
- body .vbp_color_03 a.is-active,
- body .vbp_color_03 a.active {
+body .vbp_color_03 a:hover, body .vbp_color_03 a:focus, body .vbp_color_03 a:active, body .vbp_color_03 a.is-active, body .vbp_color_03 a.active {
   color: var(--vbp_foreground_color_03);
 }
 
 body .vbp_color_04 {
-  background-color: var(--vbp_color_04);
   color: var(--vbp_foreground_color_04);
+  background-color: var(--vbp_color_04);
 }
 
 body .vbp_color_04 a {
   color: var(--vbp_foreground_color_04);
 }
 
-body .vbp_color_04 a:hover,
- body .vbp_color_04 a:focus,
- body .vbp_color_04 a:active,
- body .vbp_color_04 a.is-active,
- body .vbp_color_04 a.active {
+body .vbp_color_04 a:hover, body .vbp_color_04 a:focus, body .vbp_color_04 a:active, body .vbp_color_04 a.is-active, body .vbp_color_04 a.active {
   color: var(--vbp_foreground_color_04);
 }
 
 body .vbp_color_05 {
-  background-color: var(--vbp_color_05);
   color: var(--vbp_foreground_color_05);
+  background-color: var(--vbp_color_05);
 }
 
 body .vbp_color_05 a {
   color: var(--vbp_foreground_color_05);
 }
 
-body .vbp_color_05 a:hover,
- body .vbp_color_05 a:focus,
- body .vbp_color_05 a:active,
- body .vbp_color_05 a.is-active,
- body .vbp_color_05 a.active {
+body .vbp_color_05 a:hover, body .vbp_color_05 a:focus, body .vbp_color_05 a:active, body .vbp_color_05 a.is-active, body .vbp_color_05 a.active {
   color: var(--vbp_foreground_color_05);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_01 {
-  background-color: var(--vbp_color_01);
   color: var(--vbp_foreground_color_01);
+  background-color: var(--vbp_color_01);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_01 a {
   color: var(--vbp_foreground_color_01);
 }
 
-#drupal-off-canvas-wrapper body .vbp_color_01 a:hover,
- #drupal-off-canvas-wrapper body .vbp_color_01 a:focus,
- #drupal-off-canvas-wrapper body .vbp_color_01 a:active,
- #drupal-off-canvas-wrapper body .vbp_color_01 a.is-active,
- #drupal-off-canvas-wrapper body .vbp_color_01 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_01 a:hover, #drupal-off-canvas-wrapper body .vbp_color_01 a:focus, #drupal-off-canvas-wrapper body .vbp_color_01 a:active, #drupal-off-canvas-wrapper body .vbp_color_01 a.is-active, #drupal-off-canvas-wrapper body .vbp_color_01 a.active {
   color: var(--vbp_foreground_color_01);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_02 {
-  background-color: var(--vbp_color_02);
   color: var(--vbp_foreground_color_02);
+  background-color: var(--vbp_color_02);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_02 a {
   color: var(--vbp_foreground_color_02);
 }
 
-#drupal-off-canvas-wrapper body .vbp_color_02 a:hover,
- #drupal-off-canvas-wrapper body .vbp_color_02 a:focus,
- #drupal-off-canvas-wrapper body .vbp_color_02 a:active,
- #drupal-off-canvas-wrapper body .vbp_color_02 a.is-active,
- #drupal-off-canvas-wrapper body .vbp_color_02 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_02 a:hover, #drupal-off-canvas-wrapper body .vbp_color_02 a:focus, #drupal-off-canvas-wrapper body .vbp_color_02 a:active, #drupal-off-canvas-wrapper body .vbp_color_02 a.is-active, #drupal-off-canvas-wrapper body .vbp_color_02 a.active {
   color: var(--vbp_foreground_color_02);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_03 {
-  background-color: var(--vbp_color_03);
   color: var(--vbp_foreground_color_03);
+  background-color: var(--vbp_color_03);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_03 a {
   color: var(--vbp_foreground_color_03);
 }
 
-#drupal-off-canvas-wrapper body .vbp_color_03 a:hover,
- #drupal-off-canvas-wrapper body .vbp_color_03 a:focus,
- #drupal-off-canvas-wrapper body .vbp_color_03 a:active,
- #drupal-off-canvas-wrapper body .vbp_color_03 a.is-active,
- #drupal-off-canvas-wrapper body .vbp_color_03 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_03 a:hover, #drupal-off-canvas-wrapper body .vbp_color_03 a:focus, #drupal-off-canvas-wrapper body .vbp_color_03 a:active, #drupal-off-canvas-wrapper body .vbp_color_03 a.is-active, #drupal-off-canvas-wrapper body .vbp_color_03 a.active {
   color: var(--vbp_foreground_color_03);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_04 {
-  background-color: var(--vbp_color_04);
   color: var(--vbp_foreground_color_04);
+  background-color: var(--vbp_color_04);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_04 a {
   color: var(--vbp_foreground_color_04);
 }
 
-#drupal-off-canvas-wrapper body .vbp_color_04 a:hover,
- #drupal-off-canvas-wrapper body .vbp_color_04 a:focus,
- #drupal-off-canvas-wrapper body .vbp_color_04 a:active,
- #drupal-off-canvas-wrapper body .vbp_color_04 a.is-active,
- #drupal-off-canvas-wrapper body .vbp_color_04 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_04 a:hover, #drupal-off-canvas-wrapper body .vbp_color_04 a:focus, #drupal-off-canvas-wrapper body .vbp_color_04 a:active, #drupal-off-canvas-wrapper body .vbp_color_04 a.is-active, #drupal-off-canvas-wrapper body .vbp_color_04 a.active {
   color: var(--vbp_foreground_color_04);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_05 {
-  background-color: var(--vbp_color_05);
   color: var(--vbp_foreground_color_05);
+  background-color: var(--vbp_color_05);
 }
 
 #drupal-off-canvas-wrapper body .vbp_color_05 a {
   color: var(--vbp_foreground_color_05);
 }
 
-#drupal-off-canvas-wrapper body .vbp_color_05 a:hover,
- #drupal-off-canvas-wrapper body .vbp_color_05 a:focus,
- #drupal-off-canvas-wrapper body .vbp_color_05 a:active,
- #drupal-off-canvas-wrapper body .vbp_color_05 a.is-active,
- #drupal-off-canvas-wrapper body .vbp_color_05 a.active {
+#drupal-off-canvas-wrapper body .vbp_color_05 a:hover, #drupal-off-canvas-wrapper body .vbp_color_05 a:focus, #drupal-off-canvas-wrapper body .vbp_color_05 a:active, #drupal-off-canvas-wrapper body .vbp_color_05 a.is-active, #drupal-off-canvas-wrapper body .vbp_color_05 a.active {
   color: var(--vbp_foreground_color_05);
 }
+

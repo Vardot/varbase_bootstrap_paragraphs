@@ -5,7 +5,6 @@
   "globRoot": ".",
   "ignorePaths": [
     "node_modules/**",
-    "vendor/**",
     "*.min.js",
     "*.min.css",
     "composer.lock",
@@ -21,8 +20,7 @@
     "**/build/**",
     "**/.phpcs-cache",
     "**/.eslintcache",
-    "**/*.svg",
-    "css/**/*.css"
+    "**/*.svg"
   ],
   "words": [
     "varbase",
@@ -214,6 +212,7 @@
     "xlink",
     "Artboard",
     "evenodd",
-    "linecap"
+    "linecap",
+    "YOURTHEME"
   ]
 }

@@ -1,7 +1,7 @@
 // Modal Paragraph.
 // .paragraph--bp-modal.html.twig
 // -----------------------------------------------------------------------------
-@import "../defaults";   // Global defaults.
+@import '../defaults'; // Global defaults.
 
 .paragraph--type--bp-modal {
   @include padding(0.625rem);
@@ -10,13 +10,12 @@
 .paragraph--type--bp-modal {
   .btn.btn-modal {
     display: block;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 }
 
 .modal {
-
   .modal-header {
     @include padding(0.9375rem 1.875rem);
   }
@@ -31,10 +30,11 @@
 
   .modal-body .paragraph,
   .modal-footer .paragraph {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    position: initial;
     @include padding(0.9375rem 1.875rem 0.9375rem 1.875rem);
+
+    position: initial;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
   }
 }

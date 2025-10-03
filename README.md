@@ -37,7 +37,7 @@ and layout.
 
 **Backgrounds:**
 
-Each Paragraph has styling settings, including width, Backgournd image, and
+Each Paragraph has styling settings, including width, Background image, and
 background color options.
 
 **Widths:**

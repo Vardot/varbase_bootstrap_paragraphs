@@ -7,7 +7,6 @@
     "yarn": ">= 4.9.3",
     "node": ">= 20.0"
   },
-  "packageManager": "yarn@4.9.3",
   "scripts": {
     "theme:build": "webpack --progress --config webpack.config.build.js",
     "components:build": "webpack --progress --config webpack.config.components.js",
@@ -16,7 +15,7 @@
     "phpcs": "phpcs --standard=./.phpcs.xml .",
     "phpcbf": "phpcbf --standard=./.phpcs.xml .",
     "lint:js": "node ./node_modules/eslint/bin/eslint.js .",
-    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css": "stylelint \"scss/**/*.scss\" --allow-empty-input",
     "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --ext .yml .",
     "spellcheck": "cspell lint ."
   },
@@ -60,6 +59,7 @@
     "postcss-header": "^3.0.3",
     "postcss-import": "^16.1.0",
     "postcss-loader": "^8.1.1",
+    "postcss-perfectionist": "^2.3.9",
     "postcss-preset-env": "^10.1.4",
     "postcss-pxtorem": "^6.1.0",
     "postcss-rtlcss": "^5.5.1",
@@ -71,7 +71,9 @@
     "sortablejs": "1.15.x",
     "stylelint": "^16.12.0",
     "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^6.0.4",
+    "stylelint-prettier": "^5.0.3",
     "tabbable": "~6.0.0",
     "terser": "^5.37.0",
     "terser-webpack-plugin": "^5.3.11",
@@ -92,8 +94,5 @@
     "last 1 Samsung version",
     "Firefox ESR"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git.drupalcode.org/project/varbase_bootstrap_paragraphs"
-  }
+  "packageManager": "yarn@4.9.3"
 }

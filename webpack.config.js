@@ -25,7 +25,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'css'),
-    pathinfo: true,
+    pathinfo: false,
     publicPath: '',
   },
   module: {
@@ -33,21 +33,14 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         exclude: /sprite\.svg$/,
-        type: 'javascript/auto',
-        use: [{
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]', //?[contenthash]
-              outputPath: '../../'
-            },
+        type: 'asset/resource',
+        generator: {
+          filename: (pathData) => {
+            // Remove leading slash from path
+            const path = pathData.filename.replace(/^\//, '');
+            return `../../${path}`;
           },
-          {
-            loader: 'img-loader',
-            options: {
-              enabled: !isDev,
-            },
-          },
-        ],
+        },
       },
       {
         test: /\.(css|scss)$/,
@@ -55,21 +48,23 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              name: '[name].[ext]?[hash]',
-            }
+              publicPath: '../../',
+            },
           },
           {
             loader: 'css-loader',
             options: {
               sourceMap: isDev,
               importLoaders: 2,
-              url: (url) => {
-                // Don't handle sprite svg
-                if (url.includes('sprite.svg')) {
-                  return false;
-                }
+              url: {
+                filter: (url) => {
+                  // Don't handle sprite svg or image paths - keep them as-is in SCSS
+                  if (url.includes('sprite.svg') || url.includes('/images/')) {
+                    return false;
+                  }
 
-                return true;
+                  return true;
+                },
               },
             },
           },

@@ -110,7 +110,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
    *   The list of allowed values in string format described in
    *   optionsExtractAllowedValues().
    *
-   * @return arraynull
+   * @return array|null
    *   The array of extracted key/value pairs, or NULL if the string is invalid.
    *
    * @see optionsExtractAllowedListTextValues()

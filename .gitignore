@@ -3,6 +3,14 @@ node_modules
 /*/node_modules
 /*/modules/vbp_text_and_image/node_modules
 
+# Ignore Yarn v2+ files
+.yarn/
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
 # Ignore Variables
 /css/variables.css
 /css/mixins/

@@ -3,6 +3,7 @@
  * Behaviors Varbase hero slider media general scripts.
  */
 
+/* eslint-disable func-names */
 (function ($, _, Drupal) {
   Drupal.behaviors.varbaseBootstrapParagraphsAdmin = {
     attach() {

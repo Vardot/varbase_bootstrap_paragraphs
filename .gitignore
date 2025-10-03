@@ -3,6 +3,9 @@ node_modules
 /*/node_modules
 /*/modules/vbp_text_and_image/node_modules
 
+# Ignore yarn files
+.yarn/
+
 # Ignore Variables
 /css/variables.css
 /css/mixins/

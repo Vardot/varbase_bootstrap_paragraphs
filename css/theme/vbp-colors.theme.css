@@ -4,12 +4,14 @@
 
 .paragraph.paragraph--color > .paragraph__column {
   padding-top: calc(1.325rem + 0.9vw);
-  padding-bottom: calc(1.325rem + 0.9vw);
 }
 @media (min-width: 1200px) {
   .paragraph.paragraph--color > .paragraph__column {
     padding-top: 2rem;
   }
+}
+.paragraph.paragraph--color > .paragraph__column {
+  padding-bottom: calc(1.325rem + 0.9vw);
 }
 @media (min-width: 1200px) {
   .paragraph.paragraph--color > .paragraph__column {

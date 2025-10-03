@@ -1,43 +1,38 @@
 .paragraph--type--bp-modal {
-  padding: .625rem;
+  padding: 0.625rem;
 }
 
 .paragraph--type--bp-modal .btn.btn-modal {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 .modal .modal-header {
-  padding: .9375rem calc(1.3125rem + .75vw);
+  padding: 0.9375rem calc(1.3125rem + 0.75vw);
 }
-
 @media (min-width: 1200px) {
   .modal .modal-header {
-    padding: .9375rem 1.875rem;
+    padding: 0.9375rem 1.875rem;
   }
 }
-
 .modal .modal-title {
   font-weight: bold;
 }
-
 .modal .modal-footer {
   text-align: left;
 }
-
 .modal .modal-body .paragraph,
 .modal .modal-footer .paragraph {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
   position: initial;
-  padding: .9375rem calc(1.3125rem + .75vw) .9375rem calc(1.3125rem + .75vw);
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0.9375rem calc(1.3125rem + 0.75vw) 0.9375rem calc(1.3125rem + 0.75vw);
 }
-
 @media (min-width: 1200px) {
   .modal .modal-body .paragraph,
   .modal .modal-footer .paragraph {
-    padding: .9375rem 1.875rem .9375rem 1.875rem;
+    padding: 0.9375rem 1.875rem 0.9375rem 1.875rem;
   }
 }

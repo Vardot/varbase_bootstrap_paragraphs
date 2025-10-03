@@ -50,16 +50,7 @@ module.exports = {
               sourceMap: isDev,
               postcssOptions: {
                 plugins: [
-                  autoprefixer(),
-                  ['postcss-perfectionist', {
-                    format: 'expanded',
-                    indentSize: 2,
-                    trimLeadingZero: true,
-                    zeroLengthNoUnit: false,
-                    maxAtRuleLength: false,
-                    maxSelectorLength: false,
-                    maxValueLength: false,
-                  }]
+                  autoprefixer()
                 ],
               },
             },

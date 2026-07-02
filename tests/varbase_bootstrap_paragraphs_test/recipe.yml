@@ -1,12 +1,6 @@
 name: 'Varbase Bootstrap Paragraphs Test'
-description: 'Provisions a Standard site with Varbase Bootstrap Paragraphs (and Varbase Media), using vartheme_bs4 as the default theme, for the automated tests.'
+description: 'Provisions a Standard site with Varbase Bootstrap Paragraphs (and Varbase Media) for the automated tests.'
 type: 'Testing'
 install:
   - varbase_media
   - varbase_bootstrap_paragraphs
-  - vartheme_bs4
-config:
-  actions:
-    system.theme:
-      simpleConfigUpdate:
-        default: vartheme_bs4

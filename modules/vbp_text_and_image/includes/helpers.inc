@@ -16,6 +16,18 @@ function vbp_text_and_image__add_target_bundle_text_and_image_to_landing_page_co
   $site_config = \Drupal::configFactory()->getEditable('field.field.node.landing_page.field_lp_paragraphs');
   $config_data = $site_config->get();
 
+  // Only extend an existing, fully defined field configuration. This
+  // sub-module and varbase_landing depend on each other, so this sub-module
+  // can be installed before varbase_landing has imported its
+  // field.field.node.landing_page.field_lp_paragraphs config. Writing to it
+  // then would create a partial, invalid config (missing field_type) that
+  // later blocks varbase_landing's optional config import and breaks the
+  // Components field. Bail out in that case; hook_modules_installed() re-runs
+  // this once varbase_landing is installed.
+  if ($site_config->isNew() || empty($config_data['field_type'])) {
+    return;
+  }
+
   /* dependencies:
    * config:
    * - paragraphs.paragraphs_type.text_and_image

@@ -9,6 +9,21 @@
 include_once __DIR__ . '/includes/helpers.inc';
 
 /**
+ * Implements hook_modules_installed().
+ *
+ * The varbase_landing module and this sub-module depend on each other. When
+ * varbase_landing is installed after this sub-module, its
+ * field.field.node.landing_page.field_lp_paragraphs config only becomes
+ * available now, so add the text_and_image target bundle to it at this point
+ * (hook_install() bailed out earlier because the config did not exist yet).
+ */
+function vbp_text_and_image_modules_installed($modules, $is_syncing) {
+  if (in_array('varbase_landing', $modules, TRUE)) {
+    vbp_text_and_image__add_target_bundle_text_and_image_to_landing_page_components();
+  }
+}
+
+/**
  * Implements hook_theme().
  */
 function vbp_text_and_image_theme($existing, $type, $theme, $path) {

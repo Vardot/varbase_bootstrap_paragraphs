@@ -68,7 +68,7 @@ class VarbaseBootstrapParagraphsSettingsForm extends ConfigFormBase {
       $form_state->setRebuild();
       return;
     }
-    catch (Exception $e) {
+    catch (\Exception $e) {
       $this->messenger()->addError($e->getMessage());
       $form_state->setRebuild();
       return;

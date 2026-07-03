@@ -55,24 +55,18 @@ function varbase_bootstrap_paragraphs_preprocess_paragraph(&$variables) {
         }
 
         if (\Drupal::moduleHandler()->moduleExists('drimage_improved')) {
-          // For drimage_improved, construct a proper image URL for background images.
-          // Background images use the drimage improved route which expects:
-          // /drimage/{width}/{height}/{fid}/{iwc_id}/{file_extension}
-          //
-          // Use 1600px width for responsive background image coverage
-          // Height 0 = calculate based on aspect ratio
+          // Build a Drimage Improved background image URL. The route expects
+          // /drimage/{width}/{height}/{fid}/{iwc_id}/{file_extension}, using a
+          // 1600px width for responsive coverage and height 0 to keep the
+          // aspect ratio.
           $file_uri = $file->getFileUri();
-
-          // Get the file extension to pass to the route
           $file_extension = pathinfo($file_uri, PATHINFO_EXTENSION);
-
-          // Generate the drimage URL
-          // Format: /drimage/{width}/{height}/{fid}/{iwc_id}/{file_extension}
           $file_path = '/drimage/1600/0/' . $target_id . '/-/' . $file_extension;
         }
         elseif (\Drupal::moduleHandler()->moduleExists('drimage')) {
-          // Display Edge-to-Edge auto) fall back default background image using Drimage.
-          $file_path = $url . '/drimage/1600/0/' . $target_id . '/-' . $url . \Drupal::service('file_url_generator')->generateString($file->getFileUri());
+          // Fall back to the Drimage edge-to-edge background image URL.
+          $generated_url = \Drupal::service('file_url_generator')->generateString($file->getFileUri());
+          $file_path = $url . '/drimage/1600/0/' . $target_id . '/-' . $url . $generated_url;
         }
       }
     }

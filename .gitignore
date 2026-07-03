@@ -44,3 +44,6 @@ ehthumbs.db
 .bash_history
 .bashrc
 errors.log
+
+# Ignore gitlab-ci-local runner artifacts.
+.gitlab-ci-local/

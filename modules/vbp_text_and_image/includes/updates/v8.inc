@@ -35,5 +35,11 @@ function vbp_text_and_image_update_8001() {
  * configurations.
  */
 function vbp_text_and_image_update_8602() {
-  vbp_text_and_image__add_target_bundle_text_and_image_to_landing_page_components();
+  // The original helper that populated the landing page components target
+  // bundle was removed in a later refactor. Guard the historical call so the
+  // update hook stays a safe no-op on sites that ran it before.
+  $function = 'vbp_text_and_image__add_target_bundle_text_and_image_to_landing_page_components';
+  if (function_exists($function)) {
+    $function();
+  }
 }

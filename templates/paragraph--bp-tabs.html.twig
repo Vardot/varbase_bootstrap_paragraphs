@@ -97,8 +97,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set striped_custom_classes = VBP.bp_classes.value|striptags|lower %}
   {% set split_custom_classes = striped_custom_classes|split(' ') %}
   {% for custom_class in split_custom_classes %}
-    {% set clened_custom_class = [ custom_class|clean_class ] %}
-    {% set classes = classes|merge(clened_custom_class) %}
+    {% set cleaned_custom_class = [ custom_class|clean_class ] %}
+    {% set classes = classes|merge(cleaned_custom_class) %}
   {%  endfor %}
 {% endif %}
 

@@ -1,0 +1,32 @@
+name: Varbase Bootstrap Paragraphs - Default
+description: A recipe to manage default installed modules, configs and permissions.
+type: install
+config:
+  actions:
+    user.role.content_admin:
+      grantPermissions:
+        - 'view unpublished paragraphs'
+        - 'create paragraph library item'
+        - 'edit paragraph library item'
+        - 'view any paragraphs previewer'
+        - 'access paragraphs_library_items entity browser pages'
+    user.role.editor:
+      grantPermissions:
+        - 'view unpublished paragraphs'
+        - 'view any paragraphs previewer'
+        - 'access paragraphs_library_items entity browser pages'
+    user.role.seo_admin:
+      grantPermissions:
+        - 'view unpublished paragraphs'
+        - 'create paragraph library item'
+        - 'edit paragraph library item'
+        - 'view any paragraphs previewer'
+        - 'access paragraphs_library_items entity browser pages'
+    user.role.site_admin:
+      grantPermissions:
+        - 'administer varbase bootstrap paragraphs settings'
+        - 'view unpublished paragraphs'
+        - 'create paragraph library item'
+        - 'edit paragraph library item'
+        - 'view any paragraphs previewer'
+        - 'access paragraphs_library_items entity browser pages'

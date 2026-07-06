@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Config\InstallStorage;
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
 use Vardot\Entity\EntityDefinitionUpdateManager;
 use Vardot\Installer\ModuleInstallerFactory;
 
@@ -40,6 +42,7 @@ function varbase_bootstrap_paragraphs_install() {
     ->getInstanceFromDefinition(EntityDefinitionUpdateManager::class)
     ->applyUpdates();
 
-  // Add permissions.
-  ModuleInstallerFactory::addPermissions('varbase_bootstrap_paragraphs');
+  // Grant role permissions via the default recipe.
+  $default_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/default');
+  RecipeRunner::processRecipe($default_recipe);
 }

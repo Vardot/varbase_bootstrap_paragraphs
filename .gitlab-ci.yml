@@ -93,6 +93,11 @@ webship-js-test:
     - mkdir -p $CI_PROJECT_DIR/$_WEB_ROOT/libraries/dropzone/dist/min
     - curl -sSL https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.js -o $CI_PROJECT_DIR/$_WEB_ROOT/libraries/dropzone/dist/min/dropzone.min.js
     - chmod -R 777 $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files || true
+    # Varbase roles that the module config grants to (create before install; plain drush, no PHP).
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT role:create editor 'Editor' || true
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT role:create content_admin 'Content admin' || true
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT role:create site_admin 'Site admin' || true
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT role:create seo_admin 'SEO admin' || true
     # Install varbase_media first, then varbase_bootstrap_paragraphs (it depends on
     # the media config), via the module installer.
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT php:eval '\Drupal::service("module_installer")->install(["varbase_media"]);' || true

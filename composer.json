@@ -19,15 +19,15 @@
         "drupal/core": "~11.4.0",
         "vardot/module-installer-factory": "~1",
         "vardot/entity-definition-update-manager": "~1",
-        "drupal/varbase_media": "~9",
+        "drupal/varbase_media": "~9.2.0",
         "drupal/paragraphs": "~1",
         "drupal/paragraphs_previewer": "~1",
-        "drupal/paragraphs_edit": "~2 || ~3",
+        "drupal/paragraphs_edit": "~3",
         "drupal/viewsreference": "~2",
         "drupal/webform": "~6",
         "drupal/field_group": "~4",
-        "drupal/advanced_text_formatter": "~2 || ~3",
-        "drupal/maxlength": "~2 || ~3",
+        "drupal/advanced_text_formatter": "~3",
+        "drupal/maxlength": "~3",
         "drupal/entity_usage": "~2"
     }
 }

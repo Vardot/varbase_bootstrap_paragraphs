@@ -1,3 +1,7 @@
+[![pipeline status](https://git.drupalcode.org/project/varbase_bootstrap_paragraphs/badges/9.2.x/pipeline.svg)](https://git.drupalcode.org/project/varbase_bootstrap_paragraphs/-/pipelines)
+[![Varbase Bootstrap Paragraphs](https://img.shields.io/badge/Varbase%20Bootstrap%20Paragraphs-9.2.0-0d6efc?labelColor=001d38&style=flat-square)](https://git.drupalcode.org/project/varbase_bootstrap_paragraphs/-/pipelines?ref=9.2.0)
+[![Automated Functional Testing](https://git.drupalcode.org/project/varbase_bootstrap_paragraphs/badges/9.2.x/pipeline.svg)](https://git.drupalcode.org/project/varbase_bootstrap_paragraphs/-/pipelines)
+
 # Varbase Bootstrap Paragraphs
 
 A suite of Paragraph bundles to be used for

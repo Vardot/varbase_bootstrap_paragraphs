@@ -5,7 +5,7 @@
  * Contains vbp_text_and_image_update_8###(s) hook updates.
  */
 
-use Symfony\Component\Yaml\Yaml;
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Config\InstallStorage;
 
 /**
@@ -22,7 +22,7 @@ function vbp_text_and_image_update_8001() {
   $configs['core.entity_form_display.paragraph.text_and_image.default'] = $optional_install_path . 'core.entity_form_display.paragraph.text_and_image.default.yml';
 
   foreach ($configs as $name => $config_path) {
-    $data = (array) Yaml::parse($config_path);
+    $data = (array) Yaml::decode($config_path);
     $config = \Drupal::configFactory()->getEditable($name);
     $config->setData($data)->save(TRUE);
   }
